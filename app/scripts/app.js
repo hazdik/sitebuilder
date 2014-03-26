@@ -9,7 +9,7 @@ angular.module('pieologyApp', [
   .config(function ($routeProvider) {
     $routeProvider
       .when('/', {
-        templateUrl: 'views/main.html',
+        templateUrl: 'views/app-container.html',
         controller: 'MainCtrl'
       })
       .otherwise({
