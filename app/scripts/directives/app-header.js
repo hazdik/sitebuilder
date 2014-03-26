@@ -3,10 +3,10 @@
 angular.module('pieologyApp')
   .directive('appHeader', function () {
     return {
-      templateUrl: 'views/app-navigation.html',
+      templateUrl: 'views/app-header.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        element.html('<span class="icon-menu"></span> ... this is the appHeader directive');
+        // element.text('this is the appHeader directive');
         console.log(attrs);
         console.log(scope);
         console.log(element);

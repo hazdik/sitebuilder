@@ -6,7 +6,7 @@ angular.module('pieologyApp')
       templateUrl: 'views/app-action-container.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
-        element.text('this is the appActionContainer directive');
+        // element.text('this is the appActionContainer directive');
         console.log(attrs);
         console.log(scope);
         console.log(element);
