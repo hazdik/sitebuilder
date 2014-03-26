@@ -1,3 +1,5 @@
+@import "globals/variables", "globals/mixins"; //, "shared/icons", "shared/buttons;
+
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 @import 'sass-bootstrap/lib/bootstrap';
