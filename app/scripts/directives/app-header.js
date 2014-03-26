@@ -3,7 +3,7 @@
 angular.module('pieologyApp')
   .directive('appHeader', function () {
     return {
-      template: '<div></div>',
+      templateUrl: 'views/app-navigation.html',
       restrict: 'E',
       link: function postLink(scope, element, attrs) {
         element.text('this is the appHeader directive');
