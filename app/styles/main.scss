@@ -1,4 +1,4 @@
-@import "globals/variables", "globals/mixins"; //, "shared/icons", "shared/buttons;
+@import "globals/variables", "globals/mixins";
 
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
@@ -13,7 +13,7 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
 /* Space out content a bit */
 body {
-    padding-top: 20px;
+    padding-top: 40px;
     padding-bottom: 20px;
 }
 
