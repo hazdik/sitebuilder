@@ -1,15 +1,18 @@
-'use strict';
+/*global angular, console */
 
 angular.module('pieologyApp')
-  .directive('appNavigation', function () {
-    return {
-      templateUrl: 'views/app-navigation.html',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        // element.text('this is the appNavigation directive');
-        console.log(attrs);
-        console.log(scope);
-        console.log(element);
-      }
-    };
-  });
+    .directive('appNavigation', function () {
+
+        'use strict';
+
+        return {
+            templateUrl: 'views/app-navigation.html',
+            restrict   : 'E',
+            link       : function postLink(scope, element, attrs) {
+                // element.text('this is the appNavigation directive');
+                console.log(attrs);
+                console.log(scope);
+                console.log(element);
+            }
+        };
+    });
