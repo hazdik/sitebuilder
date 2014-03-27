@@ -91,3 +91,17 @@ body {
         border-bottom: 0;
     }
 }
+
+.app {
+    .-header {
+        background-color: red !important;
+    }
+
+    /* Application navigation elements */
+    .-navigation {
+        background-color: red;
+        width: 50px;
+    }
+}
+
+
