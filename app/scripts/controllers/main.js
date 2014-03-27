@@ -11,4 +11,10 @@ angular.module('pieologyApp')
             'AngularJS',
             'Karma'
         ];
+
+        $scope.company = {
+            name : 'Runaway Clothing',
+            url  : 'RunawayClothing.com'
+        };
+
     });

@@ -1,0 +1,15 @@
+@import "globals/variables", "globals/mixins";
+
+.-header {
+    background-color: $cg10;
+    border-bottom: none;
+
+    a {
+        @include hyperlinks($cg3, $cg3, $cg1, $cg1);
+    }
+
+    .company-name {
+        @include font-size($fs6);
+        color : $cg4 !important;
+    }
+}
