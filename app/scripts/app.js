@@ -1,24 +1,27 @@
-'use strict';
+
+/*global angular */
 
 angular.module('pieologyApp', [
-  'ngCookies',
-  'ngResource',
-  'ngSanitize',
-  'ngRoute'
+    'ngCookies',
+    'ngResource',
+    'ngSanitize',
+    'ngRoute'
 ])
-  .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
-    $locationProvider.html5Mode(true);
+    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
-    $routeProvider
-      .when('/', {
-        templateUrl: 'views/app-container.html',
-        controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
-      });
-  }]);
+        'use strict';
 
+        $locationProvider.html5Mode(true);
+
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/app-container.html',
+                controller : 'MainCtrl'
+            })
+            .otherwise({
+                redirectTo: '/'
+            });
+    }]);
 
 // angular.module('myApp', ['ngRoute']).
 //   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {

@@ -1,16 +1,21 @@
-'use strict';
+
+
+/*global angular */
 
 angular.module('pieologyApp')
-  .factory('updateService', function () {
-    // Service logic
-    // ...
+    .factory('updateService', function () {
 
-    var meaningOfLife = 42;
+        'use strict';
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+        // Service logic
+        // ...
+
+        var meaningOfLife = 42;
+
+        // Public API here
+        return {
+            someMethod: function () {
+                return meaningOfLife;
+            }
+        };
+    });
