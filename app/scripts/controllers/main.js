@@ -17,4 +17,9 @@ angular.module('pieologyApp')
             url  : 'RunawayClothing.com'
         };
 
+        $scope.state = {
+            switchState : 'off',
+            switchStyle : 'vln-slider'
+        };
+
     });

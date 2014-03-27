@@ -12,12 +12,17 @@
         <div class="navbar-header">
             <span class="navbar-brand company-name">{{ company.url }}</span>
         </div>
-        <div class="navbar-collapse collapse">
+        <div class="navbar-header">
             <ul class="nav navbar-nav">
                 <li><a href="#"><span class="icon-screen"></span></a></li>
                 <li><a href="#"><span class="icon-tablet"></span></a></li>
                 <li><a href="#"><span class="icon-mobile"></span></a></li>
             </ul>
+        </div>
+        <div class="navbar-header">
+            <div class="slider">
+                <div class="-label">Edit Mode</div><div vln-comp-switch switch-style="state.switchStyle" switch-state="state.switchState"></div><div class="-label">Preview Mode</div>
+            </div>
         </div>
     </div>
 </header>

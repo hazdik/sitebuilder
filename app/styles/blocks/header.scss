@@ -12,4 +12,17 @@
         @include font-size($fs6);
         color : $cg4 !important;
     }
+
+    .slider {
+        margin : 15px;
+
+        div {
+            float : left;
+
+            &.-label {
+                @include font-size($fs4);
+                margin :5px;
+            }
+        }
+    }
 }

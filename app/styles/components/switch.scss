@@ -1,0 +1,199 @@
+@import "compass/css3";
+@import "compass/css3/user-interface";
+@import "compass/typography/text";
+
+@import "globals/variables", "globals/mixins";
+
+.vln-switch {
+    position: relative;
+    border: 1px solid #aaa;
+    @include border-radius(4px);
+    float: left;
+    width: 70px;
+    height: 25px;
+    line-height: 1;
+    @include background(linear-gradient(#fff, #f0f0f0));
+    @include box-shadow(rgba(#000, .05) 0 0 0 2px inset);
+    cursor: default;
+
+    &.button {
+        .left-section {
+            float: left;
+            height: 0;
+            width: 0;
+            display: none;
+        }
+
+        .right-section {
+            float: left;
+            height: 0;
+            width: 0;
+            display: none;
+        }
+
+        .switch {
+            @include transition(all 0.5s ease);
+            float: left;
+            border-style: solid;
+            border-width: 1px;
+            background: green;
+            @include border-radius(4px);
+            position: absolute;
+            height: 23px;
+            width: 35px;
+            line-height: 20px;
+            @include fontSemiBold(14px);
+            cursor: pointer;
+            color: white;
+            @include box-shadow(darken(#aaa, 10%) 0 0 1px 1px);
+            text-align: center;
+        }
+
+        &.-off {
+            .switch {
+                //left: 0;
+                margin-left: 0px;
+                border-color: darken(red, 10%);
+                background: red;
+            }
+        }
+
+        &.-on {
+            .switch {
+                //right: 0;
+                margin-left: 33px;
+                border-color: darken(green, 10%);
+                background: green;
+            }
+        }
+    }
+
+    &.slider {
+        .left-section {
+            float: left;
+            height: 23px;
+            width: 45px;
+            line-height: 21px;
+            color: white;
+            text-align: center;
+            @include fontSemiBold(14px);
+        }
+
+        .right-section {
+            float: left;
+            height: 23px;
+            width: 68px;
+            line-height: 21px;
+            color: white;
+            text-align: center;
+            padding-left: 21px;
+            @include fontSemiBold(14px);
+        }
+
+        .switch {
+            float: left;
+            @include transition(all 0.5s ease);
+            border-style: solid;
+            border-width: 4px;
+            @include background(#aaa linear-gradient(rgba(#fff, .1), rgba(#fff, 0)));
+            @include border-radius(10px);
+            position: absolute;
+            height: 17px;
+            width: 17px;
+            @include fontSemiBold(14px);
+            cursor: pointer;
+            @include box-shadow(lighten(#aaa, 20%) 0 0 3px 3px);
+            margin-top: 3px;
+
+            span {
+                display: none;
+            }
+        }
+
+        &.-off {
+            @include background(linear-gradient(red, darkred));
+
+            .left-section {
+                display: none;
+            }
+
+            .switch {
+                //left: 0;
+                margin-left: 3px;
+            }
+        }
+
+        &.-on {
+            @include background(linear-gradient(green, darkgreen));
+
+            .right-section {
+                display: none;
+            }
+
+            .switch {
+                //right: 0;
+                margin-left: 48px;
+            }
+        }
+    }
+
+    &.vln-slider {
+
+        width: 50px;
+        height: 21px;
+        @include border-radius(12px);
+
+        .left-section {
+            display : none;
+        }
+
+        .right-section {
+            display : none;
+        }
+
+        .switch {
+            float: left;
+            @include transition(all 0.5s ease);
+            border-style: solid;
+            border-width: 4px;
+            @include background(#aaa linear-gradient(rgba(#fff, .1), rgba(#fff, 0)));
+            @include border-radius(10px);
+            position: absolute;
+            height: 17px;
+            width: 17px;
+            @include fontSemiBold(14px);
+            cursor: pointer;
+            @include box-shadow(lighten(#aaa, 20%) 0 0 3px 3px);
+            margin-top: 1px;
+
+            span {
+                display: none;
+            }
+        }
+
+        &.-off {
+            @include background(linear-gradient(white, lightgray));
+
+            .left-section {
+                display: none;
+            }
+
+            .switch {
+                //left: 0;
+                margin-left: 1px;
+            }
+        }
+
+        &.-on {
+            @include background(linear-gradient(white, lightgray));
+
+            .right-section {
+                display: none;
+            }
+
+            .switch {
+                margin-left: 30px;
+            }
+        }
+    }
+}
