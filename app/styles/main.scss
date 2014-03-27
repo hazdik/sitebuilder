@@ -95,12 +95,18 @@ body {
 .app {
     .-header {
         background-color: red !important;
+        border-bottom: none;
     }
 
     /* Application navigation elements */
     .-navigation {
         background-color: red;
         width: 50px;
+        padding: 0;
+    }
+
+    .-action {
+        background-color: $cg6;
     }
 }
 
