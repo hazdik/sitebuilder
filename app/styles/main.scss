@@ -94,19 +94,36 @@ body {
 
 .app {
     .-header {
-        background-color: red !important;
+        background-color: $cg1;
         border-bottom: none;
     }
 
     /* Application navigation elements */
     .-navigation {
-        background-color: red;
+        color: $cg8;
+        background-color: $cg1;
         width: 50px;
         padding: 0;
+
+        ul {
+            li {
+                a {
+                    color: $cg8;
+                }
+            }
+        }
     }
 
     .-action {
-        background-color: $cg6;
+        background-color: $cg2;
+
+        ul {
+            li {
+                a {
+                    color: $cg8;
+                }
+            }
+        }
     }
 }
 
