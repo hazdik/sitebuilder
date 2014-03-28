@@ -1,7 +1,9 @@
 @import "globals/variables", "globals/mixins";
 
 .-action {
-    background-color: $cg2;
+    section {
+        background-color : $cg2;
+    }
 
     ul {
         li {
