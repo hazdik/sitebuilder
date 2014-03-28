@@ -8,6 +8,7 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/app-navigation.html',
             restrict   : 'A',
+            replace    : true,
             link       : function postLink(scope, element, attrs) {
                 // element.text('this is the appNavigation directive');
                 console.log(attrs);

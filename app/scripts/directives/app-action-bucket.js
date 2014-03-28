@@ -9,6 +9,7 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/action-bucket.html',
             restrict   : 'A',
+            replace    : true,
             link       : function postLink(scope, element, attrs) {
 //                element.text('this is the appActionBucket directive');
                 console.log(attrs);
