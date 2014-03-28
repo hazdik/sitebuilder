@@ -196,4 +196,64 @@
             }
         }
     }
+
+    &.vln-tiny-slider {
+
+        width: 50px;
+        height: 5px;
+        margin-top: 8px;
+        @include border-radius(12px);
+
+        .left-section {
+            display : none;
+        }
+
+        .right-section {
+            display : none;
+        }
+
+        .switch {
+            float: left;
+            @include transition(all 0.5s ease);
+            border-style: solid;
+            border-width: 2px;
+            @include background(#fff);
+            @include border-radius(10px);
+            position: absolute;
+            height: 17px;
+            width: 17px;
+            cursor: pointer;
+            @include box-shadow(lighten(#aaa, 20%) 0 0 1px 1px);
+            margin-top: -7px;
+
+            span {
+                display: none;
+            }
+        }
+
+        &.-off {
+            @include background(linear-gradient(white, lightgray));
+
+            .left-section {
+                display: none;
+            }
+
+            .switch {
+                //left: 0;
+                margin-left: 1px;
+            }
+        }
+
+        &.-on {
+            @include background(linear-gradient(white, lightgray));
+
+            .right-section {
+                display: none;
+            }
+
+            .switch {
+                margin-left: 30px;
+            }
+        }
+    }
 }

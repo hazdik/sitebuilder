@@ -19,7 +19,7 @@ angular.module('pieologyApp')
 
         $scope.state = {
             switchState : 'off',
-            switchStyle : 'vln-slider'
+            switchStyle : 'vln-tiny-slider'
         };
 
     });
