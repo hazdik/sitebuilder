@@ -8,7 +8,7 @@
     }
 
     a {
-        @include hyperlinks($cg3, $cg3, $cg1, $cg1);
+        @include hyperlinks($cg3, $cg3, $cg1, $cg1); // $link, $visited, $hover, $active, $cursor: pointer (by default)
     }
 
     .company-name {
