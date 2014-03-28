@@ -17,7 +17,6 @@ angular.module('pieologyApp')
                 console.log(element);
 
                 scope.toggleAppNavigation = function () {
-                    console.log('global nav state: ', vlnConfig.getGlobalNavState());
                     if (vlnConfig.getGlobalNavState()) {
                         return vlnConfig.setGlobalNavState(false);
                     }

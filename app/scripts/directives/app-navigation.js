@@ -13,12 +13,9 @@ angular.module('pieologyApp')
                 // element.text('this is the appNavigation directive');
                 scope.isVisible = vlnConfig.getGlobalNavState();
                 $rootScope.$on('vlnGlobalNavState.change', function (evt, params) {
-                    console.log('hearing vlnGlobalNavState.change: ', params.state);
                     scope.isVisible = params.state;
                 });
 
-                console.log('appNav directive: ', vlnConfig.getGlobalNavState());
-                // console.log('isVisible: ', scope.isVisible);
                 console.log(attrs);
                 console.log(scope);
                 console.log(element);

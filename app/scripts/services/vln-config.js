@@ -13,7 +13,6 @@ angular.module('pieologyApp')
     }
 
     function setGlobalNavState (state) {
-        console.log('setting global nave state: ', state);
         globalNavState = state;
         $rootScope.$broadcast('vlnGlobalNavState.change', { state : state });
     }
