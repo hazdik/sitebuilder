@@ -11,11 +11,11 @@ angular.module('pieologyApp')
             restrict   : 'A',
             link       : function postLink(scope, element, attrs) {
 //                element.text('this is the appActionBucket directive');
-//                console.log(attrs);
-//                console.log(scope);
-//                console.log(element);
+                console.log(attrs);
+                console.log(scope);
+                console.log(element);
 
-                var displayClass = '';
+                // var displayClass = '';
 
                 $rootScope.$on('vlnDisplay.change', function (evt, params) {
                     scope.displayClass = '-' + params.display;
