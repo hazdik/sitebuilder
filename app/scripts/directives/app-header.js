@@ -9,6 +9,7 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/app-header.html',
             restrict   : 'A',
+            replace    : true,
 //            scope      : {},
             link       : function postLink(scope, element, attrs) {
 //                element.html('<span class="icon-menu" onclick="alert(\'TEST\')"></span> ... this is the appHeader directive');

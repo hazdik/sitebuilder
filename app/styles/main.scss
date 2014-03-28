@@ -2,39 +2,10 @@
 
 $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 
-//@import 'sass-bootstrap/lib/bootstrap'; // it creates unnecessary duplicates
-
 .app {
 
     padding-top : 50px;
 
-    /* Application navigation elements */
-    .-navigation {
-        color: $cg8;
-        background-color: $cg1;
-        width: 50px;
-        padding: 0;
-
-        ul {
-            li {
-                a {
-                    color: $cg8;
-                }
-            }
-        }
-    }
-
-    .-action {
-        background-color: $cg2;
-
-        ul {
-            li {
-                a {
-                    color: $cg8;
-                }
-            }
-        }
-    }
 }
 
 

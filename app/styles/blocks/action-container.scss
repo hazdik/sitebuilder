@@ -1,0 +1,13 @@
+@import "globals/variables", "globals/mixins";
+
+.-action {
+    background-color: $cg2;
+
+    ul {
+        li {
+            a {
+                color: $cg8;
+            }
+        }
+    }
+}

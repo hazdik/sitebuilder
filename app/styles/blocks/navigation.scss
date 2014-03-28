@@ -1,0 +1,18 @@
+@import "globals/variables", "globals/mixins";
+
+/* Application navigation elements */
+.-navigation {
+    float: left;
+    color: $cg8;
+    background-color: $cg1;
+    width: 50px;
+    padding: 0;
+
+    ul {
+        li {
+            a {
+                color: $cg8;
+            }
+        }
+    }
+}
