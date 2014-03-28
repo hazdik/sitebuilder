@@ -1,30 +1,29 @@
 @import "globals/variables", "globals/mixins";
 
 .-header {
-
     header {
-        background-color: $cg10;
-        border-bottom: none;
-    }
+        background-color : $cg10;
+        border-bottom    : none;
 
-    a {
-        @include hyperlinks($cg3, $cg3, $cg1, $cg1); // $link, $visited, $hover, $active, $cursor: pointer (by default)
-    }
+        a {
+            @include hyperlinks($cg3, $cg3, $cg1, $cg1); // $link, $visited, $hover, $active, $cursor: pointer (by default)
+        }
 
-    .company-name {
-        @include font-size($fs6);
-        color : $cg4 !important;
-    }
+        .company-name {
+            @include font-size($fs6);
+            color : $cg4 !important;
+        }
 
-    .comp-slider {
-        margin : 15px;
+        .comp-slider {
+            margin : 15px;
 
-        div {
-            float : left;
+            div {
+                float : left;
 
-            &.-label {
-                @include font-size($fs4);
-                margin :5px;
+                &.-label {
+                    @include font-size($fs4);
+                    margin : 5px;
+                }
             }
         }
     }
