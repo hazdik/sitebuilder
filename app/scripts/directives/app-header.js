@@ -2,7 +2,7 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appHeader', ['$rootScope', function ($rootScope) {
+    .directive('appHeader', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
 
         'use strict';
 
@@ -18,8 +18,9 @@ angular.module('pieologyApp')
                 console.log(element);
 
                 scope.toggleAppNavigation = function () {
-                    console.log("here be dragons");
-                }
+                    console.log('here be dragons');
+                    console.log('nav state: ', vlnConfig.getGlobalNavState());
+                };
 
                 scope.setDisplayTo = function (display) {
                     $rootScope.$broadcast('vlnDisplay.change', { display : display });
