@@ -5,6 +5,21 @@
         background-color : $cg10;
         border-bottom    : none;
 
+        .global-nav {
+            float: left;
+            margin: 10px;
+            font-size: 20px;
+
+            button {
+                border: none;
+                background: none;
+
+                &:hover {
+                    color: $cg4;
+                }
+            }
+        }
+
         a {
             @include hyperlinks($cg3, $cg3, $cg1, $cg1); // $link, $visited, $hover, $active, $cursor: pointer (by default)
         }
@@ -28,3 +43,4 @@
         }
     }
 }
+

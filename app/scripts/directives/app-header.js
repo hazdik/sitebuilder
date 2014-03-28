@@ -17,6 +17,10 @@ angular.module('pieologyApp')
                 console.log(scope);
                 console.log(element);
 
+                scope.toggleAppNavigation = function () {
+                    console.log("here be dragons");
+                }
+
                 scope.setDisplayTo = function (display) {
                     $rootScope.$broadcast('vlnDisplay.change', { display : display });
                 };
