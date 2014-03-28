@@ -1,11 +1,18 @@
 @import "globals/variables", "globals/mixins";
 
 .-action-bucket {
+    float   : left;
     padding : 20px;
+    height  : 100%;
+
+    section {
+        height : 100%;
+    }
 
     iframe {
         @include transition(all 0.5s ease);
         border : 1px solid red;
+        height : 100%;
 
         &.-screen {
             width : auto;
@@ -14,6 +21,7 @@
             width : 786px;
         }
         &.-mobile {
-            width : 512px;        }
+            width : 512px;
+        }
     }
 }

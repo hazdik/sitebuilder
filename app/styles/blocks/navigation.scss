@@ -2,12 +2,14 @@
 
 /* Application navigation elements */
 .-navigation {
-    width   : 50px;
-    padding: 0;
+    float            : left;
+    width            : 50px;
+    height           : 100%;
+    padding          : 0;
+    background-color : $cg1;
 
     section {
-        color            : $cg8;
-        // background-color : $cg2;
+        color : $cg8;
 
         ul {
             li {
