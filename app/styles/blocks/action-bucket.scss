@@ -1,5 +1,13 @@
 @import "globals/variables", "globals/mixins";
 
+@media only screen and (max-width: 480px) {
+    .-action-bucket {
+        display : none;
+
+
+    }
+}
+
 .-action-bucket {
     float   : left;
     padding : 20px 20px 20px 300px;

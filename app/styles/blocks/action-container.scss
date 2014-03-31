@@ -1,10 +1,22 @@
 @import "globals/variables", "globals/mixins";
 
+@media only screen and (max-width : 480px) {
+    .-action {
+        width : 100%;
+    }
+}
+
+@media only screen and (min-width : 480px) {
+    .-action {
+        width : 270px;
+    }
+}
+
 .-action {
     float            : left;
-    position: absolute;
-    z-index: 9;
-    width            : 270px;
+    position         : absolute;
+    z-index          : 9;
+//    width            : 270px;
     height           : 100%;
     padding          : 0 0 0 45px;
     background-color : $cg2;
