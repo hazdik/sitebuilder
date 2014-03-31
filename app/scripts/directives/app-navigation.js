@@ -1,7 +1,8 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
+    .directive('appNavigation', ['$rootScope', '$animate', 'vlnConfig',
+        function ($rootScope, $animate, vlnConfig) {
 
         'use strict';
 
@@ -16,6 +17,7 @@ angular.module('pieologyApp')
                     scope.isVisible = params.state;
                 });
 
+                console.log('animate is: ', $animate);
                 console.log(attrs);
                 console.log(scope);
                 console.log(element);

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pieologyApp')
-.factory('vlnConfig', ['$rootScope', '$q', function ($rootScope, $q) {
+.factory('vlnConfig', ['$rootScope', function ($rootScope) {
 
     var meaningOfLife = 42; // Keep this until testing is realized.
     meaningOfLife = 'happy water'; // Keep this until testing is realized.
