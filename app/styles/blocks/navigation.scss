@@ -2,20 +2,24 @@
 
 /* Application navigation elements */
 .-navigation {
-    width: 50px;
-    padding: 0;
+    float            : left;
+    width            : 3%;
+    min-width        : 45px;
+    max-width        : 45px;
+    height           : 100%;
+    padding          : 0;
+    background-color : $cg1;
 
     section {
-        color            : $cg8;
-        // background-color : $cg2;
+        color : $cg8;
 
         ul {
             li {
                 a {
                     // @include hyperlinks($cg8, $cg8, $cg0, $cg2); // $link, $visited, $hover, $active, $cursor: pointer (by default)
-                    color: $cg8;
+                    color : $cg8;
                     &:hover {
-                        background-color: $cg2;
+                        background-color : $cg2;
                     }
                 }
             }
