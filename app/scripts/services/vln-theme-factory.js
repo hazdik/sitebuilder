@@ -1,16 +1,30 @@
 'use strict';
 
 angular.module('pieologyApp')
-  .factory('vlnThemeFactory', function () {
-    // Service logic
-    // ...
+    .factory('vlnThemeFactory', ['$resource', '$q',
+            function($resource, $q) {
+                var themes = [{
+                    'name': 'Theme 1',
+                    'url': 'https://www.google.com'
+                }, {
+                    'name': 'Theme 2',
+                    'url': 'https://www.yahoo.com'
+                }, {
+                    'name': 'Theme 3',
+                    'url': 'https://www.bing.com'
+                }, {
+                    'name': 'Theme 4',
+                    'url': 'https://www.duckduckgo.com'
+                }, ];
 
-    var meaningOfLife = 42;
+                function getThemes() {
+                    var deferred = $q.defer();
+                    deferred.resolve(themes);
+                    return deferred.promise;
+                }
 
-    // Public API here
-    return {
-      someMethod: function () {
-        return meaningOfLife;
-      }
-    };
-  });
+                // Public API here
+                return {
+                    getThemes: getThemes
+                };
+            });
