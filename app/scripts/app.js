@@ -2,10 +2,12 @@
 /*global angular */
 
 angular.module('pieologyApp', [
+    // Angular Modules
     'ngCookies',
     'ngResource',
     'ngSanitize',
-    'ngRoute'
+    'ngRoute',
+    'ngAnimate'
 ])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 

@@ -1,4 +1,3 @@
-
 /*global angular, console */
 
 angular.module('pieologyApp')

@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pieologyApp')
-.factory('vlnConfig', function () {
+.factory('vlnConfig', ['$rootScope', function ($rootScope) {
 
     var meaningOfLife = 42; // Keep this until testing is realized.
     meaningOfLife = 'happy water'; // Keep this until testing is realized.
@@ -14,6 +14,7 @@ angular.module('pieologyApp')
 
     function setGlobalNavState (state) {
         globalNavState = state;
+        $rootScope.$broadcast('vlnGlobalNavState.change', { state : state });
     }
 
 
@@ -22,4 +23,4 @@ angular.module('pieologyApp')
         getGlobalNavState: getGlobalNavState,
         setGlobalNavState: setGlobalNavState
     };
-});
+}]);

@@ -3,7 +3,6 @@
 
 angular.module('pieologyApp')
     .directive('appHeader', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
-
         'use strict';
 
         return {
@@ -18,8 +17,10 @@ angular.module('pieologyApp')
                 console.log(element);
 
                 scope.toggleAppNavigation = function () {
-                    console.log('here be dragons');
-                    console.log('nav state: ', vlnConfig.getGlobalNavState());
+                    if (vlnConfig.getGlobalNavState()) {
+                        return vlnConfig.setGlobalNavState(false);
+                    }
+                    return vlnConfig.setGlobalNavState(true);
                 };
 
                 scope.setDisplayTo = function (display) {

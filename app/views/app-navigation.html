@@ -1,4 +1,6 @@
-<div class="-navigation col-md-1 container-fluid">
+<div class="-navigation col-md-1 container-fluid ng-hide"
+    ng-show="isVisible"
+    ng-controller="vlnAppNavCtrl">
     <section>
         <ul class="nav nav-sidebar">
             <li class="active"><a href="#"><span class="icon-cog"></span></a></li>
@@ -19,4 +21,19 @@
             <li><a href=""><span class="icon-cog"></span></a></li>
         </ul>
     </section>
+
+<div>
+    Click me: <input type="checkbox" ng-model="checked"><br/>
+  <div>
+    Show:
+    <div class="check-element animate-show" ng-show="checked">
+      <span class="glyphicon glyphicon-thumbs-up"></span> I show up when your checkbox is checked.
+    </div>
+  </div>
+  <div>
+    Hide:
+    <div class="check-element animate-show" ng-hide="checked">
+      <span class="glyphicon glyphicon-thumbs-down"></span> I hide when your checkbox is checked.
+    </div>
+</div>
 </div>
