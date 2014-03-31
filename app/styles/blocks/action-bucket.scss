@@ -2,9 +2,10 @@
 
 .-action-bucket {
     float   : left;
-    padding : 20px;
+    padding : 20px 20px 20px 300px;
     height  : 100%;
-    width   : 82%;
+    width   : 100%;
+    position : absolute;
 
     section {
         border  : 1px solid green;

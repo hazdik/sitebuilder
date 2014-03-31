@@ -3,12 +3,12 @@
 /* Application navigation elements */
 .-navigation {
     float            : left;
-    width            : 3%;
-    min-width        : 45px;
-    max-width        : 45px;
+    width            : 45px;
     height           : 100%;
     padding          : 0;
     background-color : $cg1;
+    z-index : 99;
+    position: absolute;
 
     section {
         color : $cg8;
