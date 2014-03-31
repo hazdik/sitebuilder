@@ -1,0 +1,15 @@
+  .slide-out {
+    -moz-transition: left 1s;
+    -webkit-transition: left 1s;
+    -o-transition: left 1s;
+    transition: left 1s;
+    left: -40px;
+}
+
+  .slide-in {
+    -moz-transition: left 1s;
+    -webkit-transition: left 1s;
+    -o-transition: left 1s;
+    transition: left 1s;
+    left: 0px;
+}
