@@ -2,8 +2,14 @@
 
 .-header {
     header {
+        position: absolute;
+        top: 0;
         background-color : $cg10;
         border-bottom    : none;
+
+        div {
+            float : left;
+        }
 
         .global-nav {
             float: left;
