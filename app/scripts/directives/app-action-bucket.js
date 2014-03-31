@@ -16,7 +16,7 @@ angular.module('pieologyApp')
                 console.log(scope);
                 console.log(element);
 
-                // var displayClass = '';
+                scope.displayClass = '-screen';
 
                 $rootScope.$on('vlnDisplay.change', function (evt, params) {
                     scope.displayClass = '-' + params.display;
