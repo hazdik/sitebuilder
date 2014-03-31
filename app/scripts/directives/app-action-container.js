@@ -1,7 +1,8 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appActionContainer', function () {
+    .directive('appActionContainer', ['$rootScope', 'vlnConfig',
+        function ($rootScope, vlnConfig) {
 
         'use strict';
 
@@ -12,7 +13,7 @@ angular.module('pieologyApp')
             link       : function postLink(scope, element, attrs) {
                 // element.text('this is the appActionContainer directive');
 
-               scope.isVisible = vlnConfig.getGlobalNavState();
+                scope.isVisible = vlnConfig.getGlobalNavState();
                 $rootScope.$on('vlnGlobalNavState.change', function (evt, params) {
                     scope.isVisible = params.state;
                 });
@@ -21,4 +22,4 @@ angular.module('pieologyApp')
                 console.log(element);
             }
         };
-    });
+    }]);
