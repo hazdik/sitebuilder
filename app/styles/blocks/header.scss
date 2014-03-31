@@ -1,11 +1,15 @@
 @import "globals/variables", "globals/mixins";
 
 .-header {
+
+    position: absolute;
+    top: 0;
+    background-color: white;
+    z-index: 1030;
+    border-radius: 0;
+    width: 100%;
+
     header {
-        position: absolute;
-        top: 0;
-        background-color : $cg10;
-        border-bottom    : none;
 
         div {
             float : left;

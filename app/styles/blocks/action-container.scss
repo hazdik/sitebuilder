@@ -16,12 +16,13 @@
     float            : left;
     position         : absolute;
     z-index          : 9;
-//    width            : 270px;
     height           : 100%;
     padding          : 0 0 0 45px;
     background-color : $cg2;
 
     section {
+        margin-top: 50px;
+
         ul {
             li {
                 a {
