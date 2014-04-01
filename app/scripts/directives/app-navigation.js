@@ -1,7 +1,7 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope) {
+    .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
 
         'use strict';
 
@@ -12,19 +12,33 @@ angular.module('pieologyApp')
             link       : function postLink(scope) {
                 scope.currentAction = 'designAction'; // the default
 
+                // Listen for messages that hide/show the app navigation
                 $rootScope.$on('vlnGlobalNavState.change', function (evt, params) {
                     scope.isVisible = params.state;
                 });
 
-                /* Public methods */
+                // Listen for messages that update the currentAction
+                $rootScope.$on('vlnCurrentAction.change', function (evt, params) {
+                    scope.currentAction = params.action;
+                });
 
                 scope.loadDesignTools = function() {
-                    scope.currentAction = 'designAction';
+                    /*
+                        @Input - none
+                        @Output - none
+                        @Purpose - update the config attribute currentAction for design
+                    */
+                    vlnConfig.setCurrentAction('designAction');
                     console.log('load the design view into the action container');
                 };
 
                 scope.loadPageTools = function() {
-                    scope.currentAction = 'pageAction';
+                    /*
+                        @Input - none
+                        @Output - none
+                        @Purpose - update the config attribute currentAction for page
+                    */
+                    vlnConfig.setCurrentAction('pageAction');
                     console.log('load the pages view into the action container');
                 };
             }

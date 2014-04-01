@@ -18,15 +18,14 @@
     z-index          : 9;
     height           : 100%;
     padding          : 0 0 0 45px;
+    color: $cg8;
     background-color : $cg2;
+    margin-top: 50px; //  Account for the app header element
 
     section {
-        margin-top: 50px;
-
         ul {
             li {
                 a {
-                    color : $cg8;
                     &:hover {
                         color: $cg2;
                     }

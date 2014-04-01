@@ -18,6 +18,12 @@ angular.module('pieologyApp')
                     scope.isVisible = params.state; // Relates to the global app nav menu state.
                 });
 
+                scope.currentAction = vlnConfig.getCurrentAction();
+                $rootScope.$on('vlnCurrentAction.change', function (evt, params) {
+                    console.log(params);
+                    scope.currentAction = params.action;
+                });
+
                 vlnThemeFactory.getThemes()
                     .then(function (promise) {
                         scope.themes = promise;

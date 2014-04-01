@@ -1,13 +1,15 @@
 <div class="-action"
      ng-class="isVisible ? 'slide-in-offset' : 'slide-out-offset'">
-    <section>
-        <ul class="nav nav-sidebar" ng-repeat="theme in themes">
-            <li class="active text-center">
-                <a ng-click="theme.url">
-                    <span>{{theme.name}}</span>
-                    <img ng-src="{{theme.thumbnail}}" alt="{{theme.name}}">
-                </a>
-            </li>
-        </ul>
-    </section>
+     <section>
+        <div ng-switch="currentAction">
+            <div ng-switch-when="designAction">
+                <p>designAction</p>
+                <div vln-design-action></div>
+            </div>
+            <div ng-switch-when="pageAction">
+                <p>pageAction</p>
+                <div vln-page-action></div>
+            </div>
+        </div>
+     </section>
 </div>
