@@ -10,7 +10,7 @@
   font-style: normal;
 }
 
-.icon {
+[class^="icon-"], [class*=" icon-"] {
   font-family: 'Volusion';
   speak: none;
   font-style: normal;
