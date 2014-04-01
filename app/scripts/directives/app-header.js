@@ -10,11 +10,7 @@ angular.module('pieologyApp')
             restrict   : 'A',
             replace    : true,
 //            scope      : {},
-            link       : function postLink(scope, element, attrs) {
-               // element.html('<span class="icon-menu" onclick="alert(\'TEST\')"></span> ... this is the appHeader directive');
-                console.log(attrs);
-                console.log(scope);
-                console.log(element);
+            link       : function postLink(scope) {
 
                 scope.toggleAppNavigation = function () {
                     if (vlnConfig.getGlobalNavState()) {
@@ -30,7 +26,7 @@ angular.module('pieologyApp')
                 scope.publishChanges = function () {
                     vlnSiteFactory.publish()
                         .then(function (response) {
-                           alert(response);
+                            console.log(response);
                         });
                 };
             }

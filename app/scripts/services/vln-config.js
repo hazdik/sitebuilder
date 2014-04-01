@@ -4,9 +4,7 @@ angular.module('pieologyApp')
     .factory('vlnConfig', ['$rootScope', function ($rootScope) {
 
         'use strict';
-
-        var meaningOfLife = 'happy water', // Keep this until testing is realized.
-            globalNavState = true; // true is shown and default
+        var globalNavState = true; // Show the app navigation by default.
 
         function getGlobalNavState() {
             return globalNavState;

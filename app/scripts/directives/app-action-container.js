@@ -1,4 +1,4 @@
-/*global angular, console */
+/*global angular    */
 
 angular.module('pieologyApp')
     .directive('appActionContainer', ['$rootScope', 'vlnConfig', 'vlnThemeFactory',
@@ -10,7 +10,7 @@ angular.module('pieologyApp')
             templateUrl: 'views/app-action-container.html',
             restrict   : 'A',
             replace    : true,
-            link       : function postLink(scope, element, attrs) {
+            link       : function postLink(scope) {
                 // element.text('this is the appActionContainer directive');
 
                 scope.isVisible = vlnConfig.getGlobalNavState();
@@ -20,16 +20,11 @@ angular.module('pieologyApp')
 
                 vlnThemeFactory.getThemes()
                     .then(function (promise) {
-                        console.log(promise);
                         scope.themes = promise;
                     })
                     .catch(function(promise){
                         throw new Error('Error fetching themes: ', promise);
                     });
-
-                console.log(attrs);
-                console.log(scope);
-                console.log(element);
             }
         };
     }]);

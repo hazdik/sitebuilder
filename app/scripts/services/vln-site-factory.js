@@ -1,13 +1,14 @@
 /*global angular */
 
 angular.module('pieologyApp')
-    .factory('vlnSiteFactory', ['$http', '$q', 'vlnConfig', function vlnSiteFactory($http, $q, vlnConfig) {
+    .factory('vlnSiteFactory', ['$http', '$q', 'vlnConfig', function vlnSiteFactory($http, $q) {
 
         'use strict';
 
         function publishFn() {
-            var params = {}, deferred = $q.defer(),
-                config = {};
+            // var params = {}, deferred = $q.defer(),
+            //     config = {};
+            var deferred = $q.defer();
 
 //            $http.post(vlnConfig.get(''), params, config)
 //                .success(function (response, status, headers, config) {
