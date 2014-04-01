@@ -1,6 +1,3 @@
-
-/*global angular, module, describe, beforeEach, inject, it, expect */
-
 describe('Service: vlnSiteFactory', function () {
 
     'use strict';
