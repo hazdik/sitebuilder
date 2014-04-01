@@ -19,9 +19,14 @@
                 a {
                     // @include hyperlinks($cg8, $cg8, $cg0, $cg2); // $link, $visited, $hover, $active, $cursor: pointer (by default)
                     color : $cg8;
+                    font-size: 20px;
                     &:hover {
                         background-color : $cg2;
                     }
+                }
+
+                &.active {
+                    background-color: $cg2;
                 }
             }
         }

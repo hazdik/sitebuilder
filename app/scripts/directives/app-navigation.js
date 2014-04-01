@@ -10,6 +10,8 @@ angular.module('pieologyApp')
             restrict   : 'A',
             replace    : true,
             link       : function postLink(scope) {
+                scope.currentAction = 'designAction'; // the default
+
                 $rootScope.$on('vlnGlobalNavState.change', function (evt, params) {
                     scope.isVisible = params.state;
                 });
@@ -17,10 +19,12 @@ angular.module('pieologyApp')
                 /* Public methods */
 
                 scope.loadDesignTools = function() {
+                    scope.currentAction = 'designAction';
                     console.log('load the design view into the action container');
                 };
 
                 scope.loadPageTools = function() {
+                    scope.currentAction = 'pageAction';
                     console.log('load the pages view into the action container');
                 };
             }

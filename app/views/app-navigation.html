@@ -3,22 +3,56 @@
     ng-controller="vlnAppNavCtrl">
     <section>
         <ul class="nav nav-sidebar">
-            <li class="active"><a ng-click="loadDesignTools()"><span class="icon-eye"></span></a></li>
-            <li><a ng-click="loadPageTools()"><span class="icon-files"></span></a></li>
-            <li><a href="#"><span class="icon-cog"></span></a></li>
-            <li><a href="#"><span class="icon-cog"></span></a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
-            <li><a href=""><span class="icon-cog"></span></a></li>
-            <li><a href=""><span class="icon-cog"></span></a></li>
-            <li><a href=""><span class="icon-cog"></span></a></li>
-            <li><a href=""><span class="icon-cog"></span></a></li>
-            <li><a href=""><span class="icon-cog"></span></a></li>
-        </ul>
-        <ul class="nav nav-sidebar">
-            <li><a href=""><span class="icon-cog"></span></a></li>
-            <li><a href=""><span class="icon-cog"></span></a></li>
-            <li><a href=""><span class="icon-cog"></span></a></li>
+            <li ng-class="{'active': currentAction == 'designAction'}">
+                <a ng-click="loadDesignTools()">
+                    <span class="icon-eye"></span>
+                </a>
+            </li>
+            <li ng-class="{'active': currentAction == 'pageAction'}">
+                <a ng-click="loadPageTools()">
+                    <span class="icon-files"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+<li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon-cog"></span>
+                </a>
+            </li>
         </ul>
     </section>
 </div>
