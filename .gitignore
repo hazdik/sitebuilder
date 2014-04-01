@@ -4,3 +4,13 @@ dist
 .sass-cache
 .idea
 app/bower_components
+.name
+compiler.xml
+copyright/
+encodings.xml
+misc.xml
+modules.xml
+pieology-intelliJ.iml
+scopes/
+vcs.xml
+workspace.xml
