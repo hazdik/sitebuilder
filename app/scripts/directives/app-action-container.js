@@ -1,8 +1,8 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appActionContainer', ['$rootScope', 'vlnConfig',
-        function ($rootScope, vlnConfig) {
+    .directive('appActionContainer', ['$rootScope', 'vlnConfig', 'vlnThemeFactory',
+        function ($rootScope, vlnConfig, vlnThemeFactory) {
 
         'use strict';
 
@@ -15,8 +15,18 @@ angular.module('pieologyApp')
 
                 scope.isVisible = vlnConfig.getGlobalNavState();
                 $rootScope.$on('vlnGlobalNavState.change', function (evt, params) {
-                    scope.isVisible = params.state;
+                    scope.isVisible = params.state; // Relates to the global app nav menu state.
                 });
+
+                vlnThemeFactory.getThemes()
+                    .then(function (promise) {
+                        console.log(promise);
+                        scope.themes = promise;
+                    })
+                    .catch(function(promise){
+                        throw new Error('Error fetching themes: ', promise);
+                    });
+
                 console.log(attrs);
                 console.log(scope);
                 console.log(element);

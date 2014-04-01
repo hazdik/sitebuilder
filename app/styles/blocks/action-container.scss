@@ -27,6 +27,9 @@
             li {
                 a {
                     color : $cg8;
+                    &:hover {
+                        color: $cg2;
+                    }
                 }
             }
         }
