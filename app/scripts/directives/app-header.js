@@ -2,7 +2,7 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appHeader', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
+    .directive('appHeader', ['$rootScope', 'vlnConfig', 'vlnSiteFactory', function ($rootScope, vlnConfig, vlnSiteFactory) {
         'use strict';
 
         return {
@@ -25,6 +25,13 @@ angular.module('pieologyApp')
 
                 scope.setDisplayTo = function (display) {
                     $rootScope.$broadcast('vlnDisplay.change', { display : display });
+                };
+
+                scope.publishChanges = function () {
+                    vlnSiteFactory.publish()
+                        .then(function (response) {
+                           alert(response);
+                        });
                 };
             }
         };

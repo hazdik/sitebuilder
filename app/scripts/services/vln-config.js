@@ -1,26 +1,25 @@
-'use strict';
+/*global angular */
 
 angular.module('pieologyApp')
-.factory('vlnConfig', ['$rootScope', function ($rootScope) {
+    .factory('vlnConfig', ['$rootScope', function ($rootScope) {
 
-    var meaningOfLife = 42; // Keep this until testing is realized.
-    meaningOfLife = 'happy water'; // Keep this until testing is realized.
+        'use strict';
 
-    var globalNavState = true; // true is shown and default
+        var meaningOfLife = 'happy water', // Keep this until testing is realized.
+            globalNavState = true; // true is shown and default
 
-    function getGlobalNavState () {
-        return globalNavState;
-    }
+        function getGlobalNavState() {
+            return globalNavState;
+        }
 
-    function setGlobalNavState (state) {
-        globalNavState = state;
-        $rootScope.$broadcast('vlnGlobalNavState.change', { state : state });
-    }
+        function setGlobalNavState(state) {
+            globalNavState = state;
+            $rootScope.$broadcast('vlnGlobalNavState.change', { state: state });
+        }
 
-
-    // Public API here
-    return {
-        getGlobalNavState: getGlobalNavState,
-        setGlobalNavState: setGlobalNavState
-    };
-}]);
+        // Public API here
+        return {
+            getGlobalNavState: getGlobalNavState,
+            setGlobalNavState: setGlobalNavState
+        };
+    }]);

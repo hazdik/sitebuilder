@@ -7,7 +7,8 @@ angular.module('pieologyApp', [
     'ngResource',
     'ngSanitize',
     'ngRoute',
-    'ngAnimate'
+    'ngAnimate',
+    'ui.bootstrap'
 ])
     .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
 
