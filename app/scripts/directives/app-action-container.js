@@ -20,7 +20,6 @@ angular.module('pieologyApp')
 
                 scope.currentAction = vlnConfig.getCurrentAction();
                 $rootScope.$on('vlnCurrentAction.change', function (evt, params) {
-                    console.log(params);
                     scope.currentAction = params.action;
                 });
 
