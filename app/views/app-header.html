@@ -1,34 +1,35 @@
 <div class="-header">
     <header class="" role="navigation">
-        <div class="container-fluid">
-            <div class="global-nav">
-                <button type="button"
-                    data-toggle="collapse"
-                    data-target=".navbar-collapse"
-                    ng-click="toggleAppNavigation()">
-                    <span class="icon-menu"></span>
-                </button>
+        <div class="global-nav">
+            <button type="button"
+                data-toggle="collapse"
+                data-target=".navbar-collapse"
+                ng-click="toggleAppNavigation()">
+                <span class="icon-menu"></span>
+            </button>
+        </div>
+        <div class="">
+            <a class="navbar-brand" href="#">Volusion</a>
+        </div>
+        <div class="">
+            <span class="navbar-brand company-name">{{ company.url }}</span>
+        </div>
+        <div class="">
+            <ul class="nav navbar-nav">
+                <li><a href="#" ng-click="setDisplayTo('screen')"><span class="icon-screen"></span></a></li>
+                <li><a href="#" ng-click="setDisplayTo('tablet')"><span class="icon-tablet"></span></a></li>
+                <li><a href="#" ng-click="setDisplayTo('mobile')"><span class="icon-mobile"></span></a></li>
+            </ul>
+        </div>
+        <div class="">
+            <div class="comp-slider">
+                <div class="-label">Edit Mode</div>
+                <div vln-comp-switch switch-style="state.switchStyle" switch-state="state.switchState"></div>
+                <div class="-label">Preview Mode</div>
             </div>
-            <div class="">
-                <a class="navbar-brand" href="#">Volusion</a>
-            </div>
-            <div class="">
-                <span class="navbar-brand company-name">{{ company.url }}</span>
-            </div>
-            <div class="">
-                <ul class="nav navbar-nav">
-                    <li><a href="#" ng-click="setDisplayTo('screen')"><span class="icon-screen"></span></a></li>
-                    <li><a href="#" ng-click="setDisplayTo('tablet')"><span class="icon-tablet"></span></a></li>
-                    <li><a href="#" ng-click="setDisplayTo('mobile')"><span class="icon-mobile"></span></a></li>
-                </ul>
-            </div>
-            <div class="">
-                <div class="comp-slider">
-                    <div class="-label">Edit Mode</div>
-                    <div vln-comp-switch switch-style="state.switchStyle" switch-state="state.switchState"></div>
-                    <div class="-label">Preview Mode</div>
-                </div>
-            </div>
+        </div>
+        <div class="btn-section">
+            <button class="btn btn-sm btn-danger" ng-click="publishChanges()" ng-disabled="isReadonly">Publish</button>
         </div>
     </header>
 </div>

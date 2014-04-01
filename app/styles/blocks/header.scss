@@ -51,6 +51,16 @@
                 }
             }
         }
+
+        .btn-section {
+            float: right;
+
+            button {
+                &.btn-sm {
+                    margin: 10px;
+                }
+            }
+        }
     }
 }
 
