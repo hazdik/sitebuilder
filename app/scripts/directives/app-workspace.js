@@ -1,5 +1,5 @@
 
-/*global angular, console */
+/*global angular*/
 
 angular.module('pieologyApp')
     .directive('appWorkspace', ['$rootScope', function ($rootScope) {
@@ -11,11 +11,7 @@ angular.module('pieologyApp')
             restrict   : 'A',
             replace    : true,
             scope      : {},
-            link       : function postLink(scope, element, attrs) {
-//                element.text('this is the appActionBucket directive');
-                console.log(attrs);
-                console.log(scope);
-                console.log(element);
+            link       : function postLink(scope) {
 
                 scope.displayClass = '-screen';
 

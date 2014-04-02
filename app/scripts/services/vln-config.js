@@ -6,8 +6,8 @@ angular.module('pieologyApp')
         'use strict';
 
         var meaningOfLife = 'happy water', // Keep this until testing is realized.
-            globalNavState = true, // true is shown and default
-            globalAttrBucketState = true; // true is shown and default
+            globalNavState = true, // Show the app navigation by default.
+            globalAttrBucketState = true; // Show the app attributes by default.
 
         function getGlobalNavState() {
             return globalNavState;
