@@ -1,0 +1,40 @@
+@import "globals/variables", "globals/mixins";
+
+@media only screen and (max-width : 480px) {
+    .-action-bucket {
+        display : none;
+
+    }
+}
+
+.-action-bucket {
+    float    : left;
+    padding  : 70px 300px 20px 300px;
+    height   : 100%;
+    width    : 100%;
+    position : absolute;
+
+    .-site {
+        border : 1px solid green;
+        height : 100%;
+//        float  : left;
+
+        iframe {
+            @include transition(all 0.5s ease);
+            border  : 1px solid red;
+            height  : 100%;
+            margin  : 0 auto;
+            display : block;
+
+            &.-screen {
+                width : 1024px;
+            }
+            &.-tablet {
+                width : 786px;
+            }
+            &.-mobile {
+                width : 480px;
+            }
+        }
+    }
+}

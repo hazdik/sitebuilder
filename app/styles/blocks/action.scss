@@ -1,4 +1,4 @@
-@import "globals/variables", "globals/mixins";
+@import "globals/variables", "globals/mixins", "globals/animations";
 
 @media only screen and (max-width : 480px) {
     .-action {
@@ -20,15 +20,23 @@
     padding          : 0 0 0 45px;
     background-color : $cg2;
 
+    &.slide-in-offset {
+        @include slide-offset(0 0 0 45px);
+    }
+
+    &.slide-out-offset {
+        @include slide-offset(0 0 0 0);
+    }
+
     section {
-        margin-top: 50px;
+        margin-top : 50px;
 
         ul {
             li {
                 a {
                     color : $cg8;
                     &:hover {
-                        color: $cg2;
+                        color : $cg2;
                     }
                 }
             }

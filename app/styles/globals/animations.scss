@@ -1,0 +1,40 @@
+@mixin slide-left($distance) {
+    -moz-transition    : left 1s;
+    -webkit-transition : left 1s;
+    -o-transition      : left 1s;
+    transition         : left 1s;
+    //    left               : -50px;
+    left               : $distance;
+}
+
+@mixin slide-right($distance) {
+    -moz-transition    : left 1s;
+    -webkit-transition : left 1s;
+    -o-transition      : left 1s;
+    transition         : left 1s;
+    right              : $distance;
+}
+
+//.slide-out-offset {
+//    -moz-transition    : padding 1s;
+//    -webkit-transition : padding 1s;
+//    -o-transition      : padding 1s;
+//    transition         : padding 1s;
+//    padding            : 0 0 0 0px;
+//}
+
+@mixin slide-offset($padding...) {
+    -moz-transition    : padding 1s;
+    -webkit-transition : padding 1s;
+    -o-transition      : padding 1s;
+    transition         : padding 1s;
+    padding            : $padding;
+}
+
+//.slide-in-offset {
+//    -moz-transition    : padding 1s;
+//    -webkit-transition : padding 1s;
+//    -o-transition      : padding 1s;
+//    transition         : padding 1s;
+//    padding            : 0 0 0 45px;
+//}

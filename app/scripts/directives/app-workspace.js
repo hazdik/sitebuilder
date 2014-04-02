@@ -2,14 +2,15 @@
 /*global angular, console */
 
 angular.module('pieologyApp')
-    .directive('appActionBucket', ['$rootScope', function ($rootScope) {
+    .directive('appWorkspace', ['$rootScope', function ($rootScope) {
 
         'use strict';
 
         return {
-            templateUrl: 'views/action-bucket.html',
+            templateUrl: 'views/app-workspace.html',
             restrict   : 'A',
             replace    : true,
+            scope      : {},
             link       : function postLink(scope, element, attrs) {
 //                element.text('this is the appActionBucket directive');
                 console.log(attrs);
