@@ -1,6 +1,6 @@
 @import "globals/variables", "globals/mixins", "globals/animations";
 
-.attr-bucket {
+.-attr {
     border      : 1px solid yellow;
     position    : absolute;
     width       : 270px;
@@ -10,17 +10,17 @@
     padding-top : 50px;
     color       : $cg10;
 
-    &.slide-in {
-        @include slide-right(0);
+    &.fade-in {
+        @include fade(1);
     }
 
-    &.slide-out {
-        @include slide-right(-50px);
+    &.fade-out {
+        @include fade(0.2);
     }
 
     a.-close {
         position : absolute;
-        top      : 55px;
-        left    : 10px;
+        top      : 50px;
+        left     : 0;
     }
 }

@@ -8,10 +8,10 @@
 }
 
 @mixin slide-right($distance) {
-    -moz-transition    : left 1s;
-    -webkit-transition : left 1s;
-    -o-transition      : left 1s;
-    transition         : left 1s;
+    -moz-transition    : right 1s;
+    -webkit-transition : right 1s;
+    -o-transition      : right 1s;
+    transition         : right 1s;
     right              : $distance;
 }
 
@@ -38,3 +38,11 @@
 //    transition         : padding 1s;
 //    padding            : 0 0 0 45px;
 //}
+
+@mixin fade($param) {
+    -moz-transition    : opacity 1s;
+    -webkit-transition : opacity 1s;
+    -o-transition      : opacity 1s;
+    transition         : opacity 1s;
+    opacity            : $param;
+}
