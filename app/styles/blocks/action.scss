@@ -48,6 +48,7 @@
 //       height: 30px;
 // }
 
+
             .-page-tree {
                 h2 {
                     font-size: 16px;
@@ -81,12 +82,6 @@
                         list-style-type: none;
                         position: relative;
                         padding: 20px 5px 0px 5px;
-
-                        // &:hover {
-                        //     background: $cg8;
-                        //     color: $cg2;
-                        //     border: 1px solid $cg2;
-                        // }
 
                         &:before {
                             content: '';
@@ -122,47 +117,10 @@
                             border-radius: 5px;
                             -webkit-border-radius: 5px;
                             -moz-border-radius: 5px;
-
-                            /* TODO Use somehting like this to clean up the implementaiton */
-                            // /*Time for some hover effects*/
-                            // /*We will apply the hover effect the the lineage of the element also*/
-                            // .tree li a:hover, .tree li a:hover+ul li a {
-                            //     background: #c8e4f8; color: #000; border: 1px solid #94a0b4;
-                            // }
-                            // /*Connector styles on hover*/
-                            // .tree li a:hover+ul li::after,
-                            // .tree li a:hover+ul li::before,
-                            // .tree li a:hover+ul::before,
-                            // .tree li a:hover+ul ul::before{
-                            //     border-color:  #94a0b4;
-                            // }
                         }
-
-// /*Remove connectors before root*/
-// .tree > ul > li::before, .tree > ul > li::after{
-//     border: 0;
-// }
-// /*Remove connectors after last child*/
-// .tree li:last-child::before{
-//       height: 30px;
-// }
-
-                        // Most come after the above
-                        // &::before, &::after {
-                        //     border: 0;
-                        // }
                     }
                 }
             }
         }
     }
-}
-
-/*Remove connectors before root*/
-.page-tree > ul > li::before, .page-tree > ul > li::after{
-    border: 0;
-}
-/*Remove connectors after last child*/
-.page-tree li:last-child::before{
-      height: 30px;
 }
