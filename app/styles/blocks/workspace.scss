@@ -44,4 +44,16 @@
             }
         }
     }
+
+    a.-close {
+        position        : absolute;
+        top             : 55px;
+        right           : 5px;
+        z-index         : 1030;
+        text-decoration : none;
+
+        &.-state-add {
+            @include rotate(45deg);
+        }
+    }
 }

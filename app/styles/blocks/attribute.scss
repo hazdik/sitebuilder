@@ -11,16 +11,10 @@
     color       : $cg10;
 
     &.fade-in {
-        @include fade(1);
+        @include resize(270px, null, 1);
     }
 
     &.fade-out {
-        @include fade(0.2);
-    }
-
-    a.-close {
-        position : absolute;
-        top      : 50px;
-        left     : 0;
+        @include resize(20px, null, 0);
     }
 }

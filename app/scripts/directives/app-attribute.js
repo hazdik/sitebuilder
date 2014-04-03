@@ -16,10 +16,6 @@ angular.module('pieologyApp')
                 $rootScope.$on('vlnGlobalAttrBucketState.change', function (evt, params) {
                     scope.isVisible = params.state; // Relates to the global app nav menu state.
                 });
-
-                scope.toggleAppAttrBucket = function () {
-                    vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());
-                };
             }
         };
     }]);
