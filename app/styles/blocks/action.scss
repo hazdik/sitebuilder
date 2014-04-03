@@ -20,7 +20,7 @@
     padding          : 0 0 0 45px;
     color: $cg8;
     background-color : $cg2;
-    margin-top: 50px; //  Account for the app header element
+    padding-top: 50px; //  Account for the app header element
 
     &.slide-in-offset {
         @include slide-offset(0 0 0 45px);
@@ -31,14 +31,16 @@
     }
 
     section {
-        ul {
-            li {
-                a {
-                    &:hover {
-                        color : $cg2;
-                    }
-                }
+        padding-top: 50px;
+        height: 100%;
+        overflow-y: auto;
+        div { // This is the container div for all ng-switch="currentAction"'s
+
+            .-theme-list {
+                // list elements style here.
+
             }
         }
+
     }
 }

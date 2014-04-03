@@ -1,4 +1,4 @@
-/*global angular, console */
+/*global angular*/
 
 angular.module('pieologyApp')
     .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
@@ -29,7 +29,6 @@ angular.module('pieologyApp')
                         @Purpose - update the config attribute currentAction for design
                     */
                     vlnConfig.setCurrentAction('designAction');
-                    console.log('load the design view into the action container');
                 };
 
                 scope.loadPageTools = function() {
@@ -39,7 +38,6 @@ angular.module('pieologyApp')
                         @Purpose - update the config attribute currentAction for page
                     */
                     vlnConfig.setCurrentAction('pageAction');
-                    console.log('load the pages view into the action container');
                 };
             }
         };

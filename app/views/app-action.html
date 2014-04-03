@@ -2,10 +2,10 @@
      ng-class="isVisible ? 'slide-in-offset' : 'slide-out-offset'">
      <section>
         <div ng-switch="currentAction">
-            <div ng-switch-when="designAction">
+            <div ng-switch-when="designAction" class="-theme-list">
                 <div vln-design-action></div>
             </div>
-            <div ng-switch-when="pageAction">
+            <div ng-switch-when="pageAction" class="-page-list">
                 <div vln-page-action></div>
             </div>
         </div>

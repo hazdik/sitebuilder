@@ -1,8 +1,8 @@
 /*global angular    */
 
 angular.module('pieologyApp')
-    .directive('appAction', ['$rootScope', 'vlnConfig', 'vlnThemeFactory',
-        function ($rootScope, vlnConfig, vlnThemeFactory) {
+    .directive('appAction', ['$rootScope', 'vlnConfig',
+        function ($rootScope, vlnConfig) {
 
         'use strict';
 
