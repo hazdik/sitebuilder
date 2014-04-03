@@ -1,4 +1,4 @@
-@import "globals/variables", "globals/mixins";
+@import "globals/variables", "globals/mixins", "globals/animations";
 
 /* Application navigation elements */
 .-navigation {
@@ -7,12 +7,20 @@
     height           : 100%;
     padding          : 0;
     background-color : $cg1;
-    z-index : 99;
-    position: absolute;
+    z-index          : 99;
+    position         : absolute;
+
+    &.slide-in {
+        @include slide-left(0);
+    }
+
+    &.slide-out {
+        @include slide-left(-50px);
+    }
 
     section {
-        color : $cg8;
-        margin-top:50px;
+        color      : $cg8;
+        margin-top : 50px;
 
         ul {
             li {

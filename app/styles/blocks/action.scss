@@ -1,4 +1,4 @@
-@import "globals/variables", "globals/mixins";
+@import "globals/variables", "globals/mixins", "globals/animations";
 
 @media only screen and (max-width : 480px) {
     .-action {
@@ -22,12 +22,20 @@
     background-color : $cg2;
     margin-top: 50px; //  Account for the app header element
 
+    &.slide-in-offset {
+        @include slide-offset(0 0 0 45px);
+    }
+
+    &.slide-out-offset {
+        @include slide-offset(0 0 0 0);
+    }
+
     section {
         ul {
             li {
                 a {
                     &:hover {
-                        color: $cg2;
+                        color : $cg2;
                     }
                 }
             }

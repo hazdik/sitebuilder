@@ -1,0 +1,59 @@
+@import "globals/variables", "globals/mixins", "globals/animations";
+
+@media only screen and (max-width : 480px) {
+    .-workspace {
+        display : none;
+
+    }
+}
+
+.-workspace {
+    float    : left;
+    padding  : 70px 300px 20px 300px;
+    height   : 100%;
+    width    : 100%;
+    position : absolute;
+
+    &.slide-in-offset {
+        @include slide-offset(70px 300px 20px 300px);
+    }
+
+    &.slide-out-offset {
+        @include slide-offset(70px 20px 20px 300px);
+    }
+
+    .-site {
+        border : 1px solid green;
+        height : 100%;
+
+        iframe {
+            @include transition(all 0.5s ease);
+            border  : 1px solid red;
+            height  : 100%;
+            margin  : 0 auto;
+            display : block;
+
+            &.-screen {
+                width : 1024px;
+            }
+            &.-tablet {
+                width : 786px;
+            }
+            &.-mobile {
+                width : 480px;
+            }
+        }
+    }
+
+    a.-close {
+        position        : absolute;
+        top             : 55px;
+        right           : 5px;
+        z-index         : 1030;
+        text-decoration : none;
+
+        &.-state-add {
+            @include rotate(45deg);
+        }
+    }
+}

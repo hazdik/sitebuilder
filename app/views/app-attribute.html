@@ -1,0 +1,22 @@
+<div class="-attr"
+     ng-class="isVisible ? 'fade-in' : 'fade-out'">
+
+    <section>
+
+        <accordion close-others="true">
+            <accordion-group heading="Components" is-open="true">
+                This content is straight in the template.
+            </accordion-group>
+            <accordion-group is-open="isopen">
+                <accordion-heading>
+                    Properties
+                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
+                </accordion-heading>
+                This is just some content to illustrate fancy headings.
+            </accordion-group>
+        </accordion>
+
+    </section>
+</div>
+
+

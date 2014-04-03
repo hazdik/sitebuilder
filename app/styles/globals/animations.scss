@@ -1,0 +1,47 @@
+@mixin slide-left($distance) {
+    -moz-transition    : left 1s;
+    -webkit-transition : left 1s;
+    -o-transition      : left 1s;
+    transition         : left 1s;
+    left               : $distance;
+}
+
+@mixin slide-right($distance) {
+    -moz-transition    : right 1s;
+    -webkit-transition : right 1s;
+    -o-transition      : right 1s;
+    transition         : right 1s;
+    right              : $distance;
+}
+
+@mixin slide-offset($padding...) {
+    -moz-transition    : padding 1s;
+    -webkit-transition : padding 1s;
+    -o-transition      : padding 1s;
+    transition         : padding 1s;
+    padding            : $padding;
+}
+
+@mixin fade($opacity) {
+    -moz-transition    : opacity 1s;
+    -webkit-transition : opacity 1s;
+    -o-transition      : opacity 1s;
+    transition         : opacity 1s;
+    opacity            : $opacity;
+}
+
+@mixin resize($width, $height : null, $opacity: null) {
+    -moz-transition    : width 1s, height 1s, opacity .5s;
+    -webkit-transition : width 1s, height 1s, opacity .5s;
+    -o-transition      : width 1s, height 1s, opacity .5s;
+    transition         : width 1s, height 1s, opacity .5s;
+    width              : $width;
+
+    @if $height != null {
+        height : $height;
+    }
+
+    @if $opacity != null {
+        opacity : $opacity;
+    }
+}

@@ -1,15 +1,16 @@
 /*global angular    */
 
 angular.module('pieologyApp')
-    .directive('appActionContainer', ['$rootScope', 'vlnConfig', 'vlnThemeFactory',
+    .directive('appAction', ['$rootScope', 'vlnConfig', 'vlnThemeFactory',
         function ($rootScope, vlnConfig, vlnThemeFactory) {
 
         'use strict';
 
         return {
-            templateUrl: 'views/app-action-container.html',
+            templateUrl: '../../views/app-action.html',
             restrict   : 'A',
             replace    : true,
+            scope      : {},
             link       : function postLink(scope) {
                 // element.text('this is the appActionContainer directive');
 

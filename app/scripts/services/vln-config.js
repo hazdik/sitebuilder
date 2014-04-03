@@ -5,7 +5,8 @@ angular.module('pieologyApp')
 
         'use strict';
         var globalNavState = true,          // Show the app navigation by default.
-            currentAction = 'designAction'; // Start them here but if conf is persisted turn this into a function.
+            currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
+            globalAttrBucketState = true; // Show the app attributes by default.
 
         function getGlobalNavStateFn() {
             return globalNavState;
@@ -36,11 +37,22 @@ angular.module('pieologyApp')
             return currentAction;
         }
 
+        function getGlobalAttrBucketStateFn() {
+            return globalAttrBucketState;
+        }
+
+        function setGlobalAttrBucketStateFn(state) {
+            globalAttrBucketState = state;
+            $rootScope.$broadcast('vlnGlobalAttrBucketState.change', { state: state });
+        }
+
         // Public API here
         return {
             getGlobalNavState: getGlobalNavStateFn,
             setGlobalNavState: setGlobalNavStateFn,
             getCurrentAction: getCurrentActionFn,
-            setCurrentAction: setCurrentActionFn
+            setCurrentAction: setCurrentActionFn,
+            getGlobalAttrBucketState: getGlobalAttrBucketStateFn,
+            setGlobalAttrBucketState: setGlobalAttrBucketStateFn
         };
     }]);
