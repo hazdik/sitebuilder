@@ -1,4 +1,4 @@
-/*global angular*/
+/*global angulark*/
 
 angular.module('pieologyApp')
     .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {

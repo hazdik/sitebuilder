@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('pieologyApp')
-  .directive('vlnPageAction', function () {
-    return {
-      template: '<div></div>',
-      restrict: 'E',
-      link: function postLink(scope, element, attrs) {
-        element.text('this is the vlnPageAction directive');
-      }
-    };
-  });
+    .directive('vlnPageAction', function () {
+        return {
+            templateUrl: 'views/actions/page-action.html',
+            restrict: 'A',
+            link: function postLink(scope, element, attrs) {
+                console.log('here be pages');
+            }
+        };
+    });
