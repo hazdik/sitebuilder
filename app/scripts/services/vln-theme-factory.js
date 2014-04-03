@@ -23,7 +23,7 @@ angular.module('pieologyApp')
                 }
             ];
 
-            function getThemes() {
+            function getThemesFn() {
                 var deferred = $q.defer();
                 deferred.resolve(themes);
                 return deferred.promise;
@@ -31,7 +31,7 @@ angular.module('pieologyApp')
 
             // Public API here
             return {
-                getThemes: getThemes
+                getThemes: getThemesFn
             };
         }
     ]);

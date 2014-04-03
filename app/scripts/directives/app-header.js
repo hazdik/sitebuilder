@@ -9,8 +9,6 @@ angular.module('pieologyApp')
             templateUrl: 'views/app-header.html',
             restrict   : 'A',
             replace    : true,
-//            Slider component does not like isolated scope TODO: fix it!
-//            scope      : {},
             link       : function postLink(scope) {
 
                 scope.toggleAppNavigation = function () {

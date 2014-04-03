@@ -23,14 +23,6 @@ angular.module('pieologyApp')
                 $rootScope.$on('vlnCurrentAction.change', function (evt, params) {
                     scope.currentAction = params.action;
                 });
-
-                vlnThemeFactory.getThemes()
-                    .then(function (promise) {
-                        scope.themes = promise;
-                    })
-                    .catch(function(promise){
-                        throw new Error('Error fetching themes: ', promise);
-                    });
             }
         };
     }]);
