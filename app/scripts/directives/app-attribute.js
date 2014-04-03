@@ -1,4 +1,4 @@
-/*global angular, console */
+/*global angular*/
 
 angular.module('pieologyApp')
     .directive('appAttribute', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
@@ -9,7 +9,7 @@ angular.module('pieologyApp')
             restrict   : 'A',
             replace    : true,
             scope      : {},
-            link       : function postLink(scope, element, attrs) {
+            link       : function postLink(scope) {
 
                 scope.isVisible = vlnConfig.getGlobalAttrBucketState();
 
