@@ -211,8 +211,18 @@
     font-weight : 600;
 }
 
-@mixin rotate($degree) {
-    -ms-transform     : rotate($degree); /* IE 9 */
-    -webkit-transform : rotate($degree); /* Chrome, Safari, Opera */
-    transform         : rotate($degree); /* Standard syntax */
+@mixin transform-rotate($degree) {
+    transform         : rotate($degree);
+    -webkit-transform : rotate($degree);
+    -moz-transform    : rotate($degree);
+    -o-transform      : rotate($degree);
+    -ms-transform     : rotate($degree);
+}
+
+@mixin transform-scale($x, $y) {
+    transform         : scale($x, $y);
+    -webkit-transform : scale($x, $y);
+    -moz-transform    : scale($x, $y);
+    -o-transform      : scale($x, $y);
+    -ms-transform     : scale($x, $y);
 }

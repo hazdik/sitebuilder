@@ -2,7 +2,14 @@
      ng-class="isFullSize ? 'slide-out-offset' : 'slide-in-offset'">
 
     <section class="-site">
-        <iframe src="http://www.yahoo.com" ng-class="displayClass"></iframe>
+        <iframe src="http://www.yahoo.com"
+                class="{{ displayClass }}"
+                ng-class="{'-scaled' : isScaled }"
+                ng-style="{'-webkit-transform' : vlnIFrameScale, 'left': isScaled ? scaledOffsetLeft : 0}">
+        </iframe>
+        <div class="-scaled-label" ng-if="isScaled">
+            Scale: {{ scaleRatio }}%
+        </div>
     </section>
 
     <a href="#" class="-close"
