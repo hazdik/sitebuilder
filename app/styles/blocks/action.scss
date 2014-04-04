@@ -39,45 +39,42 @@
                 // list elements style here.
             }
 
-// /*Remove connectors before root*/
-// .tree > ul > li::before, .tree > ul > li::after{
-//     border: 0;
-// }
-// /*Remove connectors after last child*/
-// .tree li:last-child::before{
-//       height: 30px;
-// }
-
-
+            // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
+            // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
             .-page-tree {
                 h2 {
                     font-size: 16px;
                 }
 
                 li {
-                    // &:hover {
-                        a {
-                            &:hover {
-                                background: $cg8;
-                                color: $cg2;
-                                border: 1px solid $cg2;
+                    a {
+                        &:hover {
+                            background: $cg8;
+                            color: $cg2;
+                            border: 1px solid $cg2;
 
-                                +ul {
-                                    li {
-                                        a {
-                                            background: $cg8;
-                                            color: $cg2;
-                                            border: 1px solid $cg2;
-                                        }
+                            +ul {
+                                li {
+                                    a {
+                                        background: $cg8;
+                                        color: $cg2;
+                                        border: 1px solid $cg2;
                                     }
                                 }
                             }
                         }
-                    // }
+                    }
+
+                    &:last-child {
+                        &::before {
+                            height: 30px;
+                        }
+                    }
                 }
 
                 ul {
                     li {
+
                         margin: 0px 0;
                         list-style-type: none;
                         position: relative;
@@ -95,17 +92,6 @@
                             bottom: 50px;
                         }
 
-                        &:after {
-                            content: '';
-                            position: absolute;
-                            top: 30px;
-                            width: 25px;
-                            height: 20px;
-                            right: auto;
-                            left: -20px;
-                            border-top: 1px solid #ccc;
-                        }
-
                         a {
                             display: inline-block;
                             border: 1px solid #ccc;
@@ -117,6 +103,17 @@
                             border-radius: 5px;
                             -webkit-border-radius: 5px;
                             -moz-border-radius: 5px;
+                        }
+
+                        &:after {
+                            content: '';
+                            position: absolute;
+                            top: 30px;
+                            width: 25px;
+                            height: 20px;
+                            right: auto;
+                            left: -20px;
+                            border-top: 1px solid #ccc;
                         }
                     }
                 }
