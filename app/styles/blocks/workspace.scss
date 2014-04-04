@@ -23,8 +23,9 @@
     }
 
     .-site {
-        border : 1px solid green;
-        height : 100%;
+        border   : 1px solid green;
+        height   : 100%;
+        position : relative;
 
         iframe {
             @include transition(all 0.5s ease);
@@ -42,6 +43,20 @@
             &.-mobile {
                 width : 480px;
             }
+
+            &.-scaled {
+                position : absolute;
+            }
+        }
+
+        .-scaled-label {
+            border: 1px solid $cg-min;
+            background-color: $cg4;
+            color: $cg-min;
+            position: absolute;
+            padding: 5px;
+            bottom: -10px;
+            right: 0;
         }
     }
 
@@ -53,7 +68,7 @@
         text-decoration : none;
 
         &.-state-add {
-            @include rotate(45deg);
+            @include transform-rotate(45deg);
         }
     }
 }
