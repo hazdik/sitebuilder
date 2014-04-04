@@ -42,9 +42,17 @@
             // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
             .-page-tree {
-                h2 {
-                    font-size: 16px;
+                header {
+                    padding: 0 10px 10px 10px;
+                    h2 {
+                        font-size: 20px;
+
+                        span {
+                            padding: 0 5px;
+                        }
+                    }
                 }
+
 
                 li {
                     a {
