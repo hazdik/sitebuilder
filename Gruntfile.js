@@ -1,4 +1,3 @@
-
 /*global module, require */
 
 // Generated on 2014-03-25 using generator-angular 0.7.1
@@ -31,7 +30,8 @@ module.exports = function (grunt) {
         // Watches files for changes and runs tasks based on the changed files
         watch: {
             js: {
-                files: ['<%= yeoman.app %>/scripts/{,*/}*.js'],
+                // files: ['<%= yeoman.app %>/scripts/{,*/}*.js'], // This was not picking up the directives in the action folder. Weird.
+                files: ['<%= yeoman.app %>/scripts/**/*.js'],
                 tasks: ['newer:jshint:all'],
                 options: {
                     livereload: true

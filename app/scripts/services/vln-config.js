@@ -4,18 +4,37 @@ angular.module('pieologyApp')
     .factory('vlnConfig', ['$rootScope', function ($rootScope) {
 
         'use strict';
-
-        var meaningOfLife = 'happy water', // Keep this until testing is realized.
-            globalNavState = true, // Show the app navigation by default.
+        var globalNavState = true,          // Show the app navigation by default.
+            currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true; // Show the app attributes by default.
 
-        function getGlobalNavState() {
+        function getGlobalNavStateFn() {
             return globalNavState;
         }
 
-        function setGlobalNavState(state) {
+        function setGlobalNavStateFn(state) {
             globalNavState = state;
             $rootScope.$broadcast('vlnGlobalNavState.change', { state: state });
+        }
+
+        function setCurrentActionFn(action) {
+            /*
+                @Input a string
+                @Output broadcast a message (nothing returned)
+                @Purpose - update the string value of the currentAction for tha application
+
+            */
+            currentAction = action;
+            $rootScope.$broadcast('vlnCurrentAction.change', {action: action });
+        }
+
+        function getCurrentActionFn() {
+            /*
+                @Input - none
+                @Output - string value of currentAction
+                @Purpose - return the current value of the string currentAction
+            */
+            return currentAction;
         }
 
         function getGlobalAttrBucketStateFn() {
@@ -29,8 +48,10 @@ angular.module('pieologyApp')
 
         // Public API here
         return {
-            getGlobalNavState       : getGlobalNavState,
-            setGlobalNavState       : setGlobalNavState,
+            getGlobalNavState: getGlobalNavStateFn,
+            setGlobalNavState: setGlobalNavStateFn,
+            getCurrentAction: getCurrentActionFn,
+            setCurrentAction: setCurrentActionFn,
             getGlobalAttrBucketState: getGlobalAttrBucketStateFn,
             setGlobalAttrBucketState: setGlobalAttrBucketStateFn
         };

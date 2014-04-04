@@ -1,8 +1,8 @@
 /*global angular    */
 
 angular.module('pieologyApp')
-    .directive('appAction', ['$rootScope', 'vlnConfig', 'vlnThemeFactory',
-        function ($rootScope, vlnConfig, vlnThemeFactory) {
+    .directive('appAction', ['$rootScope', 'vlnConfig',
+        function ($rootScope, vlnConfig) {
 
         'use strict';
 
@@ -19,13 +19,11 @@ angular.module('pieologyApp')
                     scope.isVisible = params.state; // Relates to the global app nav menu state.
                 });
 
-                vlnThemeFactory.getThemes()
-                    .then(function (promise) {
-                        scope.themes = promise;
-                    })
-                    .catch(function(promise){
-                        throw new Error('Error fetching themes: ', promise);
-                    });
+                scope.currentAction = vlnConfig.getCurrentAction();
+                $rootScope.$on('vlnCurrentAction.change', function (evt, params) {
+                    scope.currentAction = params.action;
+                    // console.log('currentAction: ', scope.currentAction);
+                });
             }
         };
     }]);

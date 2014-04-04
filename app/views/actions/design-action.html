@@ -1,0 +1,10 @@
+<!-- Note: This will prolly need a dive - not show here is the selected/current theme as well as the ability to filter and search available themes -->
+<ul class="nav nav-sidebar ng-scope"
+    ng-repeat="theme in themes">
+    <li class="active text-center" ng-click="loadTheme(2)">
+        <a ng-click="theme.url">
+            <span class="ng-binding">Theme 1</span>
+            <img ng-src="http://lorempixel.com/200/200/" alt="Theme 1" src="http://lorempixel.com/200/200/">
+        </a>
+    </li>
+</ul>
