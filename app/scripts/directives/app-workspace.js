@@ -11,7 +11,7 @@ angular.module('pieologyApp')
             restrict   : 'A',
             replace    : true,
             scope      : {},
-            link       : function postLink(scope, element, attrs) {
+            link       : function postLink(scope, element) {
 
                 var scaleX = 1,
                     scaleY = 1,
@@ -39,7 +39,7 @@ angular.module('pieologyApp')
                     }
 
                     scope.isScaled = (scaleX < 1) ? true : false;
-                    scope.vlnIFrameScale = "scale(" + scaleX + ", " + scaleY + ")";
+                    scope.vlnIFrameScale = 'scale(' + scaleX + ', ' + scaleY + ')';
                 }
 
                 scope.isFullSize = !vlnConfig.getGlobalAttrBucketState();
