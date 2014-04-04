@@ -2,7 +2,7 @@
 /*global angular*/
 
 angular.module('pieologyApp')
-    .directive('appWorkspace', ['$rootScope', '$filter', 'vlnConfig', function ($rootScope, $filter, vlnConfig) {
+    .directive('appWorkspace', ['$rootScope', '$window', '$filter', 'vlnConfig', function ($rootScope, $window, $filter, vlnConfig) {
 
         'use strict';
 
@@ -30,6 +30,7 @@ angular.module('pieologyApp')
                 function calcFrame () {
                     if (container.clientWidth < screens[displayScreen]) {
                         scaleX =  container.clientWidth / screens[displayScreen];
+                        scaleY =  container.clientWidth / screens[displayScreen];
                         // offset is hall of the difference - scale is performed from the center of the element
                         scope.scaledOffsetLeft = (container.clientWidth - screens[displayScreen]) / 2;
                         scope.scaleRatio = $filter('number')(scaleX, 2) * 100;
@@ -67,6 +68,23 @@ angular.module('pieologyApp')
                 scope.toggleAppAttrBucket = function () {
                     vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());
                 };
+
+                scope.$watch('container', function () {
+                    alert('CONTAINER CHANGE');
+                    console.log('CONTAINER CHANGE');
+                }, true);
+
+                frame.parent().bind('resize', function() {
+                    console.log('RESIZE');
+//                    calcFrame();
+//                    return scope.$apply();
+                });
+
+//                angular.element($window).bind('resize', function() {
+//                    alert('RESIZE WINDOW');
+////                    $scope.initializeWindowSize();
+////                    return $scope.$apply();
+//                });
             }
         };
     }]);
