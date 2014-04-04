@@ -1,7 +1,8 @@
-'use strict';
 
 angular.module('pieologyApp')
     .factory('vlnPageFactory', ['$q', function ($q) {
+
+        'use strict';
 
         var pages = {
             'siteName': 'RunwayClothing.com',

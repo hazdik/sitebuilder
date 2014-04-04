@@ -70,7 +70,7 @@ angular.module('pieologyApp')
                 };
 
                 scope.$watch('container', function () {
-                    alert('CONTAINER CHANGE');
+                    // alert('CONTAINER CHANGE');
                     console.log('CONTAINER CHANGE');
                 }, true);
 
