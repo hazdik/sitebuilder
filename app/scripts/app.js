@@ -1,4 +1,3 @@
-
 /*global angular */
 
 angular.module('pieologyApp', [
@@ -10,28 +9,27 @@ angular.module('pieologyApp', [
     'ngAnimate',
     'ui.bootstrap'
 ])
-    .config(['$locationProvider', '$routeProvider', function ($locationProvider, $routeProvider) {
+    .config(['$locationProvider', '$routeProvider', '$sceDelegateProvider',
+        function ($locationProvider, $routeProvider, $sceDelegateProvider) {
 
-        'use strict';
+            'use strict';
 
-        $locationProvider.html5Mode(true);
+            $locationProvider.html5Mode(true);
 
-        $routeProvider
-            .when('/', {
-                templateUrl: 'views/app-container.html',
-                controller : 'MainCtrl'
-            })
-            .otherwise({
-                redirectTo: '/'
-            });
-    }]);
+            $routeProvider
+                .when('/', {
+                    templateUrl: 'views/app-container.html',
+                    controller: 'MainCtrl'
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
 
-// angular.module('myApp', ['ngRoute']).
-//   config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
-//   $locationProvider.html5Mode(true);
-
-//   $routeProvider
-//     .when("/home", {templateUrl:'home.html', controller:'homeController'})
-//     // other routes are defined here..
-//     .otherwise({redirectTo: '/home'});
-//   }]);
+            $sceDelegateProvider.resourceUrlWhitelist([
+                // Allow same origin resource loads.
+                // Allow loading from our assets domain.  Notice the difference between * and **.
+                'self',
+                // 'http://localhost:9778'
+                'http://localhost:9778/**'
+            ]);
+        }]);

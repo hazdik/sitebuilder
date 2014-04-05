@@ -2,7 +2,8 @@
 /*global angular*/
 
 angular.module('pieologyApp')
-    .directive('appWorkspace', ['$rootScope', '$window', '$filter', 'vlnConfig', function ($rootScope, $window, $filter, vlnConfig) {
+    .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$sce', 'vlnConfig',
+        function ($rootScope, $window, $filter, $sce, vlnConfig) {
 
         'use strict';
 
@@ -43,9 +44,12 @@ angular.module('pieologyApp')
                     scope.vlnIFrameScale = 'scale(' + scaleX + ', ' + scaleY + ')';
                 }
 
+                /*
+                    Directive Scope Variables
+                */
+                scope.iFrameSrc = 'http://localhost:9778';
                 scope.isFullSize = !vlnConfig.getGlobalAttrBucketState();
                 scope.isStateAdd = scope.isFullSize;
-
                 scope.displayClass = '-' + displayScreen;
                 scope.scaledOffsetLeft = 0;
 
@@ -64,6 +68,14 @@ angular.module('pieologyApp')
 
                     calcFrame();
                 });
+
+                $rootScope.$on('vlnWorkspaceUrl.change', function(evt, params) {
+                    scope.iFrameSrc = params.url;
+                });
+
+                // scope.getIframeSrc = function(src) {
+                //     return s$sce.trustResourceUrl(src);
+                // }
 
                 scope.toggleAppAttrBucket = function () {
                     vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());

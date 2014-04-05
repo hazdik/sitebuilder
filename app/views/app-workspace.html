@@ -2,7 +2,7 @@
      ng-class="isFullSize ? 'slide-out-offset' : 'slide-in-offset'">
 
     <section class="-site">
-        <iframe src="http://localhost:9778"
+        <iframe ng-src="{{ iFrameSrc }}"
                 class="{{ displayClass }}"
                 ng-class="{'-scaled' : isScaled }"
                 ng-style="{'-webkit-transform' : vlnIFrameScale, 'left': isScaled ? scaledOffsetLeft : 0}">
