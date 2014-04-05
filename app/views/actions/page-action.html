@@ -1,60 +1,58 @@
 <div class="-page-tree">
     <header>
-        <h2>Pages
-            <span class="icon-search pull-right"></span>
-            <span class="icon-plus pull-right"></span>
-        </h2>
+        <span>Pages</span>
+        <div class="col-xs-9 pull-right page-search" >
+            <div class="right-inner-addon">
+                <span class="icon-search"></span>
+                <input type="search"
+                       class="form-control"
+                       placeholder="$filter $animate" />
+            </div>
+        </div>
     </header>
     <ul>
         <li>
-            <a href="#">RunawayClothing.com</a>
+            <a ng-click="loadIframe('{{pageData.siteUrl}}')">{{pageData.siteName}}</a>
             <ul>
-                <li>
-                    <a href="#">Home</a>
+                <li ng-repeat="page in pageData.pages">
+                    <a href="#" ng-click="loadIframe(page)">{{ page.name }}</a>
                 </li>
+                <li ng-repeat-end>
+                    <a href="#" ng-click="addPage()">
+                        <span class="icon-plus"></span>
+                        <!-- Add Page -->
+                    </a>
+                </li>
+
                 <li>
                     <a href="#">Categories</a>
                     <ul>
-                        <li>
-                            <a href="#">Shirts</a>
+                        <li ng-repeat="category in pageData.categories">
+                            <a href="#" ng-click="loadIframe(category)">{{ category.name }}</a>
                         </li>
-                        <li>
-                            <a href="#">Dresses</a>
-                        </li>
-                        <li>
-                            <a href="#">Hats</a>
-                        </li>
-                        <li>
-                            <a href="#">Shoes</a>
+                        <li ng-repeat-end>
+                            <a href="#" ng-click="addCategory()">
+                                <span class="icon-plus"></span>
+                                <!-- Add Page -->
+                            </a>
                         </li>
                     </ul>
                 </li>
                 <li>
                     <a href="#">Products</a>
                     <ul>
-                        <li><a href="#">Summer cloths</a></li>
-                        <li><a href="#">Fall cloths</a></li>
-                        <li><a href="#">Winter cloths</a></li>
-                        <li><a href="#">Spring cloths</a></li>
-<!-- NOTE: THe nesting can be used ever deeper if you want to ... -->
-<!--                         <li>
-                            <a href="#">Grand Child</a>
-                            <ul>
-                                <li>
-                                    <a href="#">Great Grand Child</a>
-                                </li>
-                                <li>
-                                    <a href="#">Great Grand Child</a>
-                                </li>
-                                <li>
-                                    <a href="#">Great Grand Child</a>
-                                </li>
-                            </ul>
-                        </li> -->
+                        <li ng-repeat="product in pageData.products">
+                            <a href="#" ng-click="loadIframe(product)">{{ product.name }}</a>
+                        </li>
+                        <li ng-repeat-end>
+                            <a href="#" ng-click="addProduct()">
+                                <span class="icon-plus"></span>
+                                <!-- Add Page -->
+                            </a>
+                        </li>
                     </ul>
                 </li>
             </ul>
         </li>
     </ul>
-    <a href="#">Add (ng-repeat-end)</a>
 </div>

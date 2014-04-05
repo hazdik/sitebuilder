@@ -1,8 +1,10 @@
-'use strict';
 
 angular.module('pieologyApp')
     .factory('vlnThemeFactory', ['$resource', '$q',
         function($resource, $q) {
+
+            'use strict';
+
             var themes = [
                 {
                     'name': 'Theme 1',

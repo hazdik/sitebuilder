@@ -43,16 +43,43 @@
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
             .-page-tree {
                 header {
-                    padding: 0 10px 10px 10px;
-                    h2 {
-                        font-size: 20px;
+                    padding: 2px 10px 10px 10px;
+                    line-height: 30px;
+                    border-bottom: 1px solid $cg8;
+                    height: 40px;
 
-                        span {
-                            padding: 0 5px;
+                    > span {
+                        font-size: 18px;
+                        position: relative;
+                        top: 4px;
+                    }
+
+
+                    .page-search {
+                        position: relative;
+                        display: inline;
+
+                        .right-inner-addon {
+                            position: absolute;
+                            top: 5px;
+                            // right: 5px;
+
+                            input {
+                                padding-right: 20px;
+                                border: 1px solid $cg0;
+                                height: 25px;
+                            }
+
+                            span {
+                                position: absolute;
+                                right: 0px;
+                                padding: 5px 6px;
+                                pointer-events: none;
+                                color: $cg2;
+                            }
                         }
                     }
                 }
-
 
                 li {
                     a {
@@ -86,7 +113,7 @@
                         margin: 0px 0;
                         list-style-type: none;
                         position: relative;
-                        padding: 20px 5px 0px 5px;
+                        padding: 10px 5px 0px 5px;
 
                         &:before {
                             content: '';
@@ -105,7 +132,7 @@
                             border: 1px solid #ccc;
                             padding: 5px 10px;
                             text-decoration: none;
-                            color: #666;
+                            color: $cg8;
                             font-family: arial, verdana, tahoma;
                             font-size: 11px;
                             border-radius: 5px;
