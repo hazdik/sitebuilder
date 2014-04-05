@@ -1,14 +1,15 @@
 @import "globals/variables", "globals/mixins", "globals/animations";
 
 .-attr {
-    border      : 1px solid yellow;
-    position    : absolute;
-    width       : 270px;
-    height      : 100%;
-    right       : 0;
-    top         : 0;
-    padding-top : 50px;
-    color       : $cg10;
+    border           : 1px solid yellow;
+    position         : absolute;
+    width            : 270px;
+    height           : 100%;
+    right            : 0;
+    top              : 0;
+    padding-top      : 50px;
+    color            : $cg10;
+    background-color : $cg2;
 
     &.fade-in {
         @include resize(270px, null, 1);
