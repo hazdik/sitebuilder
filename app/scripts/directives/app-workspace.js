@@ -2,8 +2,8 @@
 /*global angular*/
 
 angular.module('pieologyApp')
-    .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$sce', 'vlnConfig',
-        function ($rootScope, $window, $filter, $sce, vlnConfig) {
+    .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$timeout', '$sce', 'vlnConfig',
+        function ($rootScope, $window, $filter, $timeout, $sce, vlnConfig) {
 
         'use strict';
 
@@ -14,7 +14,8 @@ angular.module('pieologyApp')
             scope      : {},
             link       : function postLink(scope, element) {
 
-                var scaleX = 1,
+                var _containerWatch,
+                    scaleX = 1,
                     scaleY = 1,
                     frame = element.find('iframe'),
                     container = frame.parent()[0],
@@ -30,8 +31,7 @@ angular.module('pieologyApp')
 
                 function calcFrame () {
                     if (container.clientWidth < screens[displayScreen]) {
-                        scaleX =  container.clientWidth / screens[displayScreen];
-                        scaleY =  container.clientWidth / screens[displayScreen];
+                        scaleX = scaleY = container.clientWidth / screens[displayScreen];
                         // offset is hall of the difference - scale is performed from the center of the element
                         scope.scaledOffsetLeft = (container.clientWidth - screens[displayScreen]) / 2;
                         scope.scaleRatio = $filter('number')(scaleX, 2) * 100;
@@ -55,11 +55,32 @@ angular.module('pieologyApp')
 
                 calcFrame();
 
+                scope.toggleAppAttrBucket = function () {
+                    vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());
+                };
+
+                function startContainerWatch (compX, compY) {
+                    _containerWatch = $timeout(function () {
+                        // Do not watch container if dimensions are same
+                        if (compX === container.clientWidth && compY === container.clientHeight) {
+                            $timeout.cancel(_containerWatch);
+                            _containerWatch = null;
+                        } else {
+                            calcFrame();
+                            startContainerWatch(container.clientWidth, container.clientHeight);
+                        }
+                    }, 1000);
+                }
+
+                startContainerWatch(container.clientWidth, container.clientHeight);
+
                 $rootScope.$on('vlnGlobalAttrBucketState.change', function (evt, params) {
                     scope.isFullSize = !params.state; // Relates to the global app nav menu state.
                     scope.isStateAdd = scope.isFullSize;
 
-                    //calcFrame();
+                    if (!_containerWatch) {
+                        startContainerWatch();
+                    }
                 });
 
                 $rootScope.$on('vlnDisplay.change', function (evt, params) {
@@ -73,30 +94,11 @@ angular.module('pieologyApp')
                     scope.iFrameSrc = params.url;
                 });
 
-                // scope.getIframeSrc = function(src) {
-                //     return s$sce.trustResourceUrl(src);
-                // }
-
-                scope.toggleAppAttrBucket = function () {
-                    vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());
-                };
-
-                scope.$watch('container', function () {
-                    // alert('CONTAINER CHANGE');
-                    console.log('CONTAINER CHANGE');
-                }, true);
-
-                frame.parent().bind('resize', function() {
-                    console.log('RESIZE');
-//                    calcFrame();
-//                    return scope.$apply();
+                angular.element($window).bind('resize', function() {
+                    if (!_containerWatch) {
+                        startContainerWatch(container.clientWidth, container.clientHeight);
+                    }
                 });
-
-//                angular.element($window).bind('resize', function() {
-//                    alert('RESIZE WINDOW');
-////                    $scope.initializeWindowSize();
-////                    return $scope.$apply();
-//                });
             }
         };
     }]);

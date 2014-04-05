@@ -8,7 +8,7 @@
                 ng-style="{'-webkit-transform' : vlnIFrameScale, 'left': isScaled ? scaledOffsetLeft : 0}">
         </iframe>
         <div class="-scaled-label" ng-if="isScaled">
-            Scale: {{ scaleRatio }}%
+            Scale: {{ scaleRatio | number: 0 }}%
         </div>
     </section>
 
