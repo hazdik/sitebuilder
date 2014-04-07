@@ -7,7 +7,7 @@ angular.module('pieologyApp')
             'use strict';
 
             return {
-                templateUrl: '../../views/app-action.html',
+                templateUrl: 'views/app-action.html',
                 restrict   : 'A',
                 replace    : true,
                 scope      : {},

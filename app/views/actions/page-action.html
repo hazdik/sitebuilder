@@ -1,4 +1,16 @@
 <div class="-page-tree">
+    <div class="add-form page"
+         ng-show="showPageForm">
+        <button ng-click="hideForm('page')">Dismiss +Page form</button>
+    </div> <!-- to be directive -->
+    <div class="add-form product"
+         ng-show="showProductForm">
+        <button ng-click="hideForm('product')">Dismiss +product form</button>
+    </div> <!-- to be directive -->
+    <div class="add-form category"
+         ng-show="showCategoryForm">
+        <button ng-click="hideForm('category')">Dismiss +category form</button>
+    </div> <!-- to be directive -->
     <header>
         <span>Pages</span>
         <div class="col-xs-9 pull-right page-search" >
