@@ -53,7 +53,7 @@ angular.module('pieologyApp')
                 /*
                     Directive Scope Variables
                 */
-                scope.iFrameSrc = 'http://localhost:9778';
+                scope.iFrameSrc = 'http://localhost:9778'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
                 scope.isFullSize = !vlnConfig.getGlobalAttrBucketState();
                 scope.isStateAdd = scope.isFullSize;
                 scope.displayClass = '-' + displayScreen;

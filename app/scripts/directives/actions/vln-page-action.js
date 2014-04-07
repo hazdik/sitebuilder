@@ -21,6 +21,26 @@ angular.module('pieologyApp')
                         throw new Error('Error fetching page data: ', error);
                     });
 
+                    /* Scope variables */
+                    scope.showPageForm = false;
+                    scope.showProductForm = false;
+                    scope.showCategoryForm = false;
+
+                    /* Scope functionlity */
+
+                    scope.hideForm = function(formName) {
+                        if ('page' === formName) {
+                            scope.showPageForm = false;
+                            console.log('hiding page form');
+                        } else if ('product' === formName) {
+                            scope.showProductForm = false;
+                            console.log('hiding product form');
+                        } else if ('category' === formName) {
+                            scope.showCategoryForm = false;
+                            console.log('hiding category form');
+                        }
+                    }
+
                     scope.loadIframe = function(item) {
                         /*
                             @Input: url string to be loaded
@@ -37,6 +57,7 @@ angular.module('pieologyApp')
                             @Output: return nothing
                             @Description: update the directive template with a value that will animate in the add-page-form
                         */
+                        scope.showPageForm = true;
                         console.log('animate in the add page form');
                     };
 
@@ -46,6 +67,7 @@ angular.module('pieologyApp')
                             @Output: return nothing
                             @Description: update the directive template with a value that will animate in the add-category-form
                         */
+                        scope.showCategoryForm = true;
                         console.log('animate in the add category form');
                     };
 
@@ -55,6 +77,7 @@ angular.module('pieologyApp')
                             @Output: return nothing
                             @Description: update the directive template with a value that will animate in the add-product-form
                         */
+                        scope.showProductForm = true;
                         console.log('animate in the add product form');
                     };
                 }

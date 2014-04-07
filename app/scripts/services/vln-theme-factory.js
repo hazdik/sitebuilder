@@ -5,6 +5,9 @@ angular.module('pieologyApp')
 
             'use strict';
 
+            /*
+                TODO: Restructure the json response to include the current theme data
+            */
             var themes = [
                 {
                     'name': 'Theme 1',
