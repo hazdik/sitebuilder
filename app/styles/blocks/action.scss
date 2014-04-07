@@ -58,6 +58,7 @@
                     .page-search {
                         position: relative;
                         display: inline;
+                        z-index: -1000;
 
                         .right-inner-addon {
                             position: absolute;
@@ -153,48 +154,23 @@
                     }
                 }
 
-                .add-form {
+                .add-page-form , .add-product-form, .add-category-form {
                     position   : absolute;
-                    width      : 100%;
+                    // width      : 100%;
                     height     : 100%;
                     background : $cg8;
                     color      : $cg2;
-                    // opacity : 0.75;
-                    z-index    : 100000;
-                    .page {
+                    opacity : 0;
 
+                    &.fade-in {
+                        @include fade(1);
+                        z-index: 1000;
                     }
 
-                    .product{
-
+                    &.fade-out {
+                        @include fade(0);
+                        z-index: 0;
                     }
-
-                    .category {
-
-                    }
-
-@import "globals/variables", "globals/mixins", "globals/animations";
-
-// .-attr {
-//     border           : 1px solid yellow;
-//     position         : absolute;
-//     width            : 270px;
-//     height           : 100%;
-//     right            : 0;
-//     top              : 0;
-//     padding-top      : 50px;
-//     color            : $cg10;
-//     background-color : $cg2;
-
-//     &.fade-in {
-//         @include resize(270px, null, 1);
-//     }
-
-//     &.fade-out {
-//         @include resize(20px, null, 0);
-//     }
-// }
-
                 }
             }
         }

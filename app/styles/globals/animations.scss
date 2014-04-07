@@ -23,11 +23,15 @@
 }
 
 @mixin fade($opacity) {
-    -moz-transition    : opacity 1s;
-    -webkit-transition : opacity 1s;
-    -o-transition      : opacity 1s;
-    transition         : opacity 1s;
-    opacity            : $opacity;
+    -moz-transition                    : opacity 1s;
+    -webkit-transition                 : opacity 1s;
+    -o-transition                      : opacity 1s;
+    transition                         : opacity 1s;
+    -moz-transition-timing-function    : ease-in-out;
+    -webkit-transition-timing-function : ease-in-out;
+    -o-transition-timing-function      : ease-in-out;
+    transition-timing-function         : ease-in-out;
+    opacity                            : $opacity;
 }
 
 @mixin resize($width, $height : null, $opacity: null) {
