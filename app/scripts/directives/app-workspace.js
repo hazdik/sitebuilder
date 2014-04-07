@@ -30,6 +30,12 @@ angular.module('pieologyApp')
                     };
 
                 function calcFrame () {
+                    /*
+                     @Input (none)
+                     @Output (nothing returned)
+                     @Purpose - update the values of scaleX and scaleY based on selected screen size
+
+                     */
                     if (container.clientWidth < screens[displayScreen]) {
                         scaleX = scaleY = container.clientWidth / screens[displayScreen];
                         // offset is hall of the difference - scale is performed from the center of the element
@@ -56,10 +62,22 @@ angular.module('pieologyApp')
                 calcFrame();
 
                 scope.toggleAppAttrBucket = function () {
+                    /*
+                    @Input (none)
+                    @Output (nothing returned)
+                    @Purpose - toggle attribute bucket state
+
+                    */
                     vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());
                 };
 
                 function startContainerWatch (compX, compY) {
+                    /*
+                     @Input compX, compY
+                     @Output (nothing returned)
+                     @Purpose - timeout function which will call itself or cancel if condition is met
+
+                     */
                     _containerWatch = $timeout(function () {
                         // Do not watch container if dimensions are same
                         if (compX === container.clientWidth && compY === container.clientHeight) {
