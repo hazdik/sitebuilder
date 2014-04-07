@@ -1,20 +1,17 @@
 <div class="-page-tree">
-    <!-- Start the component forms for adding content -->
-    <div class="add-page-form"
+    <!-- Start the component forms for adding content -> idk, should this be up one level??-->
+    <div class="-page-form"
          ng-class="visiblePageForm ? 'fade-in' : 'fade-out'">
         <div class=""> <!-- here so bootstrap works for us -->
             <button ng-click="hideForm('page')">Dismiss +Page form</button>
             Lets put some content in here and size it with bootstrap
         </div>
     </div> <!-- to be directive -->
-    <div class="add-product-form"
+    <div class="-product-form"
          ng-class="visibleProductForm ? 'fade-in' : 'fade-out'">
-        <div class=""> <!-- here so bootstrap works for us -->
-            <button ng-click="hideForm('product')">Dismiss +product form</button>
-            Lets put some content in here and size it with bootstrap
-        </div>
-    </div><!-- to be directive -->
-    <div class="add-category-form"
+        <div vln-product-form></div>
+     </div><!-- to be directive -->
+    <div class="-category-form"
          ng-class="visibleCategoryForm ? 'fade-in' : 'fade-out'">
         <div class=""> <!-- here so bootstrap works for us -->
             <button ng-click="hideForm('category')">Dismiss +product form</button>
@@ -65,7 +62,7 @@
                     <a href="#">Products</a>
                     <ul>
                         <li ng-repeat="product in pageData.products">
-                            <a href="#" ng-click="loadIframe(product)">{{ product.name }}</a>
+                            <a href="#" ng-click="editProduct(product)">{{ product.name }}</a>
                         </li>
                         <li ng-repeat-end>
                             <a href="#" ng-click="addProduct()">

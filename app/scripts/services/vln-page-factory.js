@@ -50,19 +50,63 @@ angular.module('pieologyApp')
             'products': [
                 {
                     'name': 'Summer Shirt 1',
-                    'pageUrl': 'http://localhost:9778/pages/company'
+                    'pageUrl': 'http://localhost:9778/pages/company',
+                    'images': [
+                        ''
+                    ],
+                    'price': '129.99',
+                    'currency': '$',
+                    'options': [
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/'
+                    ],
+                    'description': 'A great shirt after surfing all day.'
                 },
                 {
                     'name': 'Summer Shirt 2',
-                    'pageUrl': 'http://localhost:9778/pages/resources'
+                    'pageUrl': 'http://localhost:9778/pages/resources',
+                    'images': [
+                        ''
+                    ],
+                    'price': '129.99',
+                    'currency': '$',
+                    'options': [
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/'
+                    ],
+                    'description': 'A great shirt after surfing all day.'
                 },
                 {
                     'name': 'Summer Shirt 3',
-                    'pageUrl': 'http://localhost:9778/pages/partners'
+                    'pageUrl': 'http://localhost:9778/pages/partners',
+                    'images': [
+                        ''
+                    ],
+                    'price': '129.99',
+                    'currency': '$',
+                    'options': [
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/'
+                    ],
+                    'description': 'A great shirt after surfing all day.'
                 },
                 {
                     'name': 'Summer Shirt 4',
-                    'pageUrl': 'http://localhost:9778/pages/developers'
+                    'pageUrl': 'http://localhost:9778/pages/developers',
+                    'images': [
+                        ''
+                    ],
+                    'price': '129.99',
+                    'currency': '$',
+                    'options': [
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/',
+                        'http://lorempixel.com/100/100/'
+                    ],
+                    'description': 'A great shirt after surfing all day.'
                 }
             ]
         };
