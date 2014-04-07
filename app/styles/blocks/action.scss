@@ -161,6 +161,7 @@
                     background : $cg8;
                     color      : $cg2;
                     opacity : 0;
+                    z-index: -1000;
 
                     &.fade-in {
                         @include fade(1);
@@ -169,7 +170,7 @@
 
                     &.fade-out {
                         @include fade(0);
-                        z-index: 0;
+                        z-index: -1000;
                     }
                 }
             }
