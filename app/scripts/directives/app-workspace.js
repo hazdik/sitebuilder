@@ -55,7 +55,7 @@ angular.module('pieologyApp')
                 */
 //              TODO:  D'n'D tests
 //                scope.iFrameSrc = 'http://localhost:9000/views/inner.html' ;//'http://localhost:9778'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
-                scope.iFrameSrc = 'http://localhost:9778'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
+                scope.iFrameSrc = 'http://localhost:8001'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
                 scope.isFullSize = !vlnConfig.getGlobalAttrBucketState();
                 scope.isStateAdd = scope.isFullSize;
                 scope.displayClass = '-' + displayScreen;
