@@ -1,0 +1,10 @@
+{
+    'current': 'Current Theme',
+    'thumbnail': 'images/ico-img.svg'
+    'themeList': [
+        {
+            'themeName': 'Theme #1',
+            'thumbnail': 'images/ico-img.svg'
+        }
+    ]
+}
