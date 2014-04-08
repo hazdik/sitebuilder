@@ -18,4 +18,8 @@
     &.fade-out {
         @include resize(20px, null, 0);
     }
+
+    .panel {
+        color: black;
+    }
 }

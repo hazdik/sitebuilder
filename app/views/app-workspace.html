@@ -2,14 +2,34 @@
      ng-class="isFullSize ? 'slide-out-offset' : 'slide-in-offset'">
 
     <section class="-site">
-        <iframe ng-src="{{ iFrameSrc }}"
-                class="{{ displayClass }}"
-                ng-class="{'-scaled' : isScaled }"
-                ng-style="{'-webkit-transform' : vlnIFrameScale, 'left': isScaled ? scaledOffsetLeft : 0}">
-        </iframe>
+        <div class="iframe-holder">
+            <div id="ifrContainer">
+                <iframe dnd-droppable-iframe
+                        ng-src="{{ iFrameSrc }}"
+                        class="{{ displayClass }}"
+                        ng-class="{'-scaled' : isScaled }"
+                        ng-style="{'transform'         : vlnIFrameScale,
+                                   '-webkit-transform' : vlnIFrameScale,
+                                   '-moz-transform'    : vlnIFrameScale,
+                                   '-o-transform'      : vlnIFrameScale,
+                                   '-ms-transform'     : vlnIFrameScale,
+                                   'left': isScaled ? scaledOffsetLeft : 0}">
+                </iframe>
+
+                <!--<div class="droppable-fake"></div>&lt;!&ndash; /.dropppable-fake &ndash;&gt;-->
+            </div>
+
+            <!-- D'n'D tests -->
+            <!--<div class="droppable-fake"></div>&lt;!&ndash; /.dropppable-fake &ndash;&gt;-->
+            <!--<div class="bin" droppable style="border: 1px dashed dodgerblue; height: 100px; width: 100px; float: left;"></div>-->
+            <!--<div class="bin" droppable style="border: 1px dashed red; height: 100px; width: 100px; float: left;"></div>-->
+            <!--<div class="item" id="item1" draggable style="border: 1px dashed green; height: 20px; width: 20px; float: left;"></div>-->
+        </div>
+
         <div class="-scaled-label" ng-if="isScaled">
             Scale: {{ scaleRatio | number: 0 }}%
         </div>
+
     </section>
 
     <a href="#" class="-close"
