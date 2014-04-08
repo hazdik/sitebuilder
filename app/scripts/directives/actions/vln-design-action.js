@@ -17,13 +17,13 @@ angular.module('pieologyApp')
                     throw new Error('Error fetching themes: ', error);
                 });
 
-                scope.loadTheme = function(themeId) {
+                scope.loadTheme = function(theme) {
                     /*
                         @Input       : takes either a number or string as a number (not sure at time of writing)
                         @Output      : sets the selected style for this theme.
                         @Description : sends a request to load the customers site in the preview iframe with this theme id
                     */
-                    console.log('need to call the theme factory service and load the customers website with this theme in the iframe.');
+                    console.log(theme);
                 }
             }
         };

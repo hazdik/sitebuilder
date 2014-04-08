@@ -7,7 +7,9 @@ angular.module('pieologyApp', [
     'ngSanitize',
     'ngRoute',
     'ngAnimate',
-    'ui.bootstrap'
+    'ngTouch',
+    'ui.bootstrap',
+    'angular-carousel'
 ])
     .config(['$locationProvider', '$routeProvider', '$sceDelegateProvider',
         function ($locationProvider, $routeProvider, $sceDelegateProvider) {

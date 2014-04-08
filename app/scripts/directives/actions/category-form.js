@@ -1,12 +1,12 @@
 'use strict';
 
 angular.module('pieologyApp')
-  .directive('actions/categoryForm', function () {
+  .directive('vlnCategoryForm', function () {
     return {
-      template: '<div></div>',
-      restrict: 'E',
+      templateUrl: 'views/actions/category-form.html',
+      restrict: 'A',
       link: function postLink(scope, element, attrs) {
-        element.text('this is the actions/categoryForm directive');
+        // element.text('this is the vlnCategoryForm directive');
       }
     };
   });

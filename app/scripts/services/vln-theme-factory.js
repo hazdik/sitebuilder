@@ -11,35 +11,35 @@ angular.module('pieologyApp')
             var themes = [
                 {
                     'name': 'Theme 1',
-                    'url': 'https://www.google.com',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
                     'name': 'Theme 2',
-                    'url': 'https://www.yahoo.com',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
                     'name': 'Theme 3',
-                    'url': 'https://www.bing.com',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
                     'name': 'Theme 4',
-                    'url': 'https://www.duckduckgo.com',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
-                    'name': 'Theme 1',
-                    'url': 'https://www.google.com',
+                    'name': 'Theme 5',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
-                    'name': 'Theme 2',
-                    'url': 'https://www.yahoo.com',
+                    'name': 'Theme 6',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
-                    'name': 'Theme 3',
-                    'url': 'https://www.bing.com',
+                    'name': 'Theme 7',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }, {
-                    'name': 'Theme 4',
-                    'url': 'https://www.duckduckgo.com',
+                    'name': 'Theme 8',
+                    'url': 'http://localhost:9778',
                     'thumbnail': 'http://lorempixel.com/200/200/'
                 }
             ];

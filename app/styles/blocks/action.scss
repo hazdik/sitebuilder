@@ -42,6 +42,7 @@
             // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
             .-page-tree {
+                width: 100%;
                 header {
                     padding: 2px 10px 10px 10px;
                     line-height: 30px;
@@ -156,12 +157,41 @@
 
                 .-page-form , .-product-form, .-category-form {
                     position   : absolute;
-                    // width      : 100%;
+                    width      : 270px;
                     height     : 100%;
                     background : $cg8;
                     color      : $cg2;
                     opacity : 0;
                     z-index: -1000;
+
+                    .rn-carousel-container {
+                        color: $cg0;
+                        // width: 150px;
+                        // height: 150px;
+                        border: 1px solid red;
+
+                        .product-slider {
+                            border :1px solid red;
+                            width: 100px;
+                            heidght: 100px;
+                        }
+
+                        .-add-image {
+                            float: right;
+                            width: 100px;
+                            height: 100px;
+                            border: 1px dashed $cg6;
+                        }
+                    }
+
+                    div {
+                        padding: 10px 0 0 0;
+
+                        .edit-btn {
+                            width: 96%;
+                            margin: 10px 0;
+                        }
+                    }
 
                     &.fade-in {
                         @include fade(1);

@@ -1,4 +1,34 @@
-<div class=""> <!-- here so bootstrap works for us -->
-    <button ng-click="hideForm('product')">Dismiss +product form</button>
-    Lets put some content in here and size it with bootstrap
+<div class="edit-product text-center">
+    <header>Product Details</header>
+    <input type="text" placeholder="Product Name">
+    <div class="row rn-carousel-container" style="width: 100px; height: 100px;">
+        <ul rn-carousel="" rn-carousel-buffered="" rn-carousel-indicator="" rn-carousel-control="" class="product-slider rn-carousel-slides" style="">
+                <li ng-repeat="slide in productImages" ng-style="{'background-image': 'url(' + slide.image + ')'}" class="rn-carousel-slide"></li>
+        </ul>
+        <div class="rn-carousel-controls" id="" index="indicatorIndex" items="productImages" rn-carousel-controls="">
+            <span class="rn-carousel-control rn-carousel-control-prev" ng-click="prev()" ng-if="index &gt; 0"></span><
+            <span class="rn-carousel-control rn-carousel-control-next" ng-click="next()" ng-if="index &lt; items.length - 1"></span><
+        </div>
+        <div class="-add-image text-center">
+            <a ng-click="addImage()">Add Product Image
+                <span class="icon-plus"></span>
+            </a>
+        </div>
+    </div>
+
+    <div class="-pricing">
+        <li class="dropdown" ng-controller="">
+          <a class="dropdown-toggle">
+            {{ currentCurrency }}
+          </a>
+          <ul class="dropdown-menu">
+            <li ng-repeat="symbol in currencies">
+              <a>{{symbol}}</a>
+            </li>
+          </ul>
+        </li>
+    </div>
+
+    <button ng-click="hideForm('product')"
+            class="edit-btn">Save</button>
 </div>
