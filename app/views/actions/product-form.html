@@ -1,34 +1,26 @@
-<div class="edit-product text-center">
-    <header>Product Details</header>
-    <input type="text" placeholder="Product Name">
-    <div class="row rn-carousel-container" style="width: 100px; height: 100px;">
-        <ul rn-carousel="" rn-carousel-buffered="" rn-carousel-indicator="" rn-carousel-control="" class="product-slider rn-carousel-slides" style="">
-                <li ng-repeat="slide in productImages" ng-style="{'background-image': 'url(' + slide.image + ')'}" class="rn-carousel-slide"></li>
-        </ul>
-        <div class="rn-carousel-controls" id="" index="indicatorIndex" items="productImages" rn-carousel-controls="">
-            <span class="rn-carousel-control rn-carousel-control-prev" ng-click="prev()" ng-if="index &gt; 0"></span><
-            <span class="rn-carousel-control rn-carousel-control-next" ng-click="next()" ng-if="index &lt; items.length - 1"></span><
-        </div>
-        <div class="-add-image text-center">
-            <a ng-click="addImage()">Add Product Image
-                <span class="icon-plus"></span>
-            </a>
-        </div>
+<div class="container-fluid text-center">
+    <div class="row-fluid" style="border: 1px solid red">
+        Product Name
     </div>
 
-    <div class="-pricing">
-        <li class="dropdown" ng-controller="">
-          <a class="dropdown-toggle">
-            {{ currentCurrency }}
-          </a>
-          <ul class="dropdown-menu">
-            <li ng-repeat="symbol in currencies">
-              <a>{{symbol}}</a>
-            </li>
-          </ul>
-        </li>
+    <div class="row-fluid" style="border: 1px solid blue">
+        Product Image Carousel and add image btn
     </div>
 
-    <button ng-click="hideForm('product')"
-            class="edit-btn">Save</button>
+    <div class="row-fluid" style="border: 1px solid yellow">
+        Currency and Price
+    </div>
+
+    <div class="row-fluid" style="border: 1px solid green">
+        Options and add option button
+    </div>
+
+    <div class="row-fluid" style="border: 1px solid purple">
+        Description and rich editor
+    </div>
+
+    <div class="row-fluid" style="border: 1px solid black">
+        <button ng-click="hideForm('product')"class="edit-btn">Save</button>
+    </div>
+
 </div>

@@ -157,12 +157,16 @@
 
                 .-page-form , .-product-form, .-category-form {
                     position   : absolute;
-                    width      : 270px;
+                    // width      : 100%;
                     height     : 100%;
                     background : $cg8;
                     color      : $cg2;
                     opacity : 0;
                     z-index: -1000;
+
+                    .edit-product {
+                        width: 100%;
+                    }
 
                     .rn-carousel-container {
                         color: $cg0;
