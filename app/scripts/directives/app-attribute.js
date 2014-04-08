@@ -8,6 +8,7 @@ angular.module('pieologyApp')
             templateUrl: 'views/app-attribute.html',
             restrict   : 'A',
             replace    : true,
+            //transclude : true,
             scope      : {},
             link       : function postLink(scope) {
 
