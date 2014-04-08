@@ -3,89 +3,86 @@
     "siteUrl": "localhost:8001/#",
     "pages": [
         {
-            "root": "Home",
-            "path": "/"
+            "title": "Home",
+            "path": "/",
+            "name": "home"
         },
         {
-            "about": "About",
-            "path": "/about"
+            "title": "About",
+            "path": "/about",
+            "name": "about"
         },
         {
-            "": "",
-            "": ""
+            "title": "Shiney Red Sparkles",
+            "path": "/product",
+            "name": "shiney-red-sparkles"
         },
         {
-            "": "",
-            "": ""
-        },
-        {
-            "": "",
-            "": ""
+            "title": "Categorys",
+            "path": "/category",
+            "name": "category"
         }
     ],
     "products": [
         {
-            "": "",
-            "": ""
+            "name": "Shiney Red Sparkles",
+            "path": "/product"
         },
         {
-            "": "",
-            "": ""
+            "name": "Summber Dress",
+            "path": "/product"
         },
         {
-            "": "",
-            "": ""
+            "name": "Summer Shoes",
+            "path": "/product"
         },
         {
-            "": "",
-            "": ""
+            "name": "Summer Hat",
+            "path": "/product"
         },
         {
-            "": "",
-            "": ""
+            "name": "Summer Shirts",
+            "path": "/product"
         }
     ],
     "categories": [
         {
-            "": "",
-            "": ""
+            "name": "Category 1",
+            "path": "/category"
         },
         {
-            "": "",
-            "": ""
+            "name": "Category 2",
+            "path": "/category"
         },
         {
-            "": "",
-            "": ""
+            "name": "Categroy 3",
+            "path": "/category"
         },
         {
-            "": "",
-            "": ""
+            "name": "Category 4",
+            "path": "/category"
         },
         {
-            "": "",
-            "": ""
+            "name": "Category 5",
+            "path": "/category"
+        },
+        {
+            "name": "Category 6",
+            "path": "/category"
         }
     ],
     "components": [ // avaialbe and enabled
         {
-            "": "",
-            "": ""
+            "name": "Comments",
+            "active": true
         },
         {
-            "": "",
-            "": ""
+            "name": "Slider",
+            "active": true
         },
         {
-            "": "",
-            "": ""
-        },
-        {
-            "": "",
-            "": ""
-        },
-        {
-            "": "",
-            "": ""
+            "name": "Component 3",
+            "active": false
         }
+    ]
 }
