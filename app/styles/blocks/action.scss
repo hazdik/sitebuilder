@@ -210,4 +210,12 @@
             }
         }
     }
+
+    .-design {
+        padding: 10px 0;
+        .-current {
+            padding: 0 0 10px 0;
+            border-bottom:  2px solid $cg8;
+        }
+    }
 }

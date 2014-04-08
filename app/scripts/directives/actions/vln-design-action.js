@@ -11,7 +11,7 @@ angular.module('pieologyApp')
                 // Fetch available themes
                 vlnThemeFactory.getThemes()
                 .then(function (promise) {
-                    scope.themes = promise;
+                    scope.themes = promise.data;
                 })
                 .catch(function(error){
                     throw new Error('Error fetching themes: ', error);
