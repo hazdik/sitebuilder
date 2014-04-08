@@ -25,7 +25,9 @@ angular.module('pieologyApp')
                     scope.visiblePageForm = false;
                     scope.visibleProductForm = false;
                     scope.visibleCategoryForm = false;
-
+                    scope.currentProduct = null;
+                    scope.currentCategory = null;
+                    scope.currentPage = null;
 
                     /* Scope functionlity */
 
@@ -82,6 +84,10 @@ angular.module('pieologyApp')
                         scope.visibleProductForm = true;
                         console.log('animate in the add product form');
                     };
+
+                    scope.editProduct = function (product) {
+                        console.log('need to show edit form and load the iframe iwth how it looks', product);
+                    }
                 }
             };
     }]);
