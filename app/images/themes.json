@@ -5,6 +5,26 @@
         {
             'themeName': 'Theme #1',
             'thumbnail': 'images/ico-img.svg'
+        },
+                {
+            'themeName': 'Theme #2',
+            'thumbnail': 'images/ico-img.svg'
+        },
+        {
+            'themeName': 'Theme #3',
+            'thumbnail': 'images/ico-img.svg'
+        },
+        {
+            'themeName': 'Theme #4',
+            'thumbnail': 'images/ico-img.svg'
+        },
+        {
+            'themeName': 'Theme #5',
+            'thumbnail': 'images/ico-img.svg'
+        },
+        {
+            'themeName': 'Theme #6',
+            'thumbnail': 'images/ico-img.svg'
         }
     ]
 }
