@@ -1,12 +1,40 @@
 /*global angular */
 
 angular.module('pieologyApp')
-    .factory('vlnConfig', ['$rootScope', function ($rootScope) {
+    .factory('vlnConfig', ['$rootScope', '$http', function ($rootScope, $http) {
 
         'use strict';
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
-            globalAttrBucketState = true; // Show the app attributes by default.
+            globalAttrBucketState = true, // Show the app attributes by default.
+            iFramePathBase = '';
+
+        function initConfigFn () {
+            /*
+                @Input - none
+                @Output - none
+                @Description - called during app initialization to request external resources that will be used to populate configuration values
+            */
+
+            /* This is the setter for the iFrameBasePath */
+            $http.get('images/account-data.json')
+            .then(function(promise) {
+                iFramePathBase = promise.data.siteUrl;
+            });
+        }
+
+        function getIframePathBaseFn() {
+            /*
+                @Input - none
+                @Output - iFramePathBase
+                @Description - return the current value of iFrameBasePath
+            */
+
+            if ('' === iFramePathBase) {
+                initConfigFn();
+            }
+            return iFramePathBase;
+        }
 
         function getGlobalNavStateFn() {
             return globalNavState;
@@ -48,11 +76,13 @@ angular.module('pieologyApp')
 
         // Public API here
         return {
-            getGlobalNavState: getGlobalNavStateFn,
-            setGlobalNavState: setGlobalNavStateFn,
-            getCurrentAction: getCurrentActionFn,
-            setCurrentAction: setCurrentActionFn,
-            getGlobalAttrBucketState: getGlobalAttrBucketStateFn,
-            setGlobalAttrBucketState: setGlobalAttrBucketStateFn
+            getGlobalNavState        : getGlobalNavStateFn,
+            setGlobalNavState        : setGlobalNavStateFn,
+            getCurrentAction         : getCurrentActionFn,
+            setCurrentAction         : setCurrentActionFn,
+            getGlobalAttrBucketState : getGlobalAttrBucketStateFn,
+            setGlobalAttrBucketState : setGlobalAttrBucketStateFn,
+            getIframePathBase        : getIframePathBaseFn,
+            initConfig               : initConfigFn
         };
     }]);

@@ -56,7 +56,7 @@
                     <a href="#">Products</a>
                     <ul>
                         <li ng-repeat="product in pageData.products">
-                            <a href="#" ng-click="editProduct(product)">{{ product.name }}</a>
+                            <a href="#" ng-click="editProduct(product); loadIframe(product)">{{ product.name }}</a>
                         </li>
                         <li ng-repeat-end>
                             <a href="#" ng-click="addProduct()">

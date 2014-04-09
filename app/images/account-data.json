@@ -1,6 +1,6 @@
 {
     "siteName": "RunwayClothing.com",
-    "siteUrl": "localhost:8001/#",
+    "siteUrl": "http://localhost:8001/#",
     "pages": [
         {
             "title": "Home",
@@ -26,23 +26,68 @@
     "products": [
         {
             "name": "Shiney Red Sparkles",
-            "path": "/product"
+            "path": "/product",
+            "images": [
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/"
+            ],
+            "price": "129.99",
+            "currency": "$",
+            "options": [],
+            "description": "These things are shiney. And red!"
         },
         {
-            "name": "Summber Dress",
-            "path": "/product"
+            "name": "Summer Dress",
+            "path": "/product",
+            "images": [
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/"
+            ],
+            "price": "129.99",
+            "currency": "$",
+            "options": [],
+            "description": "Summer dresses are nice on hot days"
         },
         {
             "name": "Summer Shoes",
-            "path": "/product"
+            "path": "/product",
+            "images": [
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/"
+            ],
+            "price": "129.99",
+            "currency": "$",
+            "options": [],
+            "description": "Summer shoes are comfortable at the beach"
         },
         {
             "name": "Summer Hat",
-            "path": "/product"
+            "path": "/product",
+            "images": [
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/"
+            ],
+            "price": "129.99",
+            "currency": "$",
+            "options": [],
+            "description": "Summer hats keep you eyes cool"
         },
         {
             "name": "Summer Shirts",
-            "path": "/product"
+            "path": "/product",
+            "images": [
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/",
+                "http://lorempixel.com/100/100/"
+            ],
+            "price": "129.99",
+            "currency": "$",
+            "options": [],
+            "description": "Summer shirts are comforatble in the sun"
         }
     ],
     "categories": [
@@ -71,7 +116,7 @@
             "path": "/category"
         }
     ],
-    "components": [ // avaialbe and enabled
+    "components": [
         {
             "name": "Comments",
             "active": true

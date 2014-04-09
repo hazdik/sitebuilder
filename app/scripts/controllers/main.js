@@ -2,9 +2,11 @@
 /*global angular */
 
 angular.module('pieologyApp')
-    .controller('MainCtrl', function ($scope) {
+    .controller('MainCtrl', ['$scope',  'vlnConfig', function ($scope, vlnConfig) {
 
         'use strict';
+        vlnConfig.initConfig();
+
 
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
@@ -22,4 +24,4 @@ angular.module('pieologyApp')
             switchStyle : 'vln-tiny-slider'
         };
 
-    });
+    }]);

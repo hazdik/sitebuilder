@@ -1,8 +1,8 @@
 
 
 angular.module('pieologyApp')
-    .directive('vlnPageAction', ['$rootScope', 'vlnPageFactory',
-        function ($rootScope, vlnPageFactory) {
+    .directive('vlnPageAction', ['$rootScope', 'vlnPageFactory', 'vlnConfig',
+        function ($rootScope, vlnPageFactory, vlnConfig) {
 
             'use strict';
 
@@ -15,7 +15,7 @@ angular.module('pieologyApp')
                     vlnPageFactory.getPages()
                     .then(function (promise) {
                         scope.pageData = promise;
-                        // console.log(scope.pageData);
+                        console.log(scope.pageData);
                     })
                     .catch (function (error) {
                         throw new Error('Error fetching page data: ', error);
@@ -28,20 +28,17 @@ angular.module('pieologyApp')
                     scope.currentProduct = null;
                     scope.currentCategory = null;
                     scope.currentPage = null;
+                    scope.basePath = vlnConfig.getIframePathBase();
 
                     /* Scope functionlity */
 
                     scope.hideForm = function(formName) {
-                        console.log('hiding the elemtn for', formName);
                         if ('page' === formName) {
                             scope.visiblePageForm = false;
-                            console.log('hiding page form');
                         } else if ('product' === formName) {
                             scope.visibleProductForm = false;
-                            console.log('hiding product form');
                         } else if ('category' === formName) {
                             scope.visibleCategoryForm = false;
-                            console.log('hiding category form');
                         }
                     }
 
@@ -52,7 +49,8 @@ angular.module('pieologyApp')
                             @Description: the function takes a url string and sends it to the workspace service to update the iFrame url of customers site.
                         */
 
-                        $rootScope.$broadcast('vlnWorkspaceUrl.change', { url: item.pageUrl });
+                        var srcPath = scope.basePath + item.path;
+                        $rootScope.$broadcast('vlnWorkspaceUrl.change', { url: srcPath });
                     };
 
                     scope.addPage = function() {
