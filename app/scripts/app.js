@@ -9,6 +9,7 @@ angular.module('pieologyApp', [
     'ngAnimate',
     'ngTouch',
     'ui.bootstrap',
+    'angular-carousel'
 ])
     .config(['$locationProvider', '$routeProvider', '$sceDelegateProvider',
         function ($locationProvider, $routeProvider, $sceDelegateProvider) {

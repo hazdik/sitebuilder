@@ -157,43 +157,79 @@
 
                 .-page-form , .-product-form, .-category-form {
                     position   : absolute;
-                    // width      : 100%;
                     height     : 100%;
+                    overflow: scroll;
                     background : $cg8;
                     color      : $cg2;
                     opacity : 0;
                     z-index: -1000;
-
-                    .edit-product {
-                        width: 100%;
-                    }
-
-                    .rn-carousel-container {
-                        color: $cg0;
-                        // width: 150px;
-                        // height: 150px;
-                        border: 1px solid red;
-
-                        .product-slider {
-                            border :1px solid red;
-                            width: 100px;
-                            heidght: 100px;
-                        }
-
-                        .-add-image {
-                            float: right;
-                            width: 100px;
-                            height: 100px;
-                            border: 1px dashed $cg6;
-                        }
-                    }
+                    padding-left: 10px;
 
                     div {
-                        padding: 10px 0 0 0;
+                        margin-bottom: 15px;
+                        min-width: 225px;
+                        max-width: 270px;
 
-                        .edit-btn {
-                            width: 96%;
-                            margin: 10px 0;
+                        p {
+                            font-size: 12px;
+                            text-transform:uppercase;
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+
+                    .form-header {
+                        button {
+                            float: right;
+                            border: none;
+                            background-color: inherit;
+                        }
+                    }
+
+                    .product-images {
+                        padding: 0 0 30px 0;
+                        // width: 100%;
+
+                        .-carousel {
+                            ul {
+                                height: 125px;
+                                li {
+                                    div {
+                                        background-color: $cg8;
+                                        color: $cg1;
+                                        opacity: 0.6;
+                                        position: absolute;
+                                        bottom: 0px;
+                                        padding: 3px;
+                                        @include border-radius(5px);
+                                    }
+                                }
+                            }
+
+                        }
+
+                        .-add {
+                            // width: 40%;
+                            float: right;
+
+                            button {
+                                float: right;
+                                border: 1px dashed $cg4;
+                                background: inherit;
+                                @include border-radius(5px);
+                            }
+                        }
+                    }
+
+                    .pricing {
+                        div {
+                            display: inline-block;
+                        }
+                    }
+
+                    .description {
+                        textarea {
+                            width: 90%;
                         }
                     }
 

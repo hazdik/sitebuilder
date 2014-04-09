@@ -28,6 +28,7 @@ angular.module('pieologyApp')
                     scope.currentProduct = null;
                     scope.currentCategory = null;
                     scope.currentPage = null;
+                    scope.currentProduct = null;
                     scope.basePath = vlnConfig.getIframePathBase();
 
                     /* Scope functionlity */
@@ -60,7 +61,6 @@ angular.module('pieologyApp')
                             @Description: update the directive template with a value that will animate in the add-page-form
                         */
                         scope.visiblePageForm = true;
-                        console.log('animate in the add page form');
                     };
 
                     scope.addCategory = function() {
@@ -70,7 +70,6 @@ angular.module('pieologyApp')
                             @Description: update the directive template with a value that will animate in the add-category-form
                         */
                         scope.visibleCategoryForm = true;
-                        console.log('animate in the add category form');
                     };
 
                     scope.addProduct = function() {
@@ -80,11 +79,12 @@ angular.module('pieologyApp')
                             @Description: update the directive template with a value that will animate in the add-product-form
                         */
                         scope.visibleProductForm = true;
-                        console.log('animate in the add product form');
                     };
 
                     scope.editProduct = function (product) {
-                        console.log('need to show edit form and load the iframe iwth how it looks', product);
+                        scope.loadIframe(product);
+                        scope.visibleProductForm = true;
+                        scope.currentProduct = product;
                     }
                 }
             };
