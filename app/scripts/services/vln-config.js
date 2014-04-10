@@ -18,6 +18,8 @@ angular.module('pieologyApp')
             */
             return firebaseUrl;
         }
+            screenMode = 'desktop',         // Initial screen mode.
+            previewMode = false;            // Initial edit/preview mode
 
         function initConfigFn () {
             /*
@@ -84,6 +86,22 @@ angular.module('pieologyApp')
             $rootScope.$broadcast('vlnGlobalAttrBucketState.change', { state: state });
         }
 
+        function getScreenModeFn () {
+            return screenMode;
+        }
+
+        function setScreenModeFn (mode) {
+            screenMode = mode;
+        }
+
+        function getPreviewModeFn () {
+            return previewMode ? 'on' : 'off';
+        }
+
+        function setPreviewModeFn (mode) {
+            previewMode = mode;
+        }
+
         // Public API here
         return {
             getGlobalNavState        : getGlobalNavStateFn,
@@ -94,6 +112,10 @@ angular.module('pieologyApp')
             setGlobalAttrBucketState : setGlobalAttrBucketStateFn,
             getIframePathBase        : getIframePathBaseFn,
             initConfig               : initConfigFn,
-            gitFirebaseUrl           : getFirebaseUrlFn
+            getFirebaseUrl           : getFirebaseUrlFn,
+            getScreenMode            : getScreenModeFn,
+            setScreenMode            : setScreenModeFn,
+            getPreviewMode            : getPreviewModeFn,
+            setPreviewMode            : setPreviewModeFn
         };
     }]);

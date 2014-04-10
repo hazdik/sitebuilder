@@ -2,45 +2,75 @@
     <header class="" role="navigation">
         <div class="global-nav">
             <button type="button"
-                data-toggle="collapse"
-                data-target=".navbar-collapse"
-                ng-click="toggleAppNavigation()">
-                <span class="icon-menu"></span>
+                    data-toggle="collapse"
+                    data-target=".navbar-collapse"
+                    ng-click="toggleAppNavigation()">
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
-        <div class="">
-            <a class="navbar-brand" href="#">Volusion</a>
+        <div class="global-brand">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Volusion"/></a>
         </div>
-        <div class="">
-            <span class="navbar-brand company-name">{{ company.url }}</span>
+        <div class="global-company-name">
+            <a class="navbar-brand company-name">{{ company.url }}</a>
         </div>
-        <div class="">
+        <div class="preview-mode">
             <ul class="nav navbar-nav">
-                <li><a href="#" ng-click="setDisplayTo('screen')"><span class="icon-screen"></span></a></li>
-                <li><a href="#" ng-click="setDisplayTo('tablet')"><span class="icon-tablet"></span></a></li>
-                <li><a href="#" ng-click="setDisplayTo('mobile')"><span class="icon-mobile"></span></a></li>
+                <li ng-class="{ active: screenMode === 'desktop' }">
+                    <a href="#" ng-click="setDisplayTo('desktop')"><span class="icon-desktop"></span></a></li>
+                <li ng-class="{ active: screenMode === 'tablet' }">
+                    <a href="#" ng-click="setDisplayTo('tablet')"><span class="icon-tablet"></span></a></li>
+                <li ng-class="{ active: screenMode === 'mobile' }">
+                    <a href="#" ng-click="setDisplayTo('mobile')"><span class="icon-mobile"></span></a></li>
             </ul>
         </div>
-        <div class="">
+        <div class="mode-switcher">
             <div class="comp-slider">
-                <div class="-label">Edit Mode</div>
-                <div vln-comp-switch switch-style="state.switchStyle" switch-state="state.switchState"></div>
-                <div class="-label">Preview Mode</div>
+                <div class="-label" ng-class="{ active: previewMode === 'off'}">Edit Mode</div>
+                <div vln-comp-switch switch-style="switchStyle" switch-state="previewMode"></div>
+                <div class="-label" ng-class="{ active: previewMode === 'on'}">Preview Mode</div>
             </div>
         </div>
         <div class="btn-section">
-            <div>
-                <button class="btn btn-sm btn-danger" ng-click="publishChanges()" ng-disabled="isReadonly">Publish</button>
+            <div class="-regular">
+                <button class="btn -vln-default" ng-click="publishChanges()" ng-disabled="isReadonly">Publish</button>
             </div>
             <div class="btn-group">
-                <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
-                    <span class="icon-user"></span> <span class="caret"></span>
+                <button type="button" class="btn btn-default">
+                    <img src="images/ico-05.svg" alt="Volusion"/>
+                    <img src="images/ico-05-a.svg" alt="Volusion"/>
                 </button>
-                <ul class="dropdown-menu" role="menu">
-                    <li><a href="#">My Profile</a></li>
-                    <li><a href="#">Billing</a></li>
-                    <li><a href="#">Support</a></li>
-                    <li><a href="#">Help &amp; FAQ</a></li>
+                <ul>
+                    <li>
+                        <a href="#">
+                            <img alt="image" src="images/ico-06.svg">
+                            <img alt="image" src="images/ico-06-a.svg">
+                            My Profile
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img alt="image" src="images/ico-07.svg">
+                            <img alt="image" src="images/ico-07-a.svg">
+                            Billing
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img alt="image" src="images/ico-08.svg">
+                            <img alt="image" src="images/ico-08-a.svg">
+                            Support
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <img alt="image" src="images/ico-09.svg">
+                            <img alt="image" src="images/ico-09-a.svg">
+                            Help &amp; FAQ
+                        </a>
+                    </li>
                 </ul>
             </div>
         </div>

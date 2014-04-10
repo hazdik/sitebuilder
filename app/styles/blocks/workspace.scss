@@ -34,7 +34,7 @@
             margin  : 0 auto;
             display : block;
 
-            &.-screen {
+            &.-desktop {
                 width : 1024px;
             }
             &.-tablet {
@@ -96,9 +96,9 @@
 
     a.-close {
         position        : absolute;
-        top             : 55px;
+        top             : 75px;
         right           : 5px;
-        z-index         : 1030;
+        z-index         : 4;
         text-decoration : none;
 
         &.-state-add {

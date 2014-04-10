@@ -27,6 +27,14 @@ angular.module('pieologyApp')
                     return (scope.$$phase || scope.$root.$$phase) ? fn() : scope.$apply(fn);
                 }
 
+                scope.$watchCollection('[switchState, switchStyle]', function(value) {
+                    console.log('collection=', value);
+
+                    scope.elementStyle = scope.switchStyle;
+                    scope.elementText = (scope.switchState === 'off') ? 'off' : 'on';
+                    scope.elementClass = (scope.switchState === 'off') ? '-off' : '-on';
+                });
+
                 var divSwitch = element.find('div[class=switch]');
 
                 divSwitch.on('click', function (event) {
@@ -38,11 +46,6 @@ angular.module('pieologyApp')
                         scope.elementText = (scope.switchState === 'off') ? 'off' : 'on';
                     });
                 });
-
-                scope.elementStyle = scope.switchStyle;
-                scope.elementText = (scope.switchState === 'off') ? 'off' : 'on';
-                scope.elementClass = (scope.switchState === 'off') ? '-off' : '-on';
-
             }
         };
     });

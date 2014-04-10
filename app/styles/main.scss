@@ -5,6 +5,8 @@ $icon-font-path: "/bower_components/sass-bootstrap/fonts/";
 html, body {
     height : 100%;
     background-color: $cg0;
+    color: #4c4c4c;
+    font: 14px/20px 'vigaregular', sans-serif;
 }
 
 .app {
