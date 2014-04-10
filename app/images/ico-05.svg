@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.2, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_extend "http://ns.adobe.com/Extensibility/1.0/">
+	<!ENTITY ns_ai "http://ns.adobe.com/AdobeIllustrator/10.0/">
+	<!ENTITY ns_graphs "http://ns.adobe.com/Graphs/1.0/">
+	<!ENTITY ns_vars "http://ns.adobe.com/Variables/1.0/">
+	<!ENTITY ns_imrep "http://ns.adobe.com/ImageReplacement/1.0/">
+	<!ENTITY ns_sfw "http://ns.adobe.com/SaveForWeb/1.0/">
+	<!ENTITY ns_custom "http://ns.adobe.com/GenericCustomNamespace/1.0/">
+	<!ENTITY ns_adobe_xpath "http://ns.adobe.com/XPath/1.0/">
+]>
+<svg version="1.1" id="Layer_1" xmlns:x="&ns_extend;" xmlns:i="&ns_ai;" xmlns:graph="&ns_graphs;"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="33px" height="38px"
+	 viewBox="0 0 33 38" enable-background="new 0 0 33 38" xml:space="preserve">
+<metadata>
+	<sfw  xmlns="&ns_sfw;">
+		<slices></slices>
+		<sliceSourceBounds  y="-34" x="0.666" height="33.917" width="32.334" bottomLeftOrigin="true"></sliceSourceBounds>
+	</sfw>
+</metadata>
+<g id="Layer_2">
+	<g id="Shape_22">
+		<g>
+			<path fill-rule="evenodd" clip-rule="evenodd" fill="#91A1B1" d="M0.957,26h23.999c0.004-0.072,0.017-0.143,0.02-0.216
+				c0.113-0.152,0.192-0.331,0.192-0.534c0-0.506-0.411-1.25-0.917-1.25H2.971c0.518-4.006,3.397-7.272,7.196-8.37v-3.039
+				c-1.592-1.009-2.655-2.78-2.655-4.801c0-3.141,2.555-5.695,5.694-5.695c3.141,0,5.695,2.555,5.695,5.695
+				c0,2.056-1.097,3.855-2.734,4.856v2.355l1.615-0.73c-0.081-0.035-0.159-0.076-0.24-0.109c2.035-1.39,3.375-3.726,3.375-6.37
+				c0-4.251-3.458-7.709-7.709-7.709c-4.25,0-7.708,3.458-7.708,7.709c0,2.57,1.27,4.845,3.21,6.247
+				c-4.286,1.623-7.414,5.615-7.759,10.376c-0.175,0.253-0.285,0.575-0.285,0.835c0,0.258,0.109,0.49,0.281,0.656
+				C0.949,25.938,0.955,25.969,0.957,26z"/>
+		</g>
+	</g>
+	
+		<image overflow="visible" width="22" height="22" id="Shape_24_xA0_Image_2_" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAWCAYAAADEtGw7AAAACXBIWXMAAAsSAAALEgHS3X78AAAA
+GXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAXhJREFUeNpiYBgFtAaMhBRMXLiR
+E0i5ALESEDMD8RMg3pMf7/+OLIOBBoLk8oG4WlFGQoSfl4uBkZGR4cu37wy3Hzz7DhSfBMQNQAt+
+EG0w0FCQy5boqStEGGgqMQjw8aDI//r9h+HkxZsM56/dPQHkegAN/4huBhMOB9foayhGOJjrYRgK
+AmysLAy2JtoMJjqqFkDubGwGMGFxrQSQKjPVUyMYQVZGmgySooKhQD2WxLg4BOhaLi4OdqJiX1NZ
+FkTFE2OwoagQP9HJSgSi1oAYg1lAsU8sYIKoZSHG4Kdfv/0g2uAvELVPiDF416Pnr4k2+NGzV2A9
+xBh88MmLN6cv33xA0NCHT18xXLr5AGTyYoIGAxP7fyCVvP/kpY/X7z7GaehjoK827j3xF8hMBer5
+TEqWNgNSa420VWRU5SXBsQ+K1A+fvjDcefiM4cSFmyDDEoCGriO5EAIaDsp2WUAcDE1SIB/eAuKN
+oLICaOiL0XJ84ABAgAEAMdJxxea5D2wAAAAASUVORK5CYII=" transform="matrix(1 0 0 1 11 12)">
+	</image>
+	<g id="Shape_23">
+		<g>
+			<polygon fill="#127DB5" points="19.318,22.016 22.207,26.135 25.021,22.016 			"/>
+		</g>
+	</g>
+</g>
+</svg>

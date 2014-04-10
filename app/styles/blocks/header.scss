@@ -116,7 +116,7 @@
 
         .mode-switcher {
 
-            padding: 5px 0 0;
+            padding : 5px 0 0;
 
             .comp-slider {
                 margin : 14px;
@@ -139,10 +139,112 @@
 
         .btn-section {
             float : right;
-            padding: 8px 0;
 
-            div {
-                margin : 8px;
+            .-regular {
+                padding : 18px 20px;
+            }
+
+            .btn-group {
+
+                @include transition-to(all, 0.3s);
+
+                &:before {
+                    content    : "";
+                    position   : absolute;
+                    min-height : 68px;
+                    width      : 1px;
+                    top        : 0;
+                    background : #DBE3EB;
+                }
+
+                *:hover button img + img {
+                    display : inline;
+                }
+
+                button {
+                    border        : none;
+                    background    : none;
+                    cursor        : pointer;
+                    outline       : none;
+                    padding       : 20px 20px 10px 25px;
+                    border-radius : 0;
+
+                    img {
+                        display : inline;
+                    }
+
+                    img + img {
+                        display : none;
+                    }
+
+                    &:hover {
+                        background : none repeat scroll 0 0 #2D3F55;
+
+                        img {
+                            display : none;
+                        }
+
+                        img + img {
+                            display : inline;
+                        }
+                    }
+                }
+
+                ul {
+                    margin     : 0;
+                    padding    : 0;
+                    list-style : none;
+                    background : #2D3F55;
+                    top        : 100%;
+                    right      : -1000%;
+                    width      : 270px;
+                    position   : absolute;
+                    text-align : left;
+                    z-index    : 5;
+                    @include transition-to(all, 0.3s);
+                    @include border-radius(0 0 0 5px);
+
+                    li {
+                        border-top : 1px solid #32455A;
+
+                        a {
+                            color      : #51677D !important;
+                            display    : block;
+                            padding    : 14px 20px 16px;
+                            transition : all 0.3s ease 0s;
+
+                            img {
+                                display      : inline;
+                                margin-right : 15px;
+                            }
+
+                            img + img {
+                                display : none;
+                            }
+
+                            &:hover {
+                                color           : #EDF3F8 !important;
+                                text-decoration : none;
+
+                                img {
+                                    display : none;
+                                }
+
+                                img + img {
+                                    display : inline;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &:hover {
+                    background : none repeat scroll 0 0 #2D3F55;
+                }
+
+                &:hover ul {
+                    right : 0;
+                }
             }
 
             .btn-default {
