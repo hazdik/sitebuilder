@@ -32,6 +32,7 @@ angular.module('pieologyApp', [
                 // Allow loading from our assets domain.  Notice the difference between * and **.
                 'self',
                 // 'http://localhost:9778'
-                'http://localhost:8001/**'
+                'http://localhost:8001/**',
+                'http://localhost/**'
             ]);
         }]);
