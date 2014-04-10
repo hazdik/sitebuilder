@@ -23,7 +23,15 @@ angular.module('pieologyApp')
                   for (var i=0; i<4; i++) {
                     scope.addImage();
                   }
-                  console.log(scope.productImages)
+
+                  scope.updateIframeModel = function(value) {
+                    var iframe = document.getElementById("workspace").contentWindow.document;
+                    console.log(iframe);
+                  };
+
+                  scope.$watch('currentProduct.name', function (value) {
+                    scope.updateIframeModel(value);
+                  })
             }
         };
     });
