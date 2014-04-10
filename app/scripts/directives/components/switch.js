@@ -35,9 +35,11 @@ angular.module('pieologyApp')
                     scope.elementClass = (scope.switchState === 'off') ? '-off' : '-on';
                 });
 
-                var divSwitch = element.find('div[class=switch]');
+                // TODO: set which will be the toggle active element
+                // for now is set to be the whole element
+                //var divSwitch = element.find('div[class=switch]');
 
-                divSwitch.on('click', function (event) {
+                element.on('click', function (event) {
                     event.preventDefault();
 
                     safeApply(scope, function () {
