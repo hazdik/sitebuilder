@@ -1,12 +1,13 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .directive('vlnProductForm', function () {
+    .directive('vlnProductForm', ['vlnUpdateManager', function (vlnUpdateManager) {
         return {
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
-            link: function postLink(scope, element, attrs) {
+            link: function postLink(scope, element, attrs, vlnUpdateManager) {
 
+                  console.log(vlnUpdateManager);
                   scope.myInterval = 5000;
                   scope.productImages = [];
                   scope.currencies = ['$', '£', '€', '¥'];
@@ -34,4 +35,4 @@ angular.module('pieologyApp')
                   })
             }
         };
-    });
+    }]);
