@@ -13,7 +13,7 @@ angular.module('pieologyApp')
 
                 scope.screenMode = vlnConfig.getScreenMode();
                 scope.previewMode = vlnConfig.getPreviewMode();
-                scope.switchStyle = 'vln-tiny-slider';
+                scope.switchStyle = 'vln-slider';
 
 //                scope.state = {
 //                    previewMode : 'off',
