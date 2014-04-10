@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .factory('vlnUpdateManager', function () {
+    .factory('vlnUpdateManager', ['vlnConfig', function () {
         // Service logic
         // ...
 
@@ -13,4 +13,4 @@ angular.module('pieologyApp')
                 return meaningOfLife;
             }
         };
-    });
+    }]);

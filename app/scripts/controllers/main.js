@@ -14,6 +14,7 @@ angular.module('pieologyApp')
             'Karma'
         ];
 
+        /* TODO: grab this from vlnConfig (if this is even the right place to keep it) */
         $scope.company = {
             name : 'Runaway Clothing',
             url  : 'RunawayClothing.com'

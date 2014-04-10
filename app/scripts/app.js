@@ -9,7 +9,8 @@ angular.module('pieologyApp', [
     'ngAnimate',
     'ngTouch',
     'ui.bootstrap',
-    'angular-carousel'
+    'angular-carousel',
+    'firebase'
 ])
     .config(['$locationProvider', '$routeProvider', '$sceDelegateProvider',
         function ($locationProvider, $routeProvider, $sceDelegateProvider) {

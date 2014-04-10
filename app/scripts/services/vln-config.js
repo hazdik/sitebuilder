@@ -7,7 +7,17 @@ angular.module('pieologyApp')
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
-            iFramePathBase = '';
+            iFramePathBase = '',
+            firebaseUrl = 'https://brilliant-fire-5600.firebaseio.com';
+
+        function getFirebaseUrlFn() {
+            /*
+                @Input: null
+                @Output: a string with the format https://YOURAPP.firebaseio.com
+                @Description: a string with the correct firebase url for accessing real time data set
+            */
+            return firebaseUrl;
+        }
 
         function initConfigFn () {
             /*
@@ -83,6 +93,7 @@ angular.module('pieologyApp')
             getGlobalAttrBucketState : getGlobalAttrBucketStateFn,
             setGlobalAttrBucketState : setGlobalAttrBucketStateFn,
             getIframePathBase        : getIframePathBaseFn,
-            initConfig               : initConfigFn
+            initConfig               : initConfigFn,
+            gitFirebaseUrl           : getFirebaseUrlFn
         };
     }]);
