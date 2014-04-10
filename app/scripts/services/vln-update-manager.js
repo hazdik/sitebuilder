@@ -5,10 +5,11 @@ angular.module('pieologyApp')
         // Service logic
         // ...
 
-        var meaningOfLife = 42;
+        // var meaningOfLife = 42;
 
         function testFirebase() {
             console.log($firebase);
+            console.log(vlnConfig);
         }
 
         // Public API here

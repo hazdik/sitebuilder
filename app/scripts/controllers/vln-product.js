@@ -1,10 +1,6 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .controller('VlnProductCtrl', function ($scope) {
-        $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-    });
+    .controller('vlnProductCtrl', ['$scope', 'vlnUpdateManager', function ($scope, vlnUpdateManager) {
+        console.log(vlnUpdateManager);
+    }]);
