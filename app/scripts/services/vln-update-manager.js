@@ -2,14 +2,11 @@
 
 angular.module('pieologyApp')
     .factory('vlnUpdateManager', ['$firebase', 'vlnConfig', function ($firebase, vlnConfig) {
-        // Service logic
-        // ...
 
-        // var meaningOfLife = 42;
+        var fbObj = new Firebase('https://brilliant-fire-5600.firebaseio.com');
 
         function testFirebase() {
-            console.log($firebase);
-            console.log(vlnConfig);
+            return $firebase(fbObj);
         }
 
         // Public API here

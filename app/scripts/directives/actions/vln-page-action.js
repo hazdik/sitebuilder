@@ -9,6 +9,9 @@ angular.module('pieologyApp')
             return {
                 templateUrl: 'views/actions/page-action.html',
                 restrict: 'A',
+                scope: {
+                    products: '='
+                },
                 link: function postLink(scope) {
 
                     // Fetch available themes
