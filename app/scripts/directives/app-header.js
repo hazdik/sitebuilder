@@ -8,8 +8,17 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/app-header.html',
             restrict   : 'A',
-            replace    : true,
+//            replace    : true,
             link       : function postLink(scope) {
+
+                scope.screenMode = vlnConfig.getScreenMode();
+                scope.previewMode = vlnConfig.getPreviewMode();
+                scope.switchStyle = 'vln-tiny-slider';
+
+//                scope.state = {
+//                    previewMode : 'off',
+//                    switchStyle : 'vln-tiny-slider'
+//                };
 
                 scope.toggleAppNavigation = function () {
                     if (vlnConfig.getGlobalNavState()) {
@@ -19,6 +28,7 @@ angular.module('pieologyApp')
                 };
 
                 scope.setDisplayTo = function (display) {
+                    scope.screenMode = display;
                     $rootScope.$broadcast('vlnDisplay.change', { display : display });
                 };
 

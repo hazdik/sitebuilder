@@ -5,27 +5,29 @@
                 data-toggle="collapse"
                 data-target=".navbar-collapse"
                 ng-click="toggleAppNavigation()">
-                <span class="icon-menu"></span>
+                <span></span>
+                <span></span>
+                <span></span>
             </button>
         </div>
-        <div class="">
-            <a class="navbar-brand" href="#">Volusion</a>
+        <div class="global-brand">
+            <a class="navbar-brand" href="#"><img src="images/logo.png" alt="Volusion" /></a>
         </div>
-        <div class="">
-            <span class="navbar-brand company-name">{{ company.url }}</span>
+        <div class="global-company-name">
+            <a class="navbar-brand company-name">{{ company.url }}</a>
         </div>
-        <div class="">
+        <div class="preview-mode">
             <ul class="nav navbar-nav">
-                <li><a href="#" ng-click="setDisplayTo('screen')"><span class="icon-screen"></span></a></li>
-                <li><a href="#" ng-click="setDisplayTo('tablet')"><span class="icon-tablet"></span></a></li>
-                <li><a href="#" ng-click="setDisplayTo('mobile')"><span class="icon-mobile"></span></a></li>
+                <li ng-class="{ active: screenMode === 'desktop' }"><a href="#" ng-click="setDisplayTo('desktop')"><span class="icon-desktop"></span></a></li>
+                <li ng-class="{ active: screenMode === 'tablet' }"><a href="#" ng-click="setDisplayTo('tablet')"><span class="icon-tablet"></span></a></li>
+                <li ng-class="{ active: screenMode === 'mobile' }"><a href="#" ng-click="setDisplayTo('mobile')"><span class="icon-mobile"></span></a></li>
             </ul>
         </div>
-        <div class="">
+        <div class="mode-switcher">
             <div class="comp-slider">
-                <div class="-label">Edit Mode</div>
-                <div vln-comp-switch switch-style="state.switchStyle" switch-state="state.switchState"></div>
-                <div class="-label">Preview Mode</div>
+                <div class="-label" ng-class="{ active: previewMode === 'off'}">Edit Mode</div>
+                <div vln-comp-switch switch-style="switchStyle" switch-state="previewMode"></div>
+                <div class="-label" ng-class="{ active: previewMode === 'on'}">Preview Mode</div>
             </div>
         </div>
         <div class="btn-section">

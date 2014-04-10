@@ -49,3 +49,11 @@
         opacity : $opacity;
     }
 }
+
+@mixin transition-to ($type, $duration) {
+    -webkit-transition : $type $duration;
+    -moz-transition    : $type $duration;
+    -ms-transition     : $type $duration;
+    -o-transition      : $type $duration;
+    transition         : $type $duration;
+}

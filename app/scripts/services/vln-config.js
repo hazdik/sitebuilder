@@ -7,7 +7,9 @@ angular.module('pieologyApp')
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
-            iFramePathBase = '';
+            iFramePathBase = '',
+            screenMode = 'desktop',         // Initial screen mode.
+            previewMode = false;            // Initial edit/preview mode
 
         function initConfigFn () {
             /*
@@ -74,6 +76,22 @@ angular.module('pieologyApp')
             $rootScope.$broadcast('vlnGlobalAttrBucketState.change', { state: state });
         }
 
+        function getScreenModeFn () {
+            return screenMode;
+        }
+
+        function setScreenModeFn (mode) {
+            screenMode = mode;
+        }
+
+        function getPreviewModeFn () {
+            return previewMode ? 'on' : 'off';
+        }
+
+        function setPreviewModeFn (mode) {
+            previewMode = mode;
+        }
+
         // Public API here
         return {
             getGlobalNavState        : getGlobalNavStateFn,
@@ -83,6 +101,10 @@ angular.module('pieologyApp')
             getGlobalAttrBucketState : getGlobalAttrBucketStateFn,
             setGlobalAttrBucketState : setGlobalAttrBucketStateFn,
             getIframePathBase        : getIframePathBaseFn,
-            initConfig               : initConfigFn
+            initConfig               : initConfigFn,
+            getScreenMode            : getScreenModeFn,
+            setScreenMode            : setScreenModeFn,
+            getPreviewMode            : getPreviewModeFn,
+            setPreviewMode            : setPreviewModeFn
         };
     }]);

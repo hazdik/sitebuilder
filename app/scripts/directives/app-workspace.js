@@ -19,12 +19,12 @@ angular.module('pieologyApp')
                     scaleY = 1,
                     frame = element.find('iframe'),
                     container = frame.parent()[0],
-                    displayScreen = 'screen',
+                    displayScreen = 'desktop',
                     // screen size are defined twice (here and in the css)
                     // ...but I prefer (for now) to have initial dimensions defined through a class
                     // and dynamic resizing - through a style (TT)
                     screens = {
-                        'screen': 1024,
+                        'desktop': 1024,
                         'tablet': 786,
                         'mobile': 480
                     };
