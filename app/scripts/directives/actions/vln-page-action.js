@@ -15,7 +15,6 @@ angular.module('pieologyApp')
                     vlnPageFactory.getPages()
                     .then(function (promise) {
                         scope.pageData = promise;
-                        console.log(scope.pageData);
                     })
                     .catch (function (error) {
                         throw new Error('Error fetching page data: ', error);
