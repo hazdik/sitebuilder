@@ -1,16 +1,9 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .controller('vlnPageCtrl', ['$firebase', '$scope', function ($firebase, $scope) {
-        // console.log('updateMgr  print: ', vlnUpdateManager.testFirebase());
-        var fbProducts = new Firebase('https://brilliant-fire-5600.firebaseio.com/products');
-        $scope.data = $firebase(fbProducts);
+    .controller('vlnPageCtrl', ['$scope', 'vlnUpdateManager', function ($scope, vlnUpdateManager) {
 
-        fbProducts.on('value', function(snapshot) {
-            console.log('the data was changed: ', snapshot.val());
-        });
+        // Gets the product list from firebase and updates there when change happens
+        vlnUpdateManager.productList().$bind($scope, 'products');
 
-        console.log('product ctrl loaded');
-        console.log($scope.data);
-        console.log('site name: ', $scope.data.siteName);
     }]);

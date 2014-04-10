@@ -1,9 +1,14 @@
-'use strict';
+/*global angular,Firebase*/
 
 angular.module('pieologyApp')
-    .factory('vlnUpdateManager', ['$firebase', 'vlnConfig', function ($firebase, vlnConfig) {
+    .factory('vlnUpdateManager', ['$firebase', function ($firebase) {
+        'use strict';
 
-        var fbObj = new Firebase('https://brilliant-fire-5600.firebaseio.com');
+        var fbObj = new Firebase('https://brilliant-fire-5600.firebaseio.com/');
+
+        function productListFn() {
+            return $firebase ( new Firebase('https://brilliant-fire-5600.firebaseio.com/products/') );
+        }
 
         function testFirebase() {
             return $firebase(fbObj);
@@ -11,6 +16,7 @@ angular.module('pieologyApp')
 
         // Public API here
         return {
-            testFirebase: testFirebase
+            testFirebase: testFirebase,
+            productList: productListFn
         };
     }]);

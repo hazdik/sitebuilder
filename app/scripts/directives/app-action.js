@@ -1,4 +1,4 @@
-/*global angular    */
+/*global angular */
 
 angular.module('pieologyApp')
     .directive('appAction', ['$rootScope', 'vlnConfig',
