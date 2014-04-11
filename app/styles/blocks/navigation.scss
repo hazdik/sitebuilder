@@ -3,7 +3,7 @@
 /* Application navigation elements */
 .-navigation {
     float            : left;
-    width            : 45px;
+    width            : 78px;
     height           : 100%;
     padding          : 0;
     background-color : $cg1;
@@ -15,7 +15,7 @@
     }
 
     &.slide-out {
-        @include slide-left(-50px);
+        @include slide-left(-78px);
     }
 
     section {
@@ -24,19 +24,59 @@
 
         ul {
             li {
+
+                border-bottom : 1px solid #293A4B;
+
                 a {
-                    // @include hyperlinks($cg8, $cg8, $cg0, $cg2); // $link, $visited, $hover, $active, $cursor: pointer (by default)
-                    color : $cg8;
-                    font-size: 20px;
+                    display        : table-cell;
+                    height         : 66px;
+                    padding        : 0 5px;
+                    text-align     : center;
+                    transition     : background 0.3s ease 0s;
+                    vertical-align : middle;
+                    width          : 78px;
+                    color          : $cg8;
+                    font-size      : 20px;
+
                     &:hover {
-                        background-color : $cg2;
+                        background-color : #2D3F55;
                     }
                 }
 
+                img {
+                    display : inline;
+                }
+
+                img + img {
+                    display : none;
+                }
+
                 &.active {
-                    background-color: $cg2;
+                    background-color : #2D3F55;
+                    border-color     : #117DB5;
+
+                    img {
+                        display : none;
+                    }
+
+                    img + img {
+                        display : inline;
+                    }
+                }
+
+                &:hover {
+                    border-color : #117DB5;
+
+                    img {
+                        display : none;
+                    }
+
+                    img + img {
+                        display : inline;
+                    }
                 }
             }
+
         }
     }
 }

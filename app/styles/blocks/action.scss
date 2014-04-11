@@ -8,7 +8,7 @@
 
 @media only screen and (min-width : 480px) {
     .-action {
-        width : 270px;
+        width : 335px;
     }
 }
 
@@ -17,13 +17,13 @@
     position         : absolute;
     z-index          : 9;
     height           : 100%;
-    padding          : 0 0 0 45px;
+    padding          : 0 0 0 78px;
     color: $cg8;
-    background-color : $cg2;
+    background-color : #2D3F55;
     padding-top: 50px; //  Account for the app header element
 
     &.slide-in-offset {
-        @include slide-offset(0 0 0 45px);
+        @include slide-offset(0 0 0 78px);
     }
 
     &.slide-out-offset {

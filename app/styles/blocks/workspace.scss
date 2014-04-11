@@ -9,18 +9,18 @@
 
 .-workspace {
     float            : left;
-    padding          : 80px 285px 10px 285px;
+    padding          : 80px 285px 10px 355px;
     height           : 100%;
     width            : 100%;
     position         : absolute;
     background-color : #EDF3F7;
 
     &.slide-in-offset {
-        @include slide-offset(80px 285px 10px 285px);
+        @include slide-offset(80px 285px 10px 355px);
     }
 
     &.slide-out-offset {
-        @include slide-offset(80px 20px 10px 285px);
+        @include slide-offset(80px 20px 10px 355px);
     }
 
     .-site {
