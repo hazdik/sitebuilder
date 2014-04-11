@@ -5,11 +5,22 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
-            scope: {
-                currentProduct: '='
-            },
             link: function postLink(scope, element, attrs) {
-                console.log(scope.currentProduct);
+
+                console.log("state of vars in product directive", {
+                    pform: scope.visibleProductForm,
+                    alist: scope.visibleAssetList,
+                    currproj: scope.currentProduct
+                });
+
+                scope.hideForm = function() {
+                    /**
+                        Note: we do not need a toggle here. If this form is showing,
+                        then we need to hide it and make the asset list visible.
+                      */
+                    scope.visibleProductForm = false;
+                    scope.visibleAssetList = true;
+                };
 
                   scope.myInterval = 5000;
                   scope.productImages = [];

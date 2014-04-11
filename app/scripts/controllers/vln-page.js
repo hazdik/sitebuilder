@@ -28,34 +28,19 @@ angular.module('pieologyApp')
                     @param {Object} product
                     @return nothing to return
                  */
-                 console.log('in edit form fn with product', product);
-                 console.log('firebase endpoint: ', 'products/' + product.id);
+                 // console.log('in edit form fn with product', product);
+                 // console.log('firebase endpoint: ', 'products/' + product.id);
                  // vlnUpdateManager.getFBReference('products/' + product.id).$bind($scope, 'currentProduct');
             };
 
-            $scope.hideForm = function(formName) {
-                console.log('hideform called', formName);
-                if ('page' === formName) {
-                    console.log('visible page form', $scope.visiblePageForm);
-                    $scope.visiblePageForm = false;
-                    $scope.visibleList= true;
-                } else if ('product' === formName) {
-                    console.log('its type product')
-                    $scope.visibleProductForm = false;
-                    $scope.visibleList= true;
-                    $scope.currentProduct = null;
-                } else if ('category' === formName) {
-                    $scope.visibleCategoryForm = false;
-                    $scope.visibleList= true;
-                }
-            };
-
             $scope.loadIframe = function (item) {
-                /*
-                            @Input: url string to be loaded
-                            @Output: return nothing
-                            @Description: the function takes a url string and sends it to the workspace service to update the iFrame url of customers site.
-                        */
+                /**
+                    @function
+                    @name loadIframe
+                    @description sends an url sctring to the workspace service to upate the ifram src url
+                    @param {Object} item (must have item.path)
+                    @return nothing is returned from this
+                 */
 
                 // var srcPath = scope.basePath + item.path + '/' +item.id;
                 var srcPath = $scope.basePath + item.path;
@@ -64,35 +49,12 @@ angular.module('pieologyApp')
                 });
             };
 
-            /**
-                scope level functions for working with site data: pages, categories and products
-             */
-            $scope.addPage = function () {
-                /*
-                            @Input: none
-                            @Output: return nothing
-                            @Description: update the directive template with a value that will animate in the add-page-form
-                        */
-                $scope.visibleList= false;
-                $scope.visiblePageForm = true;
-            };
-
-            $scope.addCategory = function () {
-                /*
-                            @Input: none
-                            @Output: return nothing
-                            @Description: update the directive template with a value that will animate in the add-category-form
-                        */
-                $scope.visibleList= false;
-                $scope.visibleCategoryForm = true;
-            };
-
             $scope.addProduct = function () {
                 /*
-                            @Input: none
-                            @Output: return nothing
-                            @Description: update the directive template with a value that will animate in the add-product-form
-                        */
+                    @Input: none
+                    @Output: return nothing
+                    @Description: update the directive template with a value that will animate in the add-product-form
+                */
                 $scope.visibleList= false;
                 $scope.visibleProductForm = true;
             };
@@ -100,9 +62,20 @@ angular.module('pieologyApp')
             $scope.editProduct = function (product) {
                 $scope.loadIframe(product);
                 $scope.visibleAssetList = false;
-                $scope.visibleProductForm = true;
+                // $scope.visibleProductForm = true;
+                toggleProductForm();
                 // $scope.currentProduct = product;
-                $scope.loadProduct(product);
+                // $scope.loadProduct(product);
             };
+
+            function toggleProductForm() {
+                if ($scope.visibleProductForm) {
+                    $scope.visibleProductForm = false;
+                    console.log("form should be hidden", $scope.visibleProductForm);
+                    return;
+                }
+                $scope.visibleProductForm = true;
+                console.log("form should be visible", $scope.visibleProductForm);
+            }
         }
     ]);

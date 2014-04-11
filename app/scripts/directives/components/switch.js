@@ -28,7 +28,7 @@ angular.module('pieologyApp')
                 }
 
                 scope.$watchCollection('[switchState, switchStyle]', function(value) {
-                    console.log('collection=', value);
+                    // console.log('collection=', value);
 
                     scope.elementStyle = scope.switchStyle;
                     scope.elementText = (scope.switchState === 'off') ? 'off' : 'on';
