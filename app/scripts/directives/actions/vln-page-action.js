@@ -52,7 +52,8 @@ angular.module('pieologyApp')
                             @Description: the function takes a url string and sends it to the workspace service to update the iFrame url of customers site.
                         */
 
-                        var srcPath = scope.basePath + item.path + '/' +item.id;
+                        // var srcPath = scope.basePath + item.path + '/' +item.id;
+                        var srcPath = scope.basePath + item.path;
                         $rootScope.$broadcast('vlnWorkspaceUrl.change', { url: srcPath });
                     };
 
