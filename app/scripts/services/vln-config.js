@@ -3,6 +3,13 @@
 angular.module('pieologyApp')
     .factory('vlnConfig', ['$rootScope', '$http', function ($rootScope, $http) {
 
+      /**
+       * @function
+       * @name vlnConfig
+       * @param $rootScope, $http
+       * @return an object with public api contract to get/set dynamic app configuation states.
+       */
+
         'use strict';
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
@@ -13,19 +20,21 @@ angular.module('pieologyApp')
             previewMode = false;            // Initial edit/preview mode
 
         function getFirebaseUrlFn() {
-            /*
+
+            /**
                 @Input: null
                 @Output: a string with the format https://YOURAPP.firebaseio.com
                 @Description: a string with the correct firebase url for accessing real time data set
-            */
+             */
             return firebaseUrl;
         }
 
         function initConfigFn () {
             /*
-                @Input - none
-                @Output - none
-                @Description - called during app initialization to request external resources that will be used to populate configuration values
+                @function initConfigFn
+                @param - none
+                @return - none
+                @description - sets up the dynamic configuarion attributes for the app (iframe url base, firebase url, etc)
             */
 
             /* This is the setter for the iFrameBasePath */
