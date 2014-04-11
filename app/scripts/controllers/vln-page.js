@@ -8,6 +8,7 @@ angular.module('pieologyApp')
             $scope.visiblePageForm = false;
             $scope.visibleProductForm = false;
             $scope.visibleCategoryForm = false;
+            $scope.visibleAssetList= true;
             $scope.currentProduct = null;
             $scope.currentCategory = null;
             $scope.currentPage = null;
@@ -27,16 +28,25 @@ angular.module('pieologyApp')
                     @param {Object} product
                     @return nothing to return
                  */
-                console.log(product);
+                 console.log('in edit form fn with product', product);
+                 console.log('firebase endpoint: ', 'products/' + product.id);
+                 // vlnUpdateManager.getFBReference('products/' + product.id).$bind($scope, 'currentProduct');
             };
 
             $scope.hideForm = function(formName) {
+                console.log('hideform called', formName);
                 if ('page' === formName) {
+                    console.log('visible page form', $scope.visiblePageForm);
                     $scope.visiblePageForm = false;
+                    $scope.visibleList= true;
                 } else if ('product' === formName) {
+                    console.log('its type product')
                     $scope.visibleProductForm = false;
+                    $scope.visibleList= true;
+                    $scope.currentProduct = null;
                 } else if ('category' === formName) {
                     $scope.visibleCategoryForm = false;
+                    $scope.visibleList= true;
                 }
             };
 
@@ -63,6 +73,7 @@ angular.module('pieologyApp')
                             @Output: return nothing
                             @Description: update the directive template with a value that will animate in the add-page-form
                         */
+                $scope.visibleList= false;
                 $scope.visiblePageForm = true;
             };
 
@@ -72,6 +83,7 @@ angular.module('pieologyApp')
                             @Output: return nothing
                             @Description: update the directive template with a value that will animate in the add-category-form
                         */
+                $scope.visibleList= false;
                 $scope.visibleCategoryForm = true;
             };
 
@@ -81,13 +93,16 @@ angular.module('pieologyApp')
                             @Output: return nothing
                             @Description: update the directive template with a value that will animate in the add-product-form
                         */
+                $scope.visibleList= false;
                 $scope.visibleProductForm = true;
             };
 
             $scope.editProduct = function (product) {
                 $scope.loadIframe(product);
+                $scope.visibleAssetList = false;
                 $scope.visibleProductForm = true;
-                $scope.currentProduct = product;
+                // $scope.currentProduct = product;
+                $scope.loadProduct(product);
             };
         }
     ]);

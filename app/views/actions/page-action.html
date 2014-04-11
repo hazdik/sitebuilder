@@ -6,67 +6,70 @@
     </div>
     <div class="-product-form"
          ng-class="visibleProductForm ? 'fade-in' : 'fade-out'">
-        <div vln-product-form></div>
+        <div vln-product-form="currentProduct"></div>
      </div>
     <div class="-category-form"
          ng-class="visibleCategoryForm ? 'fade-in' : 'fade-out'">
         <div vln-category-form></div>
     </div>
 
-    <header>
-        <span>Pages</span>
-        <div class="col-xs-9 pull-right page-search" >
-            <div class="right-inner-addon">
-                <span class="icon-search"></span>
-                <input type="search"
-                       class="form-control"
-                       placeholder="$filter $animate" />
+    <div class="-page-list"
+          ng-class="visibleAssetList ? 'fade-in' : 'fade-out'">
+        <header>
+            <span>Pages</span>
+            <div class="col-xs-9 pull-right page-search" >
+                <div class="right-inner-addon">
+                    <span class="icon-search"></span>
+                    <input type="search"
+                           class="form-control"
+                           placeholder="$filter $animate" />
+                </div>
             </div>
-        </div>
-    </header>
-    <ul>
-        <li>
-            <a ng-click="loadIframe('{{pageData.siteUrl}}')">{{pageData.siteName}}</a>
-            <ul>
-                <li ng-repeat="page in pageData.pages">
-                    <a href="#" ng-click="loadIframe(page)">{{ page.name }}</a>
-                </li>
-                <li ng-repeat-end>
-                    <a href="#" ng-click="addPage()">
-                        <span class="icon-plus"></span>
-                        <!-- Add Page -->
-                    </a>
-                </li>
+        </header>
+        <ul>
+            <li>
+                <a ng-click="loadIframe('{{pageData.siteUrl}}')">{{pageData.siteName}}</a>
+                <ul>
+                    <li ng-repeat="page in pageData.pages">
+                        <a href="#" ng-click="loadIframe(page)">{{ page.name }}</a>
+                    </li>
+                    <li ng-repeat-end>
+                        <a href="#" ng-click="addPage()">
+                            <span class="icon-plus"></span>
+                            <!-- Add Page -->
+                        </a>
+                    </li>
 
-                <li>
-                    <a href="#">Categories</a>
-                    <ul>
-                        <li ng-repeat="category in pageData.categories">
-                            <a href="#" ng-click="loadIframe(category)">{{ category.name }}</a>
-                        </li>
-                        <li ng-repeat-end>
-                            <a href="#" ng-click="addCategory()">
-                                <span class="icon-plus"></span>
-                                <!-- Add Page -->
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-                <li>
-                    <a href="#">Products</a>
-                    <ul>
-                        <li ng-repeat="product in products">
-                            <a href="#" ng-click="editProduct(product)">{{ product.name }}</a>
-                        </li>
-                        <li ng-repeat-end>
-                            <a href="#" ng-click="addProduct()">
-                                <span class="icon-plus"></span>
-                                <!-- Add Page -->
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
-        </li>
-    </ul>
+                    <li>
+                        <a href="#">Categories</a>
+                        <ul>
+                            <li ng-repeat="category in pageData.categories">
+                                <a href="#" ng-click="loadIframe(category)">{{ category.name }}</a>
+                            </li>
+                            <li ng-repeat-end>
+                                <a href="#" ng-click="addCategory()">
+                                    <span class="icon-plus"></span>
+                                    <!-- Add Page -->
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#">Products</a>
+                        <ul>
+                            <li ng-repeat="product in products">
+                                <a href="#" ng-click="editProduct(product)">{{ product.name }}</a>
+                            </li>
+                            <li ng-repeat-end>
+                                <a href="#" ng-click="addProduct()">
+                                    <span class="icon-plus"></span>
+                                    <!-- Add Page -->
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
 </div>

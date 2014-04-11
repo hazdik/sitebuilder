@@ -41,7 +41,22 @@
 
             // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
+
+            .-page-list {
+                background-color: inherit;
+                &.fade-in {
+                    @include fade(1);
+                    z-index: 1000;
+                }
+
+                &.fade-out {
+                    @include fade(0);
+                    z-index: -1000;
+                }
+            }
+
             .-page-tree {
+
                 width: 100%;
                 header {
                     padding: 2px 10px 10px 10px;
@@ -159,16 +174,16 @@
                     position   : absolute;
                     height     : 100%;
                     overflow: scroll;
-                    background : $cg8;
+                    background : inherit;
                     color      : $cg2;
                     opacity : 0;
                     z-index: -1000;
                     padding-left: 10px;
 
                     div {
-                        margin-bottom: 15px;
+                        margin-bottom: 10px;
                         min-width: 225px;
-                        max-width: 270px;
+                        max-width: 335px; // NOTE: This controls the forms behavier with hide/show nav
 
                         p {
                             font-size: 12px;
@@ -242,6 +257,7 @@
                         @include fade(0);
                         z-index: -1000;
                     }
+
                 }
             }
         }

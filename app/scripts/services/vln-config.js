@@ -15,7 +15,7 @@ angular.module('pieologyApp')
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
             iFramePathBase = '',
-            firebaseUrl = 'https://brilliant-fire-5600.firebaseio.com',
+            firebaseUrl = 'https://brilliant-fire-5600.firebaseio.com/',
             screenMode = 'desktop',         // Initial screen mode.
             previewMode = false;            // Initial edit/preview mode
 

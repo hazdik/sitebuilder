@@ -5,7 +5,11 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
+            scope: {
+                currentProduct: '='
+            },
             link: function postLink(scope, element, attrs) {
+                console.log(scope.currentProduct);
 
                   scope.myInterval = 5000;
                   scope.productImages = [];
@@ -23,15 +27,6 @@ angular.module('pieologyApp')
                   for (var i=0; i<4; i++) {
                     scope.addImage();
                   }
-
-                  scope.updateIframeModel = function(value) {
-                    // var iframe = document.getElementById("workspace").contentWindow.document;
-                    console.log('Real time stuff here');
-                  };
-
-                  scope.$watch('currentProduct.name', function (value) {
-                    scope.updateIframeModel(value);
-                  })
             }
         };
     });
