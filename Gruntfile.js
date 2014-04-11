@@ -341,8 +341,8 @@ module.exports = function (grunt) {
             ],
             dist: [
                 'compass:dist',
-                'imagemin',
-                'svgmin'
+                'imagemin'
+                // 'svgmin'  // NOTE: Removbed bc svgmin choked on the files generated from contractor with Adobe Fireworks, with only 20 ish images we make a choice to ignore this for now.
             ]
         },
 
