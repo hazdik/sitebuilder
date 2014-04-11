@@ -1,15 +1,14 @@
 @import "globals/variables", "globals/mixins", "globals/animations";
 
 .-attr {
-    border           : 1px solid yellow;
+//        border           : 1px solid yellow;
     position         : absolute;
     width            : 270px;
     height           : 100%;
     right            : 0;
     top              : 0;
-    padding-top      : 68px;
     color            : $cg10;
-    background-color : $cg2;
+    background-color : #2D3F55;
 
     &.fade-in {
         @include resize(270px, null, 1);
@@ -19,7 +18,49 @@
         @include resize(20px, null, 0);
     }
 
-    .panel {
-        color: black;
+    section {
+        padding-top : 68px;
+        height      : 100%;
+        overflow-y  : auto;
+
+        .panel {
+            color : black;
+        }
+
+        .panel-group {
+            .panel {
+                border-radius : 0;
+            }
+
+            .panel + .panel {
+                margin-top : -1px;
+            }
+        }
+
+        .panel-heading {
+            color: $cg3;
+            background-color: $cg10;
+            border-color: #dddddd;
+
+            padding: 8px 15px;
+            border-bottom: 1px solid transparent;
+            border-top-right-radius: 3px;
+            border-top-left-radius: 3px;
+
+            .panel-title {
+                margin-top: 0;
+                margin-bottom: 0;
+                @include font-size(14px);
+            }
+
+            a {
+                text-decoration: none;
+                cursor: default;
+
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
     }
 }

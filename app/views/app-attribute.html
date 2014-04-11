@@ -4,7 +4,7 @@
     <section>
 
         <accordion close-others="true">
-            <accordion-group heading="Components" is-open="true">
+            <accordion-group heading="Widgets" is-open="true">
                 <ul id="tools-group">
                     <li data-raw="&lt;div class=&#39;well&#39; dnd-draggable dnd-droppable&gt;&lt;/div&gt;" draggable data-helper="clone" dnd-draggable="" class="ui-draggable"><i class="glyphicon  glyphicon-adjust"></i>Drag 1</li>
                     <li data-raw="&lt;div class=&#39;alert alert-success&#39; dnd-draggable dnd-droppable&gt;&lt;/div&gt;" draggable data-helper="clone" dnd-draggable="" class="ui-draggable"><i class="glyphicon  glyphicon-adjust"></i>Drag 2</li>
@@ -13,11 +13,7 @@
                     <li data-raw="&lt;a class=&#39;btn btn-default&#39; dnd-draggable&gt;Button&lt;/a&gt;" draggable data-helper="clone" dnd-draggable="" class="ui-draggable"><i class="glyphicon  glyphicon-adjust"></i>Drag 5</li>
                 </ul>
             </accordion-group>
-            <accordion-group is-open="isopen">
-                <accordion-heading>
-                    Properties
-                    <i class="pull-right glyphicon" ng-class="{'glyphicon-chevron-down': isopen, 'glyphicon-chevron-right': !isopen}"></i>
-                </accordion-heading>
+            <accordion-group heading="Attributes" is-open="isopen">
                 This is just some content to illustrate fancy headings.
             </accordion-group>
         </accordion>

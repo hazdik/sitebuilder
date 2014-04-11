@@ -18,9 +18,9 @@
     z-index          : 9;
     height           : 100%;
     padding          : 0 0 0 78px;
-    color: $cg8;
+    color            : $cg8;
     background-color : #2D3F55;
-    padding-top: 50px; //  Account for the app header element
+    padding-top      : 50px; //  Account for the app header element
 
     &.slide-in-offset {
         @include slide-offset(0 0 0 78px);
@@ -31,10 +31,11 @@
     }
 
     section {
-        padding-top: 68px;
-        height: 100%;
-        overflow-y: auto;
-        div { // This is the container div for all ng-switch="currentAction"'s
+        padding-top : 68px;
+        height      : 100%;
+        overflow-y  : auto;
+        div {
+            // This is the container div for all ng-switch="currentAction"'s
             .-theme-list {
                 // list elements style here.
             }
@@ -42,42 +43,41 @@
             // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
             .-page-tree {
-                width: 100%;
+                width : 100%;
                 header {
-                    padding: 2px 10px 10px 10px;
-                    line-height: 30px;
-                    border-bottom: 1px solid $cg8;
-                    height: 40px;
+                    padding       : 2px 10px 10px 10px;
+                    line-height   : 30px;
+                    border-bottom : 1px solid $cg8;
+                    height        : 40px;
 
                     > span {
-                        font-size: 18px;
-                        position: relative;
-                        top: 4px;
+                        font-size : 18px;
+                        position  : relative;
+                        top       : 4px;
                     }
 
-
                     .page-search {
-                        position: relative;
-                        display: inline;
-                        z-index: -1000;
+                        position : relative;
+                        display  : inline;
+                        z-index  : -1000;
 
                         .right-inner-addon {
-                            position: absolute;
-                            top: 5px;
+                            position : absolute;
+                            top      : 5px;
                             // right: 5px;
 
                             input {
-                                padding-right: 20px;
-                                border: 1px solid $cg0;
-                                height: 25px;
+                                padding-right : 20px;
+                                border        : 1px solid $cg0;
+                                height        : 25px;
                             }
 
                             span {
-                                position: absolute;
-                                right: 0px;
-                                padding: 5px 6px;
-                                pointer-events: none;
-                                color: $cg2;
+                                position       : absolute;
+                                right          : 0px;
+                                padding        : 5px 6px;
+                                pointer-events : none;
+                                color          : $cg2;
                             }
                         }
                     }
@@ -86,16 +86,16 @@
                 li {
                     a {
                         &:hover {
-                            background: $cg8;
-                            color: $cg2;
-                            border: 1px solid $cg2;
+                            background : $cg8;
+                            color      : $cg2;
+                            border     : 1px solid $cg2;
 
-                            +ul {
+                            + ul {
                                 li {
                                     a {
-                                        background: $cg8;
-                                        color: $cg2;
-                                        border: 1px solid $cg2;
+                                        background : $cg8;
+                                        color      : $cg2;
+                                        border     : 1px solid $cg2;
                                     }
                                 }
                             }
@@ -104,7 +104,7 @@
 
                     &:last-child {
                         &::before {
-                            height: 30px;
+                            height : 30px;
                         }
                     }
                 }
@@ -112,95 +112,95 @@
                 ul {
                     li {
 
-                        margin: 0px 0;
-                        list-style-type: none;
-                        position: relative;
-                        padding: 10px 5px 0px 5px;
+                        margin          : 0px 0;
+                        list-style-type : none;
+                        position        : relative;
+                        padding         : 10px 5px 0px 5px;
 
                         &:before {
-                            content: '';
-                            position: absolute;
-                            top: 0;
-                            width: 1px;
-                            height: 100%;
-                            right: auto;
-                            left: -20px;
-                            border-left: 1px solid #ccc;
-                            bottom: 50px;
+                            content     : '';
+                            position    : absolute;
+                            top         : 0;
+                            width       : 1px;
+                            height      : 100%;
+                            right       : auto;
+                            left        : -20px;
+                            border-left : 1px solid #CCCCCC;
+                            bottom      : 50px;
                         }
 
                         a {
-                            display: inline-block;
-                            border: 1px solid #ccc;
-                            padding: 5px 10px;
-                            text-decoration: none;
-                            color: $cg8;
-                            font-family: arial, verdana, tahoma;
-                            font-size: 11px;
-                            border-radius: 5px;
-                            -webkit-border-radius: 5px;
-                            -moz-border-radius: 5px;
+                            display               : inline-block;
+                            border                : 1px solid #CCCCCC;
+                            padding               : 5px 10px;
+                            text-decoration       : none;
+                            color                 : $cg8;
+                            font-family           : arial, verdana, tahoma;
+                            font-size             : 11px;
+                            border-radius         : 5px;
+                            -webkit-border-radius : 5px;
+                            -moz-border-radius    : 5px;
                         }
 
                         &:after {
-                            content: '';
-                            position: absolute;
-                            top: 30px;
-                            width: 25px;
-                            height: 20px;
-                            right: auto;
-                            left: -20px;
-                            border-top: 1px solid #ccc;
+                            content    : '';
+                            position   : absolute;
+                            top        : 30px;
+                            width      : 25px;
+                            height     : 20px;
+                            right      : auto;
+                            left       : -20px;
+                            border-top : 1px solid #CCCCCC;
                         }
                     }
                 }
 
-                .-page-form , .-product-form, .-category-form {
-                    position   : absolute;
-                    height     : 100%;
-                    overflow: scroll;
-                    background : $cg8;
-                    color      : $cg2;
-                    opacity : 0;
-                    z-index: -1000;
-                    padding-left: 10px;
+                .-page-form, .-product-form, .-category-form {
+                    position     : absolute;
+                    height       : 100%;
+                    overflow     : scroll;
+                    background   : $cg8;
+                    color        : $cg2;
+                    opacity      : 0;
+                    z-index      : -1000;
+                    padding-left : 10px;
 
                     div {
-                        margin-bottom: 15px;
-                        min-width: 225px;
-                        max-width: 270px;
+                        margin-bottom : 15px;
+                        min-width     : 225px;
+                        max-width     : 270px;
 
                         p {
-                            font-size: 12px;
-                            text-transform:uppercase;
-                            padding: 0;
-                            margin: 0;
+                            font-size      : 12px;
+                            text-transform : uppercase;
+                            padding        : 0;
+                            margin         : 0;
                         }
                     }
 
                     .form-header {
                         button {
-                            float: right;
-                            border: none;
-                            background-color: inherit;
+                            float            : right;
+                            border           : none;
+                            background-color : inherit;
                         }
                     }
 
                     .product-images {
-                        padding: 0 0 30px 0;
+                        padding : 0 0 30px 0;
                         // width: 100%;
 
                         .-carousel {
                             ul {
-                                height: 125px;
+                                height : 125px;
                                 li {
                                     div {
-                                        background-color: $cg8;
-                                        color: $cg1;
-                                        opacity: 0.6;
-                                        position: absolute;
-                                        bottom: 0px;
-                                        padding: 3px;
+                                        background-color : $cg8;
+                                        color            : $cg1;
+                                        opacity          : 0.6;
+                                        position         : absolute;
+                                        bottom           : 0px;
+                                        padding          : 3px;
                                         @include border-radius(5px);
                                     }
                                 }
@@ -210,12 +210,12 @@
 
                         .-add {
                             // width: 40%;
-                            float: right;
+                            float : right;
 
                             button {
-                                float: right;
-                                border: 1px dashed $cg4;
-                                background: inherit;
+                                float      : right;
+                                border     : 1px dashed $cg4;
+                                background : inherit;
                                 @include border-radius(5px);
                             }
                         }
@@ -223,24 +223,24 @@
 
                     .pricing {
                         div {
-                            display: inline-block;
+                            display : inline-block;
                         }
                     }
 
                     .description {
                         textarea {
-                            width: 90%;
+                            width : 90%;
                         }
                     }
 
                     &.fade-in {
                         @include fade(1);
-                        z-index: 1000;
+                        z-index : 1000;
                     }
 
                     &.fade-out {
                         @include fade(0);
-                        z-index: -1000;
+                        z-index : -1000;
                     }
                 }
             }
@@ -248,10 +248,10 @@
     }
 
     .-design {
-        padding: 10px 0;
+        padding : 10px 0;
         .-current {
-            padding: 0 0 10px 0;
-            border-bottom:  2px solid $cg8;
+            padding       : 0 0 10px 0;
+            border-bottom : 2px solid $cg8;
         }
     }
 }
