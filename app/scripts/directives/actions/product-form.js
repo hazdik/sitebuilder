@@ -25,8 +25,8 @@ angular.module('pieologyApp')
                   }
 
                   scope.updateIframeModel = function(value) {
-                    var iframe = document.getElementById("workspace").contentWindow.document;
-                    console.log(iframe);
+                    // var iframe = document.getElementById("workspace").contentWindow.document;
+                    console.log('Real time stuff here');
                   };
 
                   scope.$watch('currentProduct.name', function (value) {

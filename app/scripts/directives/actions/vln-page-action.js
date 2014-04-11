@@ -9,6 +9,9 @@ angular.module('pieologyApp')
             return {
                 templateUrl: 'views/actions/page-action.html',
                 restrict: 'A',
+                scope: {
+                    products: '='
+                },
                 link: function postLink(scope) {
 
                     // Fetch available themes
@@ -49,7 +52,7 @@ angular.module('pieologyApp')
                             @Description: the function takes a url string and sends it to the workspace service to update the iFrame url of customers site.
                         */
 
-                        var srcPath = scope.basePath + item.path;
+                        var srcPath = scope.basePath + item.path + '/' +item.id;
                         $rootScope.$broadcast('vlnWorkspaceUrl.change', { url: srcPath });
                     };
 

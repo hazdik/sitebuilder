@@ -8,8 +8,18 @@ angular.module('pieologyApp')
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
             iFramePathBase = '',
+            firebaseUrl = 'https://brilliant-fire-5600.firebaseio.com',
             screenMode = 'desktop',         // Initial screen mode.
             previewMode = false;            // Initial edit/preview mode
+
+        function getFirebaseUrlFn() {
+            /*
+                @Input: null
+                @Output: a string with the format https://YOURAPP.firebaseio.com
+                @Description: a string with the correct firebase url for accessing real time data set
+            */
+            return firebaseUrl;
+        }
 
         function initConfigFn () {
             /*
@@ -102,9 +112,10 @@ angular.module('pieologyApp')
             setGlobalAttrBucketState : setGlobalAttrBucketStateFn,
             getIframePathBase        : getIframePathBaseFn,
             initConfig               : initConfigFn,
+            getFirebaseUrl           : getFirebaseUrlFn,
             getScreenMode            : getScreenModeFn,
             setScreenMode            : setScreenModeFn,
-            getPreviewMode            : getPreviewModeFn,
-            setPreviewMode            : setPreviewModeFn
+            getPreviewMode           : getPreviewModeFn,
+            setPreviewMode           : setPreviewModeFn
         };
     }]);

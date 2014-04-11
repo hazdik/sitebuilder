@@ -21,6 +21,8 @@ module.exports = function(config) {
             'app/bower_components/angular-bootstrap/ui-bootstrap.js',
             'app/bower_components/angular-touch/angular-touch.js',
             'app/bower_components/angular-carousel/dist/angular-carousel.js',
+            'app/bower_components/firebase/firebase.js',
+            'app/bower_components/angularfire/angularfire.js',
             'app/scripts/*.js',
             'app/scripts/**/*.js',
             'test/mock/**/*.js',
