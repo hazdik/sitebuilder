@@ -141,7 +141,7 @@
             float : right;
 
             .-regular {
-                padding : 18px 20px;
+                padding : 18px 45px;
             }
 
             .btn-group {
@@ -157,8 +157,21 @@
                     background : #DBE3EB;
                 }
 
-                *:hover button img + img {
-                    display : inline;
+                &:hover {
+                    button {
+                        img {
+                            display : none;
+                        }
+
+                        img + img {
+                            display : inline;
+                        }
+                    }
+
+                    ul {
+                        @include resize(270px, null, 1);
+                        display : inline;
+                    }
                 }
 
                 button {
@@ -196,13 +209,16 @@
                     list-style : none;
                     background : #2D3F55;
                     top        : 100%;
-                    right      : -1000%;
+                    right      : 0;
                     width      : 270px;
                     position   : absolute;
                     text-align : left;
                     z-index    : 5;
-                    @include transition-to(all, 0.3s);
+                    @include transition-to(all, 1s);
                     @include border-radius(0 0 0 5px);
+
+                    @include resize(20px, null, 0);
+                    display    : none;
 
                     li {
                         border-top : 1px solid #32455A;
