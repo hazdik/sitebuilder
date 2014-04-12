@@ -3,7 +3,6 @@ angular.module('pieologyApp')
         'use strict';
 
         // $scope.currentProduct = vlnUpdateManager.getFBReference('products/' + product.id);
-        // console.log($scope.currentProduct);
 
         $scope.awesomeThings = [
             'HTML5 Boilerplate',
