@@ -172,7 +172,7 @@
                     height       : 100%;
                     overflow     : scroll;
                     background   : inherit;
-                    color        : $cg2;
+                    color        : $cg8;
                     opacity      : 0;
                     z-index      : -1000;
                     padding-left : 10px;
@@ -195,6 +195,7 @@
                             float: right;
                             border: none;
                             background-color: inherit;
+                            color: $cg8;
                         }
                     }
 

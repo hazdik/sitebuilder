@@ -8,19 +8,27 @@ angular.module('pieologyApp')
             $scope.visiblePageForm = false;
             $scope.visibleProductForm = false;
             $scope.visibleCategoryForm = false;
-            $scope.visibleAssetList= true;
-            $scope.currentProduct = null;
+            $scope.visibleAssetList = true;
+            $scope.currentProductId = null;
             $scope.currentCategory = null;
             $scope.currentPage = null;
             $scope.currentProduct = null;
             $scope.basePath = vlnConfig.getIframePathBase();
 
-            // Gets the product list from firebase and updates there when change happens
+            // Gets the product list from firebase
             vlnUpdateManager.productList().$bind($scope, 'products');
+
+
 
             /* Scope functionlity */
 
-            $scope.loadProduct = function(product) {
+            // $scope.hideForm = function() {
+            //     $scope.currentProductId = null;
+            //     $scope.visibleProductForm = false;
+            //     $scope.visibleAssetList = true;
+            // };
+
+            $scope.loadProduct = function (productId) {
                 /**
                     @function
                     @name loadProduct
@@ -28,9 +36,10 @@ angular.module('pieologyApp')
                     @param {Object} product
                     @return nothing to return
                  */
-                 // console.log('in edit form fn with product', product);
-                 // console.log('firebase endpoint: ', 'products/' + product.id);
-                 // vlnUpdateManager.getFBReference('products/' + product.id).$bind($scope, 'currentProduct');
+                     console.log("loadProduct id:", productId);
+                // var product = vlnUpdateManager.getFBReference('products/' + product.id);
+                // $scope.currentProductId = product.id;
+                // console.log($scope.currentProductId);
             };
 
             $scope.loadIframe = function (item) {
@@ -49,33 +58,34 @@ angular.module('pieologyApp')
                 });
             };
 
-            $scope.addProduct = function () {
-                /*
-                    @Input: none
-                    @Output: return nothing
-                    @Description: update the directive template with a value that will animate in the add-product-form
-                */
-                $scope.visibleList= false;
-                $scope.visibleProductForm = true;
-            };
-
             $scope.editProduct = function (product) {
                 $scope.loadIframe(product);
+                $scope.currentProductId = product.id;
+                // $scope.loadProduct(product.id);
                 $scope.visibleAssetList = false;
-                // $scope.visibleProductForm = true;
                 toggleProductForm();
-                // $scope.currentProduct = product;
-                // $scope.loadProduct(product);
             };
+
+            // This listens for the click on the directive (product form)
+            $scope.$on('vlnPageAction.hideProductFrom', function(event) {
+                toggleProductForm();
+                toggleAssetList();
+            });
+
+            function toggleAssetList() {
+                if ($scope.visibleAssetList) {
+                    $scope.visibleAssetList = false;
+                    return;
+                }
+                $scope.visibleAssetList = true;
+            }
 
             function toggleProductForm() {
                 if ($scope.visibleProductForm) {
                     $scope.visibleProductForm = false;
-                    console.log("form should be hidden", $scope.visibleProductForm);
                     return;
                 }
                 $scope.visibleProductForm = true;
-                console.log("form should be visible", $scope.visibleProductForm);
             }
         }
     ]);

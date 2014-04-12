@@ -1,27 +1,26 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .directive('vlnProductForm', function () {
+    .directive('vlnProductForm', function ($parse) {
         return {
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
+            scope: {
+                id: '='
+            },
             link: function postLink(scope, element, attrs) {
 
-                console.log("state of vars in product directive", {
-                    pform: scope.visibleProductForm,
-                    alist: scope.visibleAssetList,
-                    currproj: scope.currentProduct
-                });
 
+               //  console.log(element);
+               //  element.bind('click', function () {
+               //     console.log("We're in");
+               //     scope.$emit('go');
+               // });
                 scope.hideForm = function() {
-                    /**
-                        Note: we do not need a toggle here. If this form is showing,
-                        then we need to hide it and make the asset list visible.
-                      */
-                    scope.visibleProductForm = false;
-                    scope.visibleAssetList = true;
+                    scope.$emit('vlnPageAction.hideProductFrom');
                 };
 
+                // mock the images for this product
                   scope.myInterval = 5000;
                   scope.productImages = [];
                   scope.currencies = ['$', '£', '€', '¥'];

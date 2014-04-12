@@ -6,7 +6,8 @@
     </div>
     <div class="-product-form"
          ng-class="visibleProductForm ? 'fade-in' : 'fade-out'">
-        <div vln-product-form="currentProduct"></div>
+        <div vln-product-form
+             id="currentProductId"></div>
      </div>
     <div class="-category-form"
          ng-class="visibleCategoryForm ? 'fade-in' : 'fade-out'">
@@ -28,7 +29,7 @@
         </header>
         <ul>
             <li>
-                <a ng-click="loadIframe('{{pageData.siteUrl}}')">{{pageData.siteName}}</a>
+                <a ng-click="loadIframe('{{ pageData.siteUrl }}')">{{pageData.siteName}}</a>
                 <ul>
                     <li ng-repeat="page in pageData.pages">
                         <a href="#" ng-click="loadIframe(page)">{{ page.name }}</a>
