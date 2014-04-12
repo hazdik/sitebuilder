@@ -170,6 +170,7 @@
 
                     ul {
                         @include resize(270px, null, 1);
+                        display : inline;
                     }
                 }
 
@@ -213,10 +214,11 @@
                     position   : absolute;
                     text-align : left;
                     z-index    : 5;
-                    @include transition-to(all, 0.3s);
+                    @include transition-to(all, 1s);
                     @include border-radius(0 0 0 5px);
 
                     @include resize(20px, null, 0);
+                    display    : none;
 
                     li {
                         border-top : 1px solid #32455A;

@@ -8,7 +8,7 @@
     right            : 0;
     top              : 0;
     color            : $cg10;
-    background-color : #2D3F55;
+    background-color : $cg10;
 
     &.fade-in {
         @include resize(270px, null, 1);
@@ -25,6 +25,21 @@
 
         .panel {
             color : black;
+            border-bottom: none;
+            border-left: none;
+            box-shadow: none;
+        }
+
+        .last {
+            &.panel {
+                bottom: 0;
+                position: absolute;
+                width: 270px;
+            }
+
+            &.open {
+                position: relative;
+            }
         }
 
         .panel-group {
@@ -40,7 +55,7 @@
         .panel-heading {
             color: $cg3;
             background-color: $cg10;
-            border-color: #dddddd;
+            border-color: $cg6;
 
             padding: 8px 15px;
             border-bottom: 1px solid transparent;
@@ -60,6 +75,10 @@
                 &:hover {
                     text-decoration: none;
                 }
+            }
+
+            &:hover {
+                color: #117DB5;
             }
         }
     }
