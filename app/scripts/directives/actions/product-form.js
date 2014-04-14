@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .directive('vlnProductForm', function ($parse) {
+    .directive('vlnProductForm', ['vlnUpdateManager', function (vlnUpdateManager) {
         return {
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
@@ -10,6 +10,11 @@ angular.module('pieologyApp')
                 currentProduct: '='
             },
             link: function postLink(scope, element, attrs) {
+                console.log(attrs);
+                console.log(scope);
+                scope.$watch('currentProduct', function(value) {
+                    console.log('need a firebase binding to this: ', value);
+                });
 
 //                attrs.$observe('prodId', function(value) {
 //                    console.log('prodId value: ', value);
@@ -29,4 +34,4 @@ angular.module('pieologyApp')
                 });
             }
         };
-    });
+    }]);
