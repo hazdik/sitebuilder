@@ -10,21 +10,22 @@ angular.module('pieologyApp')
                 currentProduct: '='
             },
             link: function postLink(scope, element, attrs) {
-                console.log(attrs);
-                console.log(scope);
+
                 scope.$watch('currentProduct', function(value) {
-                    console.log('need a firebase binding to this: ', value);
+                    if (null !== scope.currentProduct) {
+                        // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProduct');
+                        // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProductProduct');
+                        // scope.updatedProduct = vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id);
+                        // console.log('in prod from direcive: ', scope.currentProduct);
+                        // scope.updatedProduct.$bind(scope, 'updatedProduct');
+                        // console.log(scope.updatedProduct);
+                        // console.log(scope.updatedProduct);
+                        scope.currentProduct.$bind(scope, 'updatedProduct');
+                    }
                 });
 
-//                attrs.$observe('prodId', function(value) {
-//                    console.log('prodId value: ', value);
-//                });
-//
-//                attrs.$watch(attrs.currentProduct, function(value) {
-//                    console.log('Current Product: ', value);
-//                });
-
                 scope.hideForm = function() {
+                    scope.updatedProduct = null;
                     scope.$emit('vlnPageAction.hideProductForm');
                 };
 
