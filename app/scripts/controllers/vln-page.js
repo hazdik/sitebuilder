@@ -45,6 +45,7 @@ angular.module('pieologyApp')
                 // console.log(product);
                 $scope.loadIframe(product);
                 $scope.currentProductId = product.id;
+                $scope.currentProduct = product;
                 // console.log($scope.getProduct(product.id));
                 toggleAssetList();
                 toggleProductForm();

@@ -6,12 +6,18 @@ angular.module('pieologyApp')
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
             scope: {
+                prodId: '=',
+                currentProduct: '='
             },
             link: function postLink(scope, element, attrs) {
 
-                attrs.$observe('prodId', function(value) {
-                    console.log('prodId value: ', value);
-                });
+//                attrs.$observe('prodId', function(value) {
+//                    console.log('prodId value: ', value);
+//                });
+//
+//                attrs.$watch(attrs.currentProduct, function(value) {
+//                    console.log('Current Product: ', value);
+//                });
 
                 scope.hideForm = function() {
                     scope.$emit('vlnPageAction.hideProductForm');
