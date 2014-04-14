@@ -62,12 +62,13 @@ angular.module('pieologyApp')
                 $scope.loadIframe(product);
                 $scope.currentProductId = product.id;
                 // $scope.loadProduct(product.id);
-                $scope.visibleAssetList = false;
+                // $scope.visibleAssetList = false;
+                toggleAssetList();
                 toggleProductForm();
             };
 
             // This listens for the click on the directive (product form)
-            $scope.$on('vlnPageAction.hideProductFrom', function(event) {
+            $scope.$on('vlnPageAction.hideProductForm', function(event) {
                 toggleProductForm();
                 toggleAssetList();
             });

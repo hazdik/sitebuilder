@@ -17,7 +17,7 @@ angular.module('pieologyApp')
                //     scope.$emit('go');
                // });
                 scope.hideForm = function() {
-                    scope.$emit('vlnPageAction.hideProductFrom');
+                    scope.$emit('vlnPageAction.hideProductForm');
                 };
 
                 // mock the images for this product
