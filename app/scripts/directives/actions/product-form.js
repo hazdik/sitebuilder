@@ -6,37 +6,21 @@ angular.module('pieologyApp')
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
             scope: {
-                id: '='
             },
             link: function postLink(scope, element, attrs) {
 
+                attrs.$observe('prodId', function(value) {
+                    console.log('prodId value: ', value);
+                });
 
-               //  console.log(element);
-               //  element.bind('click', function () {
-               //     console.log("We're in");
-               //     scope.$emit('go');
-               // });
                 scope.hideForm = function() {
                     scope.$emit('vlnPageAction.hideProductForm');
                 };
 
-                // mock the images for this product
-                  scope.myInterval = 5000;
-                  scope.productImages = [];
-                  scope.currencies = ['$', '£', '€', '¥'];
-                  scope.currentCurrency = '$';
-
-                  scope.addImage = function() {
-                    var newWidth = 150 + scope.productImages.length+50;
-                    scope.productImages.push({
-                      image: 'http://placekitten.com/' + newWidth + '/150',
-                      text: ['More','Extra','Lots of','Surplus'][scope.productImages.length % 4] + ' ' +
-                        ['Cats', 'Kittys', 'Felines', 'Cutes'][scope.productImages.length % 4]
-                    });
-                  };
-                  for (var i=0; i<4; i++) {
-                    scope.addImage();
-                  }
+                element.on('$destroy', function() {
+                // Add directive reset/cleanup tasks here
+                console.log('product-form-directive was destroyed');
+                });
             }
         };
     });

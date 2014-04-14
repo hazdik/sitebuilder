@@ -16,31 +16,14 @@ angular.module('pieologyApp')
             $scope.basePath = vlnConfig.getIframePathBase();
 
             // Gets the product list from firebase
-            vlnUpdateManager.productList().$bind($scope, 'products');
+            $scope.products = vlnUpdateManager.productList();
+            // vlnUpdateManager.productList().$bind($scope, 'products');
 
-
-
-            /* Scope functionlity */
-
-            // $scope.hideForm = function() {
-            //     $scope.currentProductId = null;
-            //     $scope.visibleProductForm = false;
-            //     $scope.visibleAssetList = true;
+            // $scope.getProduct = function (id) {
+            //     return vlnUpdateManager.getFBReference('products/2');
             // };
 
-            $scope.loadProduct = function (productId) {
-                /**
-                    @function
-                    @name loadProduct
-                    @description us an existing product to load and bind a product for updates
-                    @param {Object} product
-                    @return nothing to return
-                 */
-                     console.log("loadProduct id:", productId);
-                // var product = vlnUpdateManager.getFBReference('products/' + product.id);
-                // $scope.currentProductId = product.id;
-                // console.log($scope.currentProductId);
-            };
+            /* Scope functionlity */
 
             $scope.loadIframe = function (item) {
                 /**
@@ -59,12 +42,13 @@ angular.module('pieologyApp')
             };
 
             $scope.editProduct = function (product) {
+                // console.log(product);
                 $scope.loadIframe(product);
                 $scope.currentProductId = product.id;
-                // $scope.loadProduct(product.id);
-                // $scope.visibleAssetList = false;
+                // console.log($scope.getProduct(product.id));
                 toggleAssetList();
                 toggleProductForm();
+                console.log('editProd id value: ', $scope.currentProductId);
             };
 
             // This listens for the click on the directive (product form)

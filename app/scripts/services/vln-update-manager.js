@@ -17,7 +17,7 @@ angular.module('pieologyApp')
                         @return $firebase
                      */
                 // console.log('vlnConfig fbbase', vlnConfig.getFirebaseUrl());
-                // console.log('fb product url: ', fbUrl + endpoint);
+                console.log('fb product url: ', fbUrl + endpoint);
                 return $firebase(new Firebase(fbUrl + '/' + endpoint));
             }
 
