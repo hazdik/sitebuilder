@@ -42,10 +42,6 @@ angular.module('pieologyApp')
             };
 
             // This listens for things happeningin the directive (product form)
-            $scope.$on('vlnPageAction.updateProduct', function(event){
-                $scope.products.$save();
-            });
-
             $scope.$on('vlnPageAction.hideProductForm', function(event) {
                 toggleProductForm();
                 toggleAssetList();

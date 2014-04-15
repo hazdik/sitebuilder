@@ -18,8 +18,7 @@
         <p>Name:</p>
         <input type="text"
                value="{{ currentProduct.name }}"
-               ng-model="currentProduct.name"
-               ng-change="currentProduct.$child('name').$set(value)">
+               ng-model="currentProduct.name">
     </div>
 
     <div class="row-fluid product-images" style="border: 1px solid blue">
@@ -56,8 +55,7 @@
         <div>
             <input type="text"
                    value="{{ currentProduct.price }}"
-                   ng-model="currentProduct.price"
-                   ng-change="currentProduct.$child('price').$set(value)">
+                   ng-model="currentProduct.price">
         </div>
     </div>
 
@@ -69,8 +67,7 @@
     <div class="row-fluid description" style="border: 1px solid purple">
         <p>Description:</p>
         <input value="{{ currentProduct.description }}"
-               ng-model="currentProduct.description"
-               ng-change="currentProduct.$child('description').$set(value)"></input>
+               ng-model="currentProduct.description"></input>
     </div>
 
     <div class="row-fluid" style="border: 1px solid black">

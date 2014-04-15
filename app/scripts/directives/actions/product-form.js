@@ -10,11 +10,6 @@ angular.module('pieologyApp')
             },
             link: function postLink(scope, element, attrs) {
 
-                scope.save = function(product) {
-                    // console.log(product);
-                    scope.$emit('vlnPageAction.updateProduct')
-                };
-
                 scope.hideForm = function() {
                     scope.updatedProduct = null;
                     scope.$emit('vlnPageAction.hideProductForm');
