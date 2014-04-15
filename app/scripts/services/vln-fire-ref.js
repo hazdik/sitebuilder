@@ -15,8 +15,8 @@ angular.module('pieologyApp')
                     @param non
                     @return Firebase reference object
                  */
-                 return new Firebase(fbUrl + '/products');
-            }
+                 return $firebase( new Firebase(fbUrl + '/products') );
+             }
 
             function productFn(id) {
                             /**
@@ -26,7 +26,7 @@ angular.module('pieologyApp')
                             @param {String} id
                             @return Firebase reference object
                          */
-                        return new Firebase(fbUrl + '/products/'+id);
+                        return $firebase( new Firebase(fbUrl + '/products/'+id) );
             }
             // Public API here
             return {

@@ -1,40 +1,32 @@
 /*global angular*/
 
 angular.module('pieologyApp')
-    .controller('vlnPageCtrl', ['$rootScope', '$scope', '$firebase', 'vlnFireRef', 'vlnConfig',
-        function ($rootScope, $scope, $firebase, vlnFireRef, vlnConfig) {
+    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnFireRef', 'vlnConfig',
+        function ($rootScope, $scope, vlnFireRef, vlnConfig) {
             'use strict';
 
             $scope.visiblePageForm = false;
             $scope.visibleProductForm = false;
             $scope.visibleCategoryForm = false;
             $scope.visibleAssetList = true;
-            $scope.currentProductId = null;
+            $scope.currentProduct = null;
             $scope.currentCategory = null;
             $scope.currentPage = null;
-            $scope.currentProduct = null;
-            $scope.basePath = vlnConfig.getIframePathBase();
+            // $scope.basePath = vlnConfig.getIframePathBase();
 
             // Gets the product list from firebase
             // $scope.products = vlnUpdateManager.productList();
 
             // Bind this firebase list example to sync changes up as they happen
             // vlnUpdateManager.productList().$bind($scope, 'products');
-            $scope.products = $firebase(vlnFireRef.products());
+            $scope.products = vlnFireRef.products();
+            // console.log($scope.products);
 
             /* Scope functionlity */
 
             $scope.editProduct = function (product) {
-                console.log(product);
-                // $scope.currentProduct = $scope.products.$child(product.id);
-                // console.log($scope.products);
-                // console.log($scope.products.$child(product.id));
-                // $scope.loadIframe(product);
+                $scope.currentProduct = $scope.products.$child(product.name);
 
-                // $scope.currentProduct = $scope.products.$child()
-                // $scope.currentProductId = product.id;
-                // $scope.currentProduct = product;
-                // // console.log($scope.getProduct(product.id));
                 toggleAssetList();
                 toggleProductForm();
                 // console.log('editProd id value: ', $scope.currentProductId);

@@ -1,6 +1,6 @@
 <div class="container-fluid">
     <div class="row-fluid form-header" style="border: 1px solid red">
-        <header>{{ updatedProduct.name }} || CURR: {{ prodId }}
+        <header>{{ currentProduct.name }}
             <button type="button"
                 ng-click="hideForm('product')"
                 class="btn-default">
@@ -17,8 +17,8 @@
     <div class="row-fluid product-name" style="border: 1px solid blue">
         <p>Name:</p>
         <input type="text"
-               value="{{ updatedProduct.name }}"
-               ng-model="updatedProduct.name">
+               value="{{ currentProduct.name }}"
+               ng-model="currentProduct.name">
     </div>
 
     <div class="row-fluid product-images" style="border: 1px solid blue">
@@ -54,9 +54,9 @@
         </div>
         <div>
             <input type="text"
-                   value="{{ updatedProduct.price }}"
-                   ng-model="updatedProduct.price"
-                   ng-change="updatedProduct.$child('price').$set(value)">
+                   value="{{ currentProduct.price }}"
+                   ng-model="currentProduct.price"
+                   ng-change="currentProduct.$child('price').$set(value)">
         </div>
     </div>
 
@@ -67,7 +67,7 @@
 
     <div class="row-fluid description" style="border: 1px solid purple">
         <p>Description:</p>
-        <textarea>{{ updatedProduct.description }}</textarea>
+        <textarea>{{ currentProduct.description }}</textarea>
     </div>
 
     <div class="row-fluid" style="border: 1px solid black">
