@@ -9,7 +9,7 @@ angular.module('pieologyApp')
             $scope.visibleProductForm = false;
             $scope.visibleCategoryForm = false;
             $scope.visibleAssetList = true;
-            $scope.currentProduct = null;
+            $scope.currentProductIndex = null;
             $scope.currentCategory = null;
             $scope.currentPage = null;
             // $scope.basePath = vlnConfig.getIframePathBase();
@@ -19,6 +19,11 @@ angular.module('pieologyApp')
             // Bind this firebase list example to sync changes up as they happen
             // vlnUpdateManager.productList().$bind($scope, 'products');
             $scope.products = vlnFireRef.products();
+            // $scope.products.$on('child_changed', function(childSnapshot, prevChildName) {
+            //     console.log('child_changed');
+            //     console.log('childSnapshot: ', childSnapshot);
+            //     console.log('prevChildName: ', prevChildName);
+            // });
             // vlnFireRef.products().$bind($scope, 'products');
             $scope.productKeys = vlnFireRef.products().$getIndex()
             $scope.products.$on('loaded', function() {
@@ -30,12 +35,10 @@ angular.module('pieologyApp')
             /* Scope functionlity */
 
             $scope.editProduct = function (product) {
-                // $scope.currentProduct = $scope.products.$child(product.name);
+                // $scope.currentProductIndex = index;
                 $scope.currentProduct = product;
-
                 toggleAssetList();
                 toggleProductForm();
-                // console.log('editProd id value: ', $scope.currentProductId);
             };
 
             $scope.loadIframe = function (item) {
@@ -56,14 +59,19 @@ angular.module('pieologyApp')
 
             // This listens for things happeningin the directive (product form)
             $scope.$on('vlnPageAction.updateProduct', function(event){
-                // angular.forEach($scope.productKeys, function(key) {
-                //     var fbObj = $scope.products[key];
-                //     if (fbObj.vlnId === $scope.currentProduct.vlnId) {
-                //         console.log($scope.products[key]);
-                //     }
-                // });
+
+                // var tempObj = vlnFireRef.product($scope.currentProductIndex);
+                // tempObj.$update($scope.currentProduct);
+
+                // var tempObj = $scope.products[$scope.currentProductIndex];
+                // tempObj.name = $scope.currentProduct.name;
+                // tempObj.price = $scope.currentProduct.price;
+                // tempObj.description = $scope.currentProduct.description;
+                // tempObj.images = $scope.currentProduct.images;
+                // tempObj.currency = $scope.currentProduct.currency;
+                // $scope.products.$update(tempObj);
                 console.log($scope.currentProduct);
-                $scope.products.$update($scope.currentProduct);
+                $scope.products.$save();
                 console.log('saving changes to current product');
             });
 

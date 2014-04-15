@@ -18,7 +18,8 @@
         <p>Name:</p>
         <input type="text"
                value="{{ currentProduct.name }}"
-               ng-model="currentProduct.name">
+               ng-model="currentProduct.name"
+               ng-change="currentProduct.$child('name').$set(value)">
     </div>
 
     <div class="row-fluid product-images" style="border: 1px solid blue">
@@ -67,7 +68,9 @@
 
     <div class="row-fluid description" style="border: 1px solid purple">
         <p>Description:</p>
-        <textarea>{{ currentProduct.description }}</textarea>
+        <input value="{{ currentProduct.description }}"
+               ng-model="currentProduct.description"
+               ng-change="currentProduct.$child('description').$set(value)"></input>
     </div>
 
     <div class="row-fluid" style="border: 1px solid black">

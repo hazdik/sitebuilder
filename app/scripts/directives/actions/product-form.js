@@ -10,7 +10,7 @@ angular.module('pieologyApp')
             },
             link: function postLink(scope, element, attrs) {
 
-                scope.$watch('currentProduct', function(value) {
+                // scope.$watch('currentProduct', function(value) {
                     // console.log(value);
                     // if (null !== scope.currentProduct) {
                     //     // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProduct');
@@ -22,7 +22,7 @@ angular.module('pieologyApp')
                     //     // console.log(scope.updatedProduct);
                     //     // scope.currentProduct.$bind(scope, 'updatedProduct');
                     // }
-                });
+                // });
 
                 scope.save = function(product) {
                     // console.log(product);
