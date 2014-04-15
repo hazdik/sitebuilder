@@ -6,6 +6,7 @@ angular.module('pieologyApp')
             'use strict';
 
             var fbUrl = vlnConfig.getFirebaseUrl();
+            // var _products = {} || products // dont re init
 
             function productsFn() {
                     /**
