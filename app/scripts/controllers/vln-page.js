@@ -1,8 +1,8 @@
 /*global angular*/
 
 angular.module('pieologyApp')
-    .controller('vlnPageCtrl', ['$rootScope', '$scope', '$firebase', 'vlnUpdateManager', 'vlnConfig',
-        function ($rootScope, $scope, $firebase, vlnUpdateManager, vlnConfig) {
+    .controller('vlnPageCtrl', ['$rootScope', '$scope', '$firebase', 'vlnFireRef', 'vlnConfig',
+        function ($rootScope, $scope, $firebase, vlnFireRef, vlnConfig) {
             'use strict';
 
             $scope.visiblePageForm = false;
@@ -19,13 +19,14 @@ angular.module('pieologyApp')
             // $scope.products = vlnUpdateManager.productList();
 
             // Bind this firebase list example to sync changes up as they happen
-            vlnUpdateManager.productList().$bind($scope, 'products');
+            // vlnUpdateManager.productList().$bind($scope, 'products');
+            $scope.products = $firebase(vlnFireRef.products());
 
             /* Scope functionlity */
 
             $scope.editProduct = function (product) {
-
-                $scope.currentProduct = $scope.products.$child(product.id);
+                console.log(product);
+                // $scope.currentProduct = $scope.products.$child(product.id);
                 // console.log($scope.products);
                 // console.log($scope.products.$child(product.id));
                 // $scope.loadIframe(product);

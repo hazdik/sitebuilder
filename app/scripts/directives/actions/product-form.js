@@ -20,7 +20,7 @@ angular.module('pieologyApp')
                         // scope.updatedProduct.$bind(scope, 'updatedProduct');
                         // console.log(scope.updatedProduct);
                         // console.log(scope.updatedProduct);
-                        scope.currentProduct.$bind(scope, 'updatedProduct');
+                        // scope.currentProduct.$bind(scope, 'updatedProduct');
                     }
                 });
 
