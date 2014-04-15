@@ -11,7 +11,7 @@ angular.module('pieologyApp')
             link: function postLink(scope, element, attrs) {
 
                 scope.$watch('currentProduct', function(value) {
-                    console.log(value);
+                    // console.log(value);
                     // if (null !== scope.currentProduct) {
                     //     // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProduct');
                     //     // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProductProduct');
@@ -24,14 +24,19 @@ angular.module('pieologyApp')
                     // }
                 });
 
+                scope.save = function(product) {
+                    // console.log(product);
+                    scope.$emit('vlnPageAction.updateProduct')
+                };
+
                 scope.hideForm = function() {
                     scope.updatedProduct = null;
                     scope.$emit('vlnPageAction.hideProductForm');
                 };
 
                 element.on('$destroy', function() {
-                // Add directive reset/cleanup tasks here
-                console.log('product-form-directive was destroyed');
+                    // Add directive reset/cleanup tasks here
+                    console.log('product-form-directive was destroyed');
                 });
             }
         };
