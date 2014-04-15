@@ -1,19 +1,23 @@
 <!-- Note: This will prolly need a dive - not show here is the selected/current theme as well as the ability to filter and search available themes -->
-<section class="-design container-fluid text-center">
+<!--<section class="-design container-fluid text-center">-->
+<div class="-themes">
     <div class="row-fluid -current">
         <header>{{ themes.current }}</header>
         <img ng-src="{{ themes.thumbnail }}" alt="">
     </div>
     <div class="row-fluid -theme-list">
-        <ul class="nav nav-sidebar ng-scope">
-            <li ng-repeat="theme in themes.themeList"
-                class="active text-center"
-                ng-click="loadTheme(theme)">
-                <a ng-click="theme">
-                    <header>{{ theme.themeName }}</header>
-                    <img ng-src="{{ theme.thumbnail }}" alt="Theme 1">
-                </a>
-            </li>
-        </ul>
+        <div style="overflow: auto;">
+            <ul class="nav nav-sidebar ng-scope">
+                <li ng-repeat="theme in themes.themeList"
+                    class="active text-center"
+                    ng-click="loadTheme(theme)">
+                    <a ng-click="theme">
+                        <header>{{ theme.themeName }}</header>
+                        <img ng-src="{{ theme.thumbnail }}" alt="Theme 1">
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</section>
+</div>
+<!--</section>-->

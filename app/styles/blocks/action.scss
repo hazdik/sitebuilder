@@ -31,7 +31,7 @@
     }
 
     section {
-        padding-top : 68px;
+//        padding-top : 68px;
         height      : 100%;
         overflow-y  : auto;
         div {
@@ -44,7 +44,9 @@
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
 
             .-page-list {
+                padding-top: 68px;
                 background-color: inherit;
+
                 &.fade-in {
                     @include fade(1);
                     z-index: 1000;
@@ -263,11 +265,16 @@
         }
     }
 
-    .-design {
-        padding : 10px 0;
-        .-current {
-            padding       : 0 0 10px 0;
-            border-bottom : 2px solid $cg8;
+//    .-design {
+//        padding : 10px 0;
+
+        .-themes {
+            padding-top : 78px;
+
+            .-current {
+                padding       : 0 0 10px 0;
+                border-bottom : 2px solid $cg8;
+            }
         }
-    }
+//    }
 }
