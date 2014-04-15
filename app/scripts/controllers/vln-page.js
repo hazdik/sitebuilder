@@ -1,8 +1,8 @@
 /*global angular*/
 
 angular.module('pieologyApp')
-    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnUpdateManager', 'vlnConfig',
-        function ($rootScope, $scope, vlnUpdateManager, vlnConfig) {
+    .controller('vlnPageCtrl', ['$rootScope', '$scope', '$firebase', 'vlnFireRef', 'vlnConfig',
+        function ($rootScope, $scope, $firebase, vlnFireRef, vlnConfig) {
             'use strict';
 
             $scope.visiblePageForm = false;
@@ -16,14 +16,29 @@ angular.module('pieologyApp')
             $scope.basePath = vlnConfig.getIframePathBase();
 
             // Gets the product list from firebase
-            $scope.products = vlnUpdateManager.productList();
-            // vlnUpdateManager.productList().$bind($scope, 'products');
+            // $scope.products = vlnUpdateManager.productList();
 
-            // $scope.getProduct = function (id) {
-            //     return vlnUpdateManager.getFBReference('products/2');
-            // };
+            // Bind this firebase list example to sync changes up as they happen
+            // vlnUpdateManager.productList().$bind($scope, 'products');
+            $scope.products = $firebase(vlnFireRef.products());
 
             /* Scope functionlity */
+
+            $scope.editProduct = function (product) {
+                console.log(product);
+                // $scope.currentProduct = $scope.products.$child(product.id);
+                // console.log($scope.products);
+                // console.log($scope.products.$child(product.id));
+                // $scope.loadIframe(product);
+
+                // $scope.currentProduct = $scope.products.$child()
+                // $scope.currentProductId = product.id;
+                // $scope.currentProduct = product;
+                // // console.log($scope.getProduct(product.id));
+                toggleAssetList();
+                toggleProductForm();
+                // console.log('editProd id value: ', $scope.currentProductId);
+            };
 
             $scope.loadIframe = function (item) {
                 /**
@@ -39,17 +54,6 @@ angular.module('pieologyApp')
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });
-            };
-
-            $scope.editProduct = function (product) {
-                // console.log(product);
-                $scope.loadIframe(product);
-                $scope.currentProductId = product.id;
-                $scope.currentProduct = product;
-                // console.log($scope.getProduct(product.id));
-                toggleAssetList();
-                toggleProductForm();
-                console.log('editProd id value: ', $scope.currentProductId);
             };
 
             // This listens for the click on the directive (product form)

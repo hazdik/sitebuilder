@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('pieologyApp')
-    .directive('vlnProductForm', function ($parse) {
+    .directive('vlnProductForm', ['vlnUpdateManager', function (vlnUpdateManager) {
         return {
             templateUrl: 'views/actions/product-form.html',
             restrict: 'A',
@@ -11,15 +11,21 @@ angular.module('pieologyApp')
             },
             link: function postLink(scope, element, attrs) {
 
-//                attrs.$observe('prodId', function(value) {
-//                    console.log('prodId value: ', value);
-//                });
-//
-//                attrs.$watch(attrs.currentProduct, function(value) {
-//                    console.log('Current Product: ', value);
-//                });
+                scope.$watch('currentProduct', function(value) {
+                    if (null !== scope.currentProduct) {
+                        // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProduct');
+                        // vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id).$bind(scope, 'updatedProductProduct');
+                        // scope.updatedProduct = vlnUpdateManager.getFBReference('products/' + scope.currentProduct.id);
+                        // console.log('in prod from direcive: ', scope.currentProduct);
+                        // scope.updatedProduct.$bind(scope, 'updatedProduct');
+                        // console.log(scope.updatedProduct);
+                        // console.log(scope.updatedProduct);
+                        // scope.currentProduct.$bind(scope, 'updatedProduct');
+                    }
+                });
 
                 scope.hideForm = function() {
+                    scope.updatedProduct = null;
                     scope.$emit('vlnPageAction.hideProductForm');
                 };
 
@@ -29,4 +35,4 @@ angular.module('pieologyApp')
                 });
             }
         };
-    });
+    }]);

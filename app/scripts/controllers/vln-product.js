@@ -3,12 +3,12 @@ angular.module('pieologyApp')
         'use strict';
 
         console.log('id is: ', $scope.currentProduct);
-
+        scope.updatedProduct = {};
         // $scope.currentProduct = vlnUpdateManager.getFBReference('products/' + product.id);
 
         $scope.getCurrentProduct = function (id) {
-            // vlnUpdateManager.getFBReference().$bind(scope, 'currentProduct');
-            console.log('getting curr prod with id: ', id);
+            vlnUpdateManager.getFBReference(currentProduct.id).$bind(scope, 'updatedProduct');
+            console.log('directive level currentProduct: ', scope.currentProduct);
         }
 
         $scope.awesomeThings = [

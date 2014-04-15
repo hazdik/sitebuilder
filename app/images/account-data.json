@@ -33,7 +33,7 @@
                 "http://lorempixel.com/100/100/"
             ],
             "price": "129.99",
-            "currency": "$",
+            "currency": "dollar",
             "options": [],
             "description": "These things are shiney. And red!"
         },
@@ -46,7 +46,7 @@
                 "http://lorempixel.com/100/100/"
             ],
             "price": "129.99",
-            "currency": "$",
+            "currency": "dollar",
             "options": [],
             "description": "Summer dresses are nice on hot days"
         },
@@ -59,7 +59,7 @@
                 "http://lorempixel.com/100/100/"
             ],
             "price": "129.99",
-            "currency": "$",
+            "currency": "dollar",
             "options": [],
             "description": "Summer shoes are comfortable at the beach"
         },
@@ -72,7 +72,7 @@
                 "http://lorempixel.com/100/100/"
             ],
             "price": "129.99",
-            "currency": "$",
+            "currency": "dollar",
             "options": [],
             "description": "Summer hats keep you eyes cool"
         },
@@ -85,7 +85,7 @@
                 "http://lorempixel.com/100/100/"
             ],
             "price": "129.99",
-            "currency": "$",
+            "currency": "dollar",
             "options": [],
             "description": "Summer shirts are comforatble in the sun"
         }
