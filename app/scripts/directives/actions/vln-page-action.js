@@ -1,4 +1,4 @@
-
+/*global angular*/
 
 angular.module('pieologyApp')
     .directive('vlnPageAction', ['$rootScope', 'vlnPageFactory', 'vlnConfig',
@@ -8,20 +8,20 @@ angular.module('pieologyApp')
 
             return {
                 templateUrl: 'views/actions/page-action.html',
-                restrict: 'A',
-                scope: {
+                restrict   : 'A',
+                scope      : {
                     products: '='
                 },
-                link: function postLink(scope) {
+                link       : function postLink(scope) {
 
                     // Fetch available themes
                     vlnPageFactory.getPages()
-                    .then(function (promise) {
-                        scope.pageData = promise;
-                    })
-                    .catch (function (error) {
+                        .then(function (promise) {
+                            scope.pageData = promise;
+                        })
+                        .catch(function (error) {
                         throw new Error('Error fetching page data: ', error);
                     });
                 }
             };
-    }]);
+        }]);

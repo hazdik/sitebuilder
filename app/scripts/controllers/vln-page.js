@@ -15,7 +15,6 @@ angular.module('pieologyApp')
             // $scope.products = vlnFireRef.products();
             vlnFireRef.products().$bind($scope, 'products');
 
-
             /* Scope functionlity */
 
             $scope.editProduct = function (product) {
@@ -41,7 +40,6 @@ angular.module('pieologyApp')
                 });
             };
 
-            // This listens for things happeningin the directive (product form)
             $scope.$on('vlnPageAction.hideProductForm', function(event) {
                 toggleProductForm();
                 toggleAssetList();

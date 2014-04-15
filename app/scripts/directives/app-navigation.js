@@ -39,6 +39,15 @@ angular.module('pieologyApp')
                     */
                     vlnConfig.setCurrentAction('pageAction');
                 };
+
+                scope.loadStatTools = function() {
+                    /*
+                     @Input - none
+                     @Output - none
+                     @Purpose - update the config attribute currentAction for page
+                     */
+                    vlnConfig.setCurrentAction('pageStats');
+                };
             }
         };
     }]);
