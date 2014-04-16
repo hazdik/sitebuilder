@@ -13,10 +13,10 @@ angular.module('pieologyApp')
                 },
                 link       : function postLink(scope) {
 
-                    scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 20;
+                    scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
 
                     scope.$on('vlnWorkspace.resize', function () {
-                        scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 20;
+                        scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
                     });
                 }
             };

@@ -48,15 +48,31 @@
                 background-color : inherit;
 
                 header {
-                    padding       : 2px 10px 10px 10px;
-                    line-height   : 30px;
-                    border-bottom : 1px solid $cg8;
-                    height        : 40px;
+                    padding     : 20px;
+                    line-height : 30px;
+                    height      : 75px;
 
                     span {
                         font-size : 18px;
                         position  : relative;
                         top       : 4px;
+                    }
+
+                    .page-search {
+                        position : relative;
+
+                        input {
+                            padding-right : 20px;
+                            width         : 100%;
+                        }
+
+                        span {
+                            position       : absolute;
+                            right          : 0px;
+                            padding        : 5px 6px;
+                            pointer-events : none;
+                            color          : $cg2;
+                        }
                     }
                 }
 
@@ -72,121 +88,98 @@
 
                 .-body {
                     @include helperActionSection;
+
+                    span.-header {
+                        padding-left     : 20px;
+                        font-size        : 18px;
+                        position         : relative;
+                        top              : 4px;
+                        background-color : inherit;
+                    }
+
+                    ul {
+
+                        padding : 10px;
+
+                        li {
+
+                            margin          : 0;
+                            list-style-type : none;
+                            position        : relative;
+                            padding         : 0;
+
+                            a {
+                                display         : inline-block;
+                                padding         : 5px 10px;
+                                text-decoration : none;
+                                color           : #91A1B1;
+
+                                &:hover {
+                                    color : $cg10;
+                                }
+
+                                &.-node {
+                                    color : #117DB5;
+                                }
+                            }
+
+                            button {
+                                margin-left      : 10px;
+                                padding          : 5px;
+                                background-color : transparent;
+                                color            : #91A1B1;
+                                border-color     : #91A1B1;
+                                outline          : 0;
+                                outline          : none;
+
+                                &:hover {
+                                    color        : $cg10;
+                                    border-color : #117DB5;
+                                }
+
+                                span {
+                                    &:before {
+                                        content  : url("/images/ico-plus.svg");
+                                        margin: 0 5px 0 3px;
+                                    }
+                                }
+                            }
+                        }
+
+                        &.subgroup {
+
+                            padding-left : 40px;
+
+                            li {
+                                &:before {
+                                    content     : '';
+                                    position    : absolute;
+                                    top         : 0;
+                                    width       : 1px;
+                                    height      : 100%;
+                                    right       : auto;
+                                    left        : -20px;
+                                    border-left : 1px solid #91A1B1;
+                                    bottom      : 50px;
+                                }
+
+                                &:after {
+                                    content  : '';
+                                    position : absolute;
+                                    top      : 30px;
+                                    width    : 25px;
+                                    height   : 20px;
+                                    right    : auto;
+                                    left     : -20px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
 
             .-page-tree {
                 width : 100%;
-
-                header {
-                    padding       : 2px 10px 10px 10px;
-                    line-height   : 30px;
-                    border-bottom : 1px solid $cg8;
-                    height        : 40px;
-
-                    > span {
-                        font-size : 18px;
-                        position  : relative;
-                        top       : 4px;
-                    }
-
-                    .page-search {
-                        position : relative;
-                        display  : inline;
-                        z-index  : -1000;
-
-                        .right-inner-addon {
-                            position : absolute;
-                            top      : 5px;
-
-                            input {
-                                padding-right : 20px;
-                                border        : 1px solid $cg0;
-                                height        : 25px;
-                            }
-
-                            span {
-                                position       : absolute;
-                                right          : 0px;
-                                padding        : 5px 6px;
-                                pointer-events : none;
-                                color          : $cg2;
-                            }
-                        }
-                    }
-                }
-
-                li {
-                    a {
-                        &:hover {
-                            background : $cg8;
-                            color      : $cg2;
-                            border     : 1px solid $cg2;
-
-                            + ul {
-                                li {
-                                    a {
-                                        background : $cg8;
-                                        color      : $cg2;
-                                        border     : 1px solid $cg2;
-                                    }
-                                }
-                            }
-                        }
-                    }
-
-                    &:last-child {
-                        &::before {
-                            height : 30px;
-                        }
-                    }
-                }
-
-                ul {
-                    li {
-
-                        margin          : 0px 0;
-                        list-style-type : none;
-                        position        : relative;
-                        padding         : 10px 5px 0px 5px;
-
-                        &:before {
-                            content     : '';
-                            position    : absolute;
-                            top         : 0;
-                            width       : 1px;
-                            height      : 100%;
-                            right       : auto;
-                            left        : -20px;
-                            border-left : 1px solid #CCCCCC;
-                            bottom      : 50px;
-                        }
-
-                        a {
-                            display               : inline-block;
-                            border                : 1px solid #CCCCCC;
-                            padding               : 5px 10px;
-                            text-decoration       : none;
-                            color                 : $cg8;
-                            font-family           : arial, verdana, tahoma;
-                            font-size             : 11px;
-                            border-radius         : 5px;
-                            -webkit-border-radius : 5px;
-                            -moz-border-radius    : 5px;
-                        }
-
-                        &:after {
-                            content    : '';
-                            position   : absolute;
-                            top        : 30px;
-                            width      : 25px;
-                            height     : 20px;
-                            right      : auto;
-                            left       : -20px;
-                            border-top : 1px solid #CCCCCC;
-                        }
-                    }
-                }
 
                 .-page-form, .-product-form, .-category-form {
                     position     : absolute;

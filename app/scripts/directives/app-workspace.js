@@ -91,6 +91,7 @@ angular.module('pieologyApp')
 
                             vlnConfig.setWorkspaceDimensions(el.clientWidth, el.clientHeight);
                             $rootScope.$broadcast('vlnWorkspace.resize');
+
                             calcFrame();
                             startContainerWatch(container.clientWidth, container.clientHeight);
                         }

@@ -33,7 +33,7 @@ angular.module('pieologyApp')
             $scope.currentCategory = null;
             $scope.currentPage = null;
 
-            $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 20;
+            $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
 
 
             $scope.editProduct = function (product) {
@@ -65,7 +65,7 @@ angular.module('pieologyApp')
             });
 
             $scope.$on('vlnWorkspace.resize', function () {
-                $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 20;
+                $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
             });
         }
     ]);
