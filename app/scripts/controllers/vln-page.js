@@ -36,24 +36,49 @@ angular.module('pieologyApp')
             $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
 
 
-            $scope.editProduct = function (product) {
+            $scope.editProduct = function (product, index) {
+                /**
+                    @function
+                    @name editProduct
+                    @description sets up the app to edit a product and show live changes to iframe app
+                    @param {Object,String} product,index
+                    @return nothing is returned from this
+                 */
                 // $scope.currentProductIndex = index;
                 $scope.currentProduct = product;
                 toggleAssetList();
                 toggleProductForm();
+                $scope.loadFrameProduct( index );
             };
 
-            $scope.loadIframe = function (item) {
+            $scope.loadFrameProduct = function( index ) {
                 /**
                     @function
-                    @name loadIframe
-                    @description sends an url sctring to the workspace service to upate the ifram src url
+                    @name loadFrameProduct
+                    @description sends a product url string to the workspace service to upate the ifram src url
+                    @param {Object,String} product,index
+                    @return nothing is returned from this
+                 */
+
+                var srcPath = vlnConfig.getIframePathBase() + '/product/' + index;
+
+                $rootScope.$broadcast('vlnWorkspaceUrl.change', {
+                    url: srcPath
+                });
+
+            }
+
+            $scope.loadFramePage = function (item) {
+                /**
+                    @function
+                    @name loadFramePage
+                    @description sends a page url string to the workspace service to upate the ifram src url
                     @param {Object} item (must have item.path)
                     @return nothing is returned from this
                  */
 
-                // var srcPath = scope.basePath + item.path + '/' +item.id;
                 var srcPath = vlnConfig.getIframePathBase() + item.path;
+
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });

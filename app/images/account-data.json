@@ -1,6 +1,6 @@
 {
     "siteName": "RunwayClothing.com",
-    "siteUrl": "http://localhost:8001/#",
+    "siteUrl": "http://localhost:8080/",
     "pages": [
         {
             "title": "Home",
