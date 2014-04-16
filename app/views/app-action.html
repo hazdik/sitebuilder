@@ -2,35 +2,25 @@
      ng-class="isVisible ? 'slide-in-offset' : 'slide-out-offset'">
      <section>
         <div ng-switch="currentAction">
-            <div ng-switch-when="designAction" class="-theme-list">
+            <div ng-switch-when="designAction" class="">
                 <div vln-design-action></div>
             </div>
-            <div ng-switch-when="pageAction" class="-page-tree">
+
+            <div ng-switch-when="pageAction" class="">
                 <div vln-page-action></div>
             </div>
+
             <div ng-switch-when="pageStats" class="">
                 <div vln-page-stats></div>
             </div>
-<!--             <div ng-switch-when="formAction">
-                <div vln-action-forms
-                     ng-controller="vlnProductCtrl"></div>
-            </div> -->
 
+            <div ng-switch-when="pageFinance" class="">
+                <div vln-page-finance></div>
+            </div>
 
-<!--                 <div class="-page-form"
-                     ng-class="visiblePageForm ? 'fade-in' : 'fade-out'">
-                    <div vln-page-form></div>
-                </div>
-                <div class="-product-form"
-                     ng-class="visibleProductForm ? 'fade-in' : 'fade-out'">
-                    <div vln-product-form
-                         ng-controller="vlnProductCtrl"
-                         id="currentProductId"></div>
-                 </div>
-                <div class="-category-form"
-                     ng-class="visibleCategoryForm ? 'fade-in' : 'fade-out'">
-                    <div vln-category-form></div>
-                </div> -->
+            <div ng-switch-when="pageAccounts" class="">
+                <div vln-page-accounts></div>
+            </div>
         </div>
      </section>
 </div>
