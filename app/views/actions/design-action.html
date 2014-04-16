@@ -6,8 +6,8 @@
         <img ng-src="{{ themes.thumbnail }}" alt="">
     </div>
     <div class="row-fluid -theme-list">
-        <div style="overflow: auto;">
-            <ul class="nav nav-sidebar ng-scope">
+        <div class="-body" ng-style="{ 'height': elementHeight }">
+            <ul class="nav">
                 <li ng-repeat="theme in themes.themeList"
                     class="active text-center"
                     ng-click="loadTheme(theme)">

@@ -1,7 +1,7 @@
-/*global angular*/
+/*global angular, console*/
 
 angular.module('pieologyApp')
-    .directive('vlnDesignAction', ['vlnThemeFactory', function (vlnThemeFactory) {
+    .directive('vlnDesignAction', ['vlnConfig', 'vlnThemeFactory', function (vlnConfig, vlnThemeFactory) {
         'use strict';
         return {
             templateUrl : 'views/actions/design-action.html',
@@ -10,11 +10,15 @@ angular.module('pieologyApp')
             link        : function postLink(scope) {
                 // Fetch available themes
                 vlnThemeFactory.getThemes()
-                .then(function (promise) {
-                    scope.themes = promise.data;
-                })
-                .catch(function(error){
-                    throw new Error('Error fetching themes: ', error);
+                    .then(function (promise) {
+                        scope.themes = promise.data;
+                    })
+                    .catch(function(error){
+                        throw new Error('Error fetching themes: ', error);
+                    });
+
+                scope.$on('vlnWorkspace.resize', function () {
+                    scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 90;
                 });
 
                 scope.loadTheme = function(theme) {
@@ -24,7 +28,7 @@ angular.module('pieologyApp')
                         @Description : sends a request to load the customers site in the preview iframe with this theme id
                     */
                     console.log(theme);
-                }
+                };
             }
         };
     }]);
