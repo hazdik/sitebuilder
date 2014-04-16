@@ -24,17 +24,21 @@ angular.module('pieologyApp')
                 toggleProductForm();
             };
 
-            $scope.loadIframe = function (item) {
+            $scope.loadFramePage = function (item) {
                 /**
                     @function
-                    @name loadIframe
+                    @name loadFramePage
                     @description sends an url sctring to the workspace service to upate the ifram src url
                     @param {Object} item (must have item.path)
                     @return nothing is returned from this
                  */
 
-                // var srcPath = scope.basePath + item.path + '/' +item.id;
-                var srcPath = $scope.basePath + item.path;
+                var srcPath = vlnConfig.getIframePathBase() + item.path;
+                // console.log(item);
+                // var srcPath = $scope.basePath + item.path;
+                console.log(item);
+                console.log(vlnConfig.getIframePathBase())
+                console.log(srcPath);
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });

@@ -34,6 +34,7 @@ angular.module('pieologyApp', [
                 'self',
                 // 'http://localhost:9778'
                 'http://localhost:8001/**',
-                'http://localhost/**'
+                'http://localhost/**',
+                'http://localhost:8080/**'
             ]);
         }]);

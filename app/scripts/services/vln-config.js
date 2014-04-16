@@ -14,7 +14,7 @@ angular.module('pieologyApp')
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
-            iFramePathBase = '',
+            iFramePathBase = 'http://localhost:8080/',
            firebaseUrl = 'https://brilliant-fire-5600.firebaseio.com/', // Matt
             // firebaseUrl = 'https://burning-fire-1964.firebaseio.com/', // Tsanko
             screenMode = 'desktop',         // Initial screen mode.
