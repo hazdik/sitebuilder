@@ -54,7 +54,6 @@ angular.module('pieologyApp')
                     Directive Scope Variables
                 */
 //              TODO:  D'n'D tests
-//                scope.iFrameSrc = 'http://localhost:9000/views/inner.html' ;//'http://localhost:9778'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
                 scope.iFrameSrc = 'http://localhost:8080/'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
                 scope.isFullSize = !vlnConfig.getGlobalAttrBucketState();
                 scope.isStateAdd = scope.isFullSize;
@@ -86,6 +85,11 @@ angular.module('pieologyApp')
                             $timeout.cancel(_containerWatch);
                             _containerWatch = null;
                         } else {
+
+                            var el = frame.closest('section.-site')[0];
+
+                            vlnConfig.setWorkspaceDimensions(el.clientWidth, el.clientHeight);
+                            $rootScope.$broadcast('vlnWorkspace.resize');
                             calcFrame();
                             startContainerWatch(container.clientWidth, container.clientHeight);
                         }

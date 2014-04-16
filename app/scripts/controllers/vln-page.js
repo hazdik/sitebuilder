@@ -5,6 +5,26 @@ angular.module('pieologyApp')
         function ($rootScope, $scope, vlnFireRef, vlnConfig) {
             'use strict';
 
+            /* Bind to Firebase.io */
+            vlnFireRef.products().$bind($scope, 'products');
+
+            function toggleAssetList() {
+                if ($scope.visibleAssetList) {
+                    $scope.visibleAssetList = false;
+                    return;
+                }
+                $scope.visibleAssetList = true;
+            }
+
+            function toggleProductForm() {
+                if ($scope.visibleProductForm) {
+                    $scope.visibleProductForm = false;
+                    return;
+                }
+                $scope.visibleProductForm = true;
+            }
+
+            /* Scope functionlity */
             $scope.visiblePageForm = false;
             $scope.visibleProductForm = false;
             $scope.visibleCategoryForm = false;
@@ -12,10 +32,9 @@ angular.module('pieologyApp')
             $scope.currentProductIndex = null;
             $scope.currentCategory = null;
             $scope.currentPage = null;
-            // $scope.products = vlnFireRef.products();
-            vlnFireRef.products().$bind($scope, 'products');
 
-            /* Scope functionlity */
+            $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 20;
+
 
             $scope.editProduct = function (product) {
                 // $scope.currentProductIndex = index;
@@ -34,11 +53,7 @@ angular.module('pieologyApp')
                  */
 
                 var srcPath = vlnConfig.getIframePathBase() + item.path;
-                // console.log(item);
-                // var srcPath = $scope.basePath + item.path;
-                console.log(item);
-                console.log(vlnConfig.getIframePathBase())
-                console.log(srcPath);
+
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });
@@ -49,20 +64,8 @@ angular.module('pieologyApp')
                 toggleAssetList();
             });
 
-            function toggleAssetList() {
-                if ($scope.visibleAssetList) {
-                    $scope.visibleAssetList = false;
-                    return;
-                }
-                $scope.visibleAssetList = true;
-            }
-
-            function toggleProductForm() {
-                if ($scope.visibleProductForm) {
-                    $scope.visibleProductForm = false;
-                    return;
-                }
-                $scope.visibleProductForm = true;
-            }
+            $scope.$on('vlnWorkspace.resize', function () {
+                $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 20;
+            });
         }
     ]);

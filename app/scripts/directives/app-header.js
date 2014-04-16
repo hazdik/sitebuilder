@@ -8,17 +8,12 @@ angular.module('pieologyApp')
         return {
             templateUrl: 'views/app-header.html',
             restrict   : 'A',
-//            replace    : true,
+            replace    : true,
             link       : function postLink(scope) {
 
                 scope.screenMode = vlnConfig.getScreenMode();
                 scope.previewMode = vlnConfig.getPreviewMode();
                 scope.switchStyle = 'vln-slider';
-
-//                scope.state = {
-//                    previewMode : 'off',
-//                    switchStyle : 'vln-tiny-slider'
-//                };
 
                 scope.toggleAppNavigation = function () {
                     if (vlnConfig.getGlobalNavState()) {

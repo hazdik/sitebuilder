@@ -13,7 +13,6 @@
 }
 
 .-action {
-    float            : left;
     position         : absolute;
     z-index          : 9;
     height           : 100%;
@@ -31,30 +30,48 @@
     }
 
     section {
-//        padding-top : 68px;
-        height      : 100%;
-        overflow-y  : auto;
+        height : 100%;
+
         div {
             // This is the container div for all ng-switch="currentAction"'s
             .-theme-list {
-                // list elements style here.
+                .-body {
+                    @include helperActionSection;
+                }
             }
 
             // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
             // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
 
-            .-page-list {
-                padding-top: 68px;
-                background-color: inherit;
+            .-page-list, .-page-stats {
+                padding-top      : 68px;
+                background-color : inherit;
+
+                header {
+                    padding       : 2px 10px 10px 10px;
+                    line-height   : 30px;
+                    border-bottom : 1px solid $cg8;
+                    height        : 40px;
+
+                    span {
+                        font-size : 18px;
+                        position  : relative;
+                        top       : 4px;
+                    }
+                }
 
                 &.fade-in {
                     @include fade(1);
-                    z-index: 1000;
+                    z-index : 1000;
                 }
 
                 &.fade-out {
                     @include fade(0);
-                    z-index: -1000;
+                    z-index : -1000;
+                }
+
+                .-body {
+                    @include helperActionSection;
                 }
             }
 
@@ -79,8 +96,8 @@
                         z-index  : -1000;
 
                         .right-inner-addon {
-                            position: absolute;
-                            top: 5px;
+                            position : absolute;
+                            top      : 5px;
 
                             input {
                                 padding-right : 20px;
@@ -180,12 +197,12 @@
                     opacity      : 0;
                     z-index      : -1000;
                     padding-left : 10px;
-                    padding-top: 68px;
+                    padding-top  : 68px;
 
                     div {
-                        margin-bottom: 10px;
-                        min-width: 225px;
-                        max-width: 335px; // NOTE: This controls the forms behavier with hide/show nav
+                        margin-bottom : 10px;
+                        min-width     : 225px;
+                        max-width     : 335px; // NOTE: This controls the forms behavier with hide/show nav
 
                         p {
                             font-size      : 12px;
@@ -196,18 +213,18 @@
                     }
 
                     .form-header {
-                        color: $cg8;
+                        color : $cg8;
 
                         button {
-                            float: right;
-                            border: none;
-                            background-color: inherit;
-                            color: $cg8;
+                            float            : right;
+                            border           : none;
+                            background-color : inherit;
+                            color            : $cg8;
                         }
                     }
 
                     .product-images {
-                        padding: 0 0 30px 0;
+                        padding : 0 0 30px 0;
 
                         .-carousel {
                             ul {
@@ -266,16 +283,17 @@
         }
     }
 
-//    .-design {
-//        padding : 10px 0;
+    //    .-design {
+    //        padding : 10px 0;
 
-        .-themes {
-            padding-top : 78px;
+    .-themes {
+        padding-top : 68px;
 
-            .-current {
-                padding       : 0 0 10px 0;
-                border-bottom : 2px solid $cg8;
-            }
+        .-current {
+            padding       : 10px 0;
+            border-bottom : 2px solid $cg8;
+            text-align    : center;
         }
-//    }
+    }
+    //    }
 }

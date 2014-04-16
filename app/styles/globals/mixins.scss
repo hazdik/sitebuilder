@@ -211,18 +211,9 @@
     font-weight : 600;
 }
 
-@mixin transform-rotate($degree) {
-    transform         : rotate($degree);
-    -webkit-transform : rotate($degree);
-    -moz-transform    : rotate($degree);
-    -o-transform      : rotate($degree);
-    -ms-transform     : rotate($degree);
+@mixin helperActionSection() {
+    overflow   : auto;
+    height     : 100%;
+    min-height : $action-min-height;
 }
 
-@mixin transform-scale($x, $y) {
-    transform         : scale($x, $y);
-    -webkit-transform : scale($x, $y);
-    -moz-transform    : scale($x, $y);
-    -o-transform      : scale($x, $y);
-    -ms-transform     : scale($x, $y);
-}

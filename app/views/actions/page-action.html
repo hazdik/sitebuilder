@@ -27,7 +27,8 @@
                 </div>
             </div>
         </header>
-        <ul>
+        <div class="-body" ng-style="{ 'height': elementHeight }">
+            <ul>
             <li>
                 <a ng-click="loadFramePage('{{ pageData.siteUrl }}')">{{pageData.siteName}}</a>
                 <ul>
@@ -73,5 +74,6 @@
                 </ul>
             </li>
         </ul>
+        </div>
     </div>
 </div>

@@ -1,33 +1,40 @@
 // COLORS
 // ------------------------
 // Grays
-$cg10   :#FFFFFF;
-$cg9    :#F8F8F8;
-$cg8    :#F0F0F0;
-$cg7    :#E0E0E0;
-$cg6    :#D0D0D0;
-$cg5    :#AAAAAA;
-$cg4    :#888888;
-$cg3    :#666666;
-$cg2    :#444444;
-$cg1    :#222222;
-$cg0    :#000000;
-$cg-min :$cg10;
-$cg-max :$cg0;
+$cg10 : #FFFFFF;
+$cg9 : #F8F8F8;
+$cg8 : #F0F0F0;
+$cg7 : #E0E0E0;
+$cg6 : #D0D0D0;
+$cg5 : #AAAAAA;
+$cg4 : #888888;
+$cg3 : #666666;
+$cg2 : #444444;
+$cg1 : #222222;
+$cg0 : #000000;
+$cg-min : $cg10;
+$cg-max : $cg0;
 // ------------------------
 
 // FONTS
 // ------------------------
 // Families
-$sansFontFamily: 'Open Sans', Helvetica, Arial, sans-serif;
+$sansFontFamily : 'Open Sans', Helvetica, Arial, sans-serif;
 
 // Sizes
-$fs0    :10px;
-$fs1    :11px;
-$fs2    :12px;
-$fs3    :13px;
-$fs4    :14px;
-$fs5    :16px;
-$fs6    :18px;
-$fs-min :$fs0;
-$fs-max :$fs5;
+$fs0 : 10px;
+$fs1 : 11px;
+$fs2 : 12px;
+$fs3 : 13px;
+$fs4 : 14px;
+$fs5 : 16px;
+$fs6 : 18px;
+$fs-min : $fs0;
+$fs-max : $fs5;
+
+// ELEMENT'S HEIGHT & WIDTH
+// ------------------------
+// Action section
+$action-min-height : 560px;
+
+// ------------------------
