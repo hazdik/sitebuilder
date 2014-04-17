@@ -4,27 +4,27 @@
     "siteTheme": {
         "id"         : "1",
         "name"       : "default",
-        "thumbnail"  : "http://lorempixel.com/150/100/1",
-        "cssFileName": ""
+        "thumbnail"  : "http://localhost:8090/default.png",
+        "cssRef": "http://localhost:8090/default.css"
     },
     "themes": [
         {
             "id": "1",
             "name": "default",
-            "thumbnail": "http://lorempixel.com/150/100/2",
-            "cssFileName": ""
+            "thumbnail": "http://localhost:8090/default.png",
+            "cssRef": "http://localhost:8090/default.css"
         },
         {
             "id": "1234",
             "name": "tt-simple",
-            "thumbnail": "http://lorempixel.com/150/100/3",
-            "cssFileName": ""
+            "thumbnail": "http://localhost:8090/tt_sample.png",
+            "cssRef": "http://localhost:8090/tt_sample.css"
         },
         {
             "id": "5678",
-            "name": "tt_brave",
-            "thumbnail": "http://lorempixel.com/150/100/4",
-            "cssFileName": ""
+            "name": "tt-brave",
+            "thumbnail": "http://localhost:8090/tt_brave.png",
+            "cssRef": "http://localhost:8090/tt_brave.css"
         }
     ],
     "pages": [
