@@ -18,7 +18,7 @@
     height           : 100%;
     padding          : 0 0 0 78px;
     color            : $cg8;
-    background-color : #2D3F55;
+    background-color : #2d3f55;
     padding-top      : 50px; //  Account for the app header element
 
     &.slide-in-offset {
@@ -109,14 +109,14 @@
                                 display         : inline-block;
                                 padding         : 5px 10px;
                                 text-decoration : none;
-                                color           : #91A1B1;
+                                color           : #91a1b1;
 
                                 &:hover {
                                     color : $cg10;
                                 }
 
                                 &.-node {
-                                    color : #117DB5;
+                                    color : #117db5;
                                 }
                             }
 
@@ -124,20 +124,20 @@
                                 margin-left      : 10px;
                                 padding          : 5px;
                                 background-color : transparent;
-                                color            : #91A1B1;
-                                border-color     : #91A1B1;
+                                color            : #91a1b1;
+                                border-color     : #91a1b1;
                                 outline          : 0;
                                 outline          : none;
 
                                 &:hover {
                                     color        : $cg10;
-                                    border-color : #117DB5;
+                                    border-color : #117db5;
                                 }
 
                                 span {
                                     &:before {
-                                        content  : url("/images/ico-plus.svg");
-                                        margin: 0 5px 0 3px;
+                                        content : url("/images/ico-plus.svg");
+                                        margin  : 0 5px 0 3px;
                                     }
                                 }
                             }
@@ -156,7 +156,7 @@
                                     height      : 100%;
                                     right       : auto;
                                     left        : -20px;
-                                    border-left : 1px solid #91A1B1;
+                                    border-left : 1px solid #91a1b1;
                                     bottom      : 50px;
                                 }
 
@@ -181,7 +181,7 @@
                 .-page-form, .-product-form, .-category-form {
                     position     : absolute;
                     height       : 100%;
-                    overflow     : scroll;
+                    overflow-y   : scroll;
                     color        : $cg8;
                     opacity      : 0;
                     z-index      : -1000;
@@ -190,6 +190,8 @@
 
                     div {
                         margin-bottom : 10px;
+                        display       : inline-block;
+                        width         : 100%;
                         min-width     : 225px;
                         max-width     : 335px; // NOTE: This controls the forms behavior with hide/show nav
 
@@ -201,11 +203,12 @@
                         }
 
                         input {
-                            background-color: inherit;
+                            background-color : inherit;
                         }
                     }
 
                     .form-header {
+                        padding : 10px 0 0 0;
 
                         button {
                             float            : right;
@@ -215,8 +218,13 @@
                         }
                     }
 
+                    .product-name {
+                        color : $cg6;
 
-
+                        input {
+                            @include formInput();
+                        }
+                    }
 
                     .product-images {
                         padding : 0 0 30px 0;
@@ -253,14 +261,16 @@
                     }
 
                     .pricing {
-                        div {
-                            display : inline-block;
+
+                        input {
+                            @include formInput();
                         }
                     }
 
                     .description {
-                        textarea {
-                            width : 90%;
+
+                        input {
+                            @include formInput();
                         }
                     }
 

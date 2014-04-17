@@ -38,26 +38,26 @@ angular.module('pieologyApp')
 
             $scope.editProduct = function (product, index) {
                 /**
-                    @function
-                    @name editProduct
-                    @description sets up the app to edit a product and show live changes to iframe app
-                    @param {Object,String} product,index
-                    @return nothing is returned from this
+                 @function
+                 @name editProduct
+                 @description sets up the app to edit a product and show live changes to iframe app
+                 @param {Object,String} product,index
+                 @return nothing is returned from this
                  */
-                // $scope.currentProductIndex = index;
+                    // $scope.currentProductIndex = index;
                 $scope.currentProduct = product;
                 toggleAssetList();
                 toggleProductForm();
-                $scope.loadFrameProduct( index );
+                $scope.loadFrameProduct(index);
             };
 
-            $scope.loadFrameProduct = function( index ) {
+            $scope.loadFrameProduct = function (index) {
                 /**
-                    @function
-                    @name loadFrameProduct
-                    @description sends a product url string to the workspace service to upate the ifram src url
-                    @param {Object,String} product,index
-                    @return nothing is returned from this
+                 @function
+                 @name loadFrameProduct
+                 @description sends a product url string to the workspace service to upate the ifram src url
+                 @param {Object,String} product,index
+                 @return nothing is returned from this
                  */
 
                 var srcPath = vlnConfig.getIframePathBase() + '/product/' + index;
@@ -70,11 +70,11 @@ angular.module('pieologyApp')
 
             $scope.loadFramePage = function (item) {
                 /**
-                    @function
-                    @name loadFramePage
-                    @description sends a page url string to the workspace service to upate the ifram src url
-                    @param {Object} item (must have item.path)
-                    @return nothing is returned from this
+                 @function
+                 @name loadFramePage
+                 @description sends a page url string to the workspace service to upate the ifram src url
+                 @param {Object} item (must have item.path)
+                 @return nothing is returned from this
                  */
 
                 var srcPath = vlnConfig.getIframePathBase() + item.path;
@@ -84,7 +84,7 @@ angular.module('pieologyApp')
                 });
             };
 
-            $scope.$on('vlnPageAction.hideProductForm', function(event) {
+            $scope.$on('vlnPageAction.hideProductForm', function (event) {
                 toggleProductForm();
                 toggleAssetList();
             });
