@@ -67,7 +67,7 @@
             &:before {
                 content    : "";
                 position   : absolute;
-                min-height : 68px;
+                min-height : $headerHeight;
                 width      : 1px;
                 top        : 0;
                 background : #DBE3EB;
@@ -151,7 +151,7 @@
                 &:before {
                     content    : "";
                     position   : absolute;
-                    min-height : 68px;
+                    min-height : $headerHeight;
                     width      : 1px;
                     top        : 0;
                     background : #DBE3EB;

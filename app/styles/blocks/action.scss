@@ -41,7 +41,7 @@
             }
 
             .-page-list, .-page-stats {
-                padding-top      : 68px;
+                padding-top      : $headerHeight;
                 background-color : inherit;
 
                 header {
@@ -186,7 +186,7 @@
                     opacity      : 0;
                     z-index      : -1000;
                     padding-left : 10px;
-                    padding-top  : 68px;
+                    padding-top  : $headerHeight;
 
                     div {
                         margin-bottom : 10px;
@@ -282,7 +282,7 @@
     //        padding : 10px 0;
 
     .-themes {
-        padding-top : 68px;
+        padding-top : $headerHeight;
 
         .-current {
             padding       : 10px 0;
