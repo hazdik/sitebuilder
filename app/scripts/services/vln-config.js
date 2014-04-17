@@ -10,6 +10,7 @@ angular.module('pieologyApp')
          * @return an object with public api contract to get/set dynamic app configuation states.
          */
 
+
         'use strict';
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
