@@ -1,7 +1,7 @@
 /*global angular, console*/
 
 angular.module('pieologyApp')
-    .directive('vlnDesignAction', ['vlnConfig', 'vlnThemeFactory', function (vlnConfig, vlnThemeFactory) {
+    .directive('vlnDesignAction', ['vlnConfig', 'vlnFireRef', function (vlnConfig, vlnFireRef) {
         'use strict';
         return {
             templateUrl : 'views/actions/design-action.html',
@@ -9,13 +9,8 @@ angular.module('pieologyApp')
             scope       : {},
             link        : function postLink(scope) {
                 // Fetch available themes
-                vlnThemeFactory.getThemes()
-                    .then(function (promise) {
-                        scope.themes = promise.data;
-                    })
-                    .catch(function(error){
-                        throw new Error('Error fetching themes: ', error);
-                    });
+                vlnFireRef.themeCurrent().$bind(scope, 'themeCurrent');
+                vlnFireRef.themes().$bind(scope, 'themes');
 
                 scope.$on('vlnWorkspace.resize', function () {
                     scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 90;
@@ -23,10 +18,12 @@ angular.module('pieologyApp')
 
                 scope.loadTheme = function(theme) {
                     /*
-                        @Input       : takes either a number or string as a number (not sure at time of writing)
+                        @Input       : takes theme object
                         @Output      : sets the selected style for this theme.
                         @Description : sends a request to load the customers site in the preview iframe with this theme id
                     */
+                    console.log(theme);
+                    scope.themeCurrent = theme;
                     console.log(theme);
                 };
             }

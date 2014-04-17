@@ -1,6 +1,32 @@
 {
     "siteName": "RunwayClothing.com",
     "siteUrl": "http://localhost:8080/",
+    "siteTheme": {
+        "id"         : "1",
+        "name"       : "default",
+        "thumbnail"  : "http://lorempixel.com/150/100/1",
+        "cssFileName": ""
+    },
+    "themes": [
+        {
+            "id": "1",
+            "name": "default",
+            "thumbnail": "http://lorempixel.com/150/100/2",
+            "cssFileName": ""
+        },
+        {
+            "id": "1234",
+            "name": "tt-simple",
+            "thumbnail": "http://lorempixel.com/150/100/3",
+            "cssFileName": ""
+        },
+        {
+            "id": "5678",
+            "name": "tt_brave",
+            "thumbnail": "http://lorempixel.com/150/100/4",
+            "cssFileName": ""
+        }
+    ],
     "pages": [
         {
             "title": "Home",

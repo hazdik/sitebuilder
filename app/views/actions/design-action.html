@@ -2,17 +2,18 @@
 <!--<section class="-design container-fluid text-center">-->
 <div class="-themes">
     <div class="row-fluid -current">
-        <header>{{ themes.current }}</header>
-        <img ng-src="{{ themes.thumbnail }}" alt="">
+        <header>{{ themeCurrent.name }}</header>
+        <img ng-src="{{ themeCurrent.thumbnail }}" alt="">
     </div>
     <div class="row-fluid -theme-list">
         <div class="-body" ng-style="{ 'height': elementHeight }">
             <ul class="nav">
-                <li ng-repeat="theme in themes.themeList"
+                <li ng-repeat="theme in themes"
                     class="active text-center"
+                    ng-class="{ 'ng-hide' : theme.id == themeCurrent.id }"
                     ng-click="loadTheme(theme)">
                     <a ng-click="theme">
-                        <header>{{ theme.themeName }}</header>
+                        <header>{{ theme.name }}</header>
                         <img ng-src="{{ theme.thumbnail }}" alt="Theme 1">
                     </a>
                 </li>
