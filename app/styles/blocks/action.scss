@@ -40,9 +40,6 @@
                 }
             }
 
-            // Converted to SASS from this example: http://jsfiddle.net/Fh47n/
-            // TODO  - figuure out how to remove the border from the pages li only (not hte children li elements)
-
             .-page-list, .-page-stats {
                 padding-top      : 68px;
                 background-color : inherit;
@@ -185,8 +182,7 @@
                     position     : absolute;
                     height       : 100%;
                     overflow     : scroll;
-                    // background   : $cg8;
-                    color        : $cg2;
+                    color        : $cg8;
                     opacity      : 0;
                     z-index      : -1000;
                     padding-left : 10px;
@@ -203,10 +199,13 @@
                             padding        : 0;
                             margin         : 0;
                         }
+
+                        input {
+                            background-color: inherit;
+                        }
                     }
 
                     .form-header {
-                        color : $cg8;
 
                         button {
                             float            : right;
@@ -215,6 +214,9 @@
                             color            : $cg8;
                         }
                     }
+
+
+
 
                     .product-images {
                         padding : 0 0 30px 0;

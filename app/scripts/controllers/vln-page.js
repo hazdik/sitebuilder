@@ -65,8 +65,8 @@ angular.module('pieologyApp')
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });
-
             }
+
 
             $scope.loadFramePage = function (item) {
                 /**
