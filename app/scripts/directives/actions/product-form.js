@@ -17,7 +17,7 @@ angular.module('pieologyApp')
 
                 element.on('$destroy', function() {
                     // Add directive reset/cleanup tasks here
-                    console.log('product-form-directive was destroyed');
+//                    console.log('product-form-directive was destroyed');
                 });
             }
         };

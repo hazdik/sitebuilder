@@ -1,0 +1,40 @@
+@import "globals/variables", "globals/mixins", "globals/animations";
+
+.btn {
+    padding: 4px 27px 4px 26px;
+    @include transition-to(all, 0.3s);
+    background-color: $cg10;
+
+    &.-vln-default {
+        color        : #BDC7D0;
+        border-color : #D1D8DF;
+        border-width : 2px;
+
+        &:hover {
+            background   : #fff;
+            color        : #2d3f55;
+            border-color : #388fbd;
+        }
+
+        &.-add {
+            // Add buttons have an icon and no border around the add text
+            border     : none;
+            background : inherit;
+            padding-right: 5px;
+            padding-left: 5px;
+
+            span {
+                color: #52667e; // DEV NOTE: first time I used this text:
+                //           color. I will need to vaiableize
+                //          this at some point b/c the color
+                //          comes from the design mockup images
+                //          prolly not til theme switching is added!
+                padding-bottom: 5px;
+                &:before {
+                    content : url("/images/ico-add-more.svg");
+                    margin  : 0 5px 0 3px;
+                }
+            }
+        }
+    }
+}

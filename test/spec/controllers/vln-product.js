@@ -1,5 +1,8 @@
 'use strict';
 
+//NOTE: this should either be cleaned up or updated if the vln-product ctrl
+// is used in the app. As of 04-18-2014 it is not used.
+
 describe('Controller: vlnProductCtrl', function () {
 
     // load the controller's module
@@ -16,7 +19,7 @@ describe('Controller: vlnProductCtrl', function () {
         });
     }));
 
-    it('should attach a list of awesomeThings to the scope', function () {
-        expect(scope.awesomeThings.length).toBe(3);
-    });
+//    it('should attach a list of awesomeThings to the scope', function () {
+//        expect(scope.awesomeThings.length).toBe(3);
+//    });
 });

@@ -22,9 +22,9 @@ angular.module('pieologyApp')
                         @Output      : sets the selected style for this theme.
                         @Description : sends a request to load the customers site in the preview iframe with this theme id
                     */
-                    console.log(theme);
+//                    console.log(theme);
                     scope.themeCurrent = theme;
-                    console.log(theme);
+//                    console.log(theme);
                 };
             }
         };

@@ -25,17 +25,10 @@
         <!-- not happy with this but it seems better than angular-ui carousel
             http://blog.revolunet.com/angular-carousel/ -->
         <p>Images:</p>
-        <div class="-carousel">
-            <ul rn-carousel>
-              <li ng-repeat="image in productImages" style="background-image:url({{ image.image }});">
-                <div class="layer">{{ image.text }}</div>
-              </li>
-            </ul>
-        </div>
 
-        <div class="-add">
-            <button type="button">
-                <span class="icon-plus"></span>
+        <div>
+            <button class="btn -vln-default -add">
+                <span class="ico-add-more">Add</span>
             </button>
         </div>
     </div>
@@ -61,7 +54,11 @@
 
     <div class="row-fluid">
         <p>Options:</p>
-        <span class="icon-plus"> add</span>
+        <div>
+            <button class="btn -vln-default -add">
+                <span class="ico-add-more">Add</span>
+            </button>
+        </div>
     </div>
 
     <div class="row-fluid description">
@@ -75,9 +72,12 @@
         <p><a href="#">Show advanced fields</a></p>
     </div>
 
-    <div class="row-fluid">
-        <button>Cancel</button>
-        <button class="save-btn"
-                 ng-click="save(currentProduct)">Save</button>
-    </div>
+    <!-- DEV NOTE: Keeping this row for add product flow, depending on how we add
+        things to the system we may need to save to vln databases first
+        and then sync that info up to firebase. -->
+    <!--<div class="row-fluid">-->
+        <!--<button>Cancel</button>-->
+        <!--<button class="save-btn"-->
+                 <!--ng-click="save(currentProduct)">Save</button>-->
+    <!--</div>-->
 </div>

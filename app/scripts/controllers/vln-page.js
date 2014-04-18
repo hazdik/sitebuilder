@@ -65,7 +65,7 @@ angular.module('pieologyApp')
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });
-            }
+            };
 
 
             $scope.loadFramePage = function (item) {
@@ -84,7 +84,7 @@ angular.module('pieologyApp')
                 });
             };
 
-            $scope.$on('vlnPageAction.hideProductForm', function (event) {
+            $scope.$on('vlnPageAction.hideProductForm', function () {
                 toggleProductForm();
                 toggleAssetList();
             });
