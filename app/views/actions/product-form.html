@@ -37,16 +37,6 @@
 
     <div class="row-fluid pricing">
         <p>Price:</p>
-        <div class="dropdown">
-          <a class="dropdown-toggle">
-            {{ currentCurrency }}
-          </a>
-          <ul class="dropdown-menu">
-            <li ng-repeat="choice in currencies">
-              <a>{{choice}}</a>
-            </li>
-          </ul>
-        </div>
         <div>
             <input type="text"
                    value="{{ currentProduct.price }}"
