@@ -15,7 +15,7 @@ describe('Directive: vlnProductForm', function () {
   it('should make hidden element visible', inject(function ($compile) {
     element = angular.element('<actions/product-form></actions/product-form>');
     element = $compile(element)(scope);
-    console.log('This is stub test for the vlnProductForm');
+//    console.log('This is stub test for the vlnProductForm');
     // expect(element.text()).toBe('this is the vlnProductForm directive');
   }));
 });

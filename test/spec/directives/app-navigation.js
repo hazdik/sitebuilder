@@ -13,8 +13,10 @@ describe('Directive: appNavigation', function() {
     }));
 
     it('should make hidden element visible', inject(function($compile) {
-        console.log('Testing needs element attention: ', element);
-        console.log('Testing needs $compile attention: ', $compile);
+        element = null;
+        $compile = null;
+//        console.log('Testing needs element attention: ', element);
+//        console.log('Testing needs $compile attention: ', $compile);
         // element = angular.element('<app-navigation></app-navigation>');
         // element = $compile(element)(scope);
         // expect(element.text()).toBe('this is the appNavigation directive');

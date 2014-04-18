@@ -18,6 +18,6 @@ describe('Controller: vlnPageCtrl', function () {
 
     it('should attach a list of awesomeThings to the scope', function () {
         // expect(scope.awesomeThings.length).toBe(3);
-        console.log('vlnProductCotrol does NOT have any real tests!!!!');
+//        console.log('vlnProductCotrol does NOT have any real tests!!!!');
     });
 });

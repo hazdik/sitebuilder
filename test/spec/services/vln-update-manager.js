@@ -13,7 +13,7 @@ describe('Service: vlnUpdateManager', function () {
 
     it('should do something', function () {
         expect( !! vlnUpdateManager).toBe(true);
-        console.log('vlnUpdateManager does NOT Have any tests!!!!');
+//        console.log('vlnUpdateManager does NOT Have any tests!!!!');
     });
 
 });
