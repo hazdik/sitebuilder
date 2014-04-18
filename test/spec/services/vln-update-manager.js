@@ -3,7 +3,7 @@
 describe('Service: vlnUpdateManager', function () {
 
     // load the service's module
-    beforeEach(module('pieologyApp'));
+    beforeEach(module('siteBuilder'));
 
     // instantiate service
     var vlnUpdateManager;

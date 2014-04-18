@@ -5,7 +5,7 @@
 // and
 // https://github.com/kevinsproles/kevinsproles.github.io/tree/master/snippets/angular-drag-drop-iframes
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('draggable', [
         function ($rootScope, vlnConfig) {
 

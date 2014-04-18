@@ -1,6 +1,6 @@
 /*global angular, console*/
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('vlnDesignAction', ['vlnConfig', 'vlnFireRef', function (vlnConfig, vlnFireRef) {
         'use strict';
         return {

@@ -1,5 +1,5 @@
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .factory('vlnPageFactory', ['$http', '$q', function ($http, $q) {
 
         'use strict';

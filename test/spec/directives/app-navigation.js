@@ -3,7 +3,7 @@
 describe('Directive: appNavigation', function() {
 
     // load the directive's module
-    beforeEach(module('pieologyApp'));
+    beforeEach(module('siteBuilder'));
 
     var element,
         scope;

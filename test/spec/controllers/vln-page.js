@@ -3,7 +3,7 @@
 describe('Controller: vlnPageCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('pieologyApp'));
+    beforeEach(module('siteBuilder'));
 
     var vlnPageCtrl,
         scope;

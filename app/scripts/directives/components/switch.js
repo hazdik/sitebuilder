@@ -4,7 +4,7 @@
 
 /*global angular, console */
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('vlnCompSwitch', function () {
 
         'use strict';

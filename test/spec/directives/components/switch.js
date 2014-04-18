@@ -5,7 +5,7 @@ describe('Directive: compSwitch', function () {
     'use strict';
 
     // load the directive's module
-    beforeEach(module('pieologyApp'));
+    beforeEach(module('siteBuilder'));
 
     var element,
         scope;

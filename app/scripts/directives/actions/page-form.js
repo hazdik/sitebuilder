@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
   .directive('vlnPageForm', function () {
     return {
       templateUrl: 'views/actions/page-form.html',

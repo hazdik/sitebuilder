@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('vlnProductForm', ['vlnUpdateManager', function (vlnUpdateManager) {
         return {
             templateUrl: 'views/actions/product-form.html',

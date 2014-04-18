@@ -3,7 +3,7 @@ describe('Service: vlnSiteFactory', function () {
     'use strict';
 
     // load the service's module
-    beforeEach(module('pieologyApp'));
+    beforeEach(module('siteBuilder'));
 
     // instantiate service
     var vlnSiteFactory;

@@ -1,4 +1,4 @@
-//angular.module('pieologyApp')
+//angular.module('siteBuilder')
 //    .controller('vlnProductCtrl', ['$scope', 'vlnUpdateManager', function ($scope, vlnUpdateManager) {
 //        'use strict';
 

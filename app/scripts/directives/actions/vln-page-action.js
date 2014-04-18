@@ -1,6 +1,6 @@
 /*global angular*/
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('vlnPageAction', ['$rootScope', 'vlnPageFactory', 'vlnConfig',
         function ($rootScope, vlnPageFactory, vlnConfig) {
 

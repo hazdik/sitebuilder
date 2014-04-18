@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
 .controller('vlnAppNavCtrl', ['$rootScope', '$scope', 'vlnConfig',
     function ($rootScope, $scope, vlnConfig) {
     $scope.awesomeThings = [

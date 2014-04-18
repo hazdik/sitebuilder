@@ -1,6 +1,6 @@
 /*global angular*/
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnFireRef', 'vlnConfig',
         function ($rootScope, $scope, vlnFireRef, vlnConfig) {
             'use strict';

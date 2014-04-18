@@ -1,8 +1,11 @@
 
 /*global angular */
 
-angular.module('pieologyApp')
+SiteBuilder.Controllers
     .controller('MainCtrl', ['$scope',  'vlnConfig', function ($scope, vlnConfig) {
+
+//angular.module('siteBuilder')
+//    .controller('MainCtrl', ['$scope',  'vlnConfig', function ($scope, vlnConfig) {
 
         'use strict';
         vlnConfig.initConfig();

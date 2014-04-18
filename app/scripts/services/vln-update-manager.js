@@ -1,6 +1,6 @@
 /*global angular,Firebase*/
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .factory('vlnUpdateManager', ['$firebase', 'vlnConfig',
         function ($firebase, vlnConfig) {
             'use strict';

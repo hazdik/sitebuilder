@@ -1,7 +1,7 @@
 
 /*global angular*/
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$timeout', '$sce', 'vlnConfig',
         function ($rootScope, $window, $filter, $timeout, $sce, vlnConfig) {
 

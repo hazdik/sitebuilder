@@ -1,6 +1,6 @@
 /*global angular */
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .factory('vlnConfig', ['$rootScope', '$http', function ($rootScope, $http) {
 
         /**

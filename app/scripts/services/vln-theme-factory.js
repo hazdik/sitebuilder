@@ -1,5 +1,5 @@
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .factory('vlnThemeFactory', ['$http', '$q',
         function($http, $q) {
 

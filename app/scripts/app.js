@@ -1,6 +1,15 @@
 /*global angular */
 
-angular.module('pieologyApp', [
+var SiteBuilder = SiteBuilder || {};
+
+SiteBuilder.Constants = angular.module('siteBuilder.constants', []);
+SiteBuilder.Services = angular.module('siteBuilder.services', []);
+SiteBuilder.Controllers = angular.module('siteBuilder.controllers', []);
+SiteBuilder.Filters = angular.module('siteBuilder.filters', []);
+SiteBuilder.Directives = angular.module('siteBuilder.directives', []);
+SiteBuilder.Decorators = angular.module('siteBuilder.decorators', []);
+
+angular.module('siteBuilder', [
     // Angular Modules
     'ngCookies',
     'ngResource',
@@ -10,7 +19,15 @@ angular.module('pieologyApp', [
     'ngTouch',
     'ui.bootstrap',
     'angular-carousel',
-    'firebase'
+    'firebase',
+
+    // SiteBuilder Modules
+    'siteBuilder.constants',
+    'siteBuilder.services',
+    'siteBuilder.controllers',
+    'siteBuilder.filters',
+    'siteBuilder.directives',
+    'siteBuilder.decorators'
 ])
     .config(['$locationProvider', '$routeProvider', '$sceDelegateProvider',
         function ($locationProvider, $routeProvider, $sceDelegateProvider) {

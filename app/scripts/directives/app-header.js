@@ -1,7 +1,7 @@
 
 /*global angular, console */
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('appHeader', ['$rootScope', 'vlnConfig', 'vlnSiteFactory', function ($rootScope, vlnConfig, vlnSiteFactory) {
         'use strict';
 

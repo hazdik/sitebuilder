@@ -6,7 +6,7 @@
 describe('Controller: vlnProductCtrl', function () {
 
     // load the controller's module
-    beforeEach(module('pieologyApp'));
+    beforeEach(module('siteBuilder'));
 
     var vlnProductCtrl,
         scope;

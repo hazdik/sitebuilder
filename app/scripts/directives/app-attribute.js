@@ -1,6 +1,6 @@
 /*global angular*/
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .directive('appAttribute', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
         'use strict';
 

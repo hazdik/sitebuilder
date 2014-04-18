@@ -1,6 +1,6 @@
 /*global angular */
 
-angular.module('pieologyApp')
+angular.module('siteBuilder')
     .factory('vlnSiteFactory', ['$http', '$q', 'vlnConfig', function vlnSiteFactory($http, $q) {
 
         'use strict';
