@@ -1,7 +1,6 @@
+/*global SiteBuilder*/
 
-/*global angular*/
-
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$timeout', '$sce', 'vlnConfig',
         function ($rootScope, $window, $filter, $timeout, $sce, vlnConfig) {
 

@@ -1,5 +1,6 @@
+/*global SiteBuilder */
 
-angular.module('siteBuilder')
+SiteBuilder.Services
     .factory('vlnThemeFactory', ['$http', '$q',
         function($http, $q) {
 

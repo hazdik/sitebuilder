@@ -1,21 +1,23 @@
-'use strict';
+/*global SiteBuilder*/
 
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('vlnProductForm', ['vlnUpdateManager', function (vlnUpdateManager) {
+        'use strict';
+
         return {
             templateUrl: 'views/actions/product-form.html',
-            restrict: 'A',
-            scope: {
+            restrict   : 'A',
+            scope      : {
                 currentProduct: '='
             },
-            link: function postLink(scope, element, attrs) {
+            link       : function postLink(scope, element, attrs) {
 
-                scope.hideForm = function() {
+                scope.hideForm = function () {
                     scope.updatedProduct = null;
                     scope.$emit('vlnPageAction.hideProductForm');
                 };
 
-                element.on('$destroy', function() {
+                element.on('$destroy', function () {
                     // Add directive reset/cleanup tasks here
 //                    console.log('product-form-directive was destroyed');
                 });

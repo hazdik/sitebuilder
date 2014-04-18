@@ -1,6 +1,6 @@
-/*global angular */
+/*global SiteBuilder */
 
-angular.module('siteBuilder')
+SiteBuilder.Services
     .factory('vlnSiteFactory', ['$http', '$q', 'vlnConfig', function vlnSiteFactory($http, $q) {
 
         'use strict';

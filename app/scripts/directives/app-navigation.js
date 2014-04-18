@@ -1,6 +1,6 @@
-/*global angular*/
+/*global SiteBuilder*/
 
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
 
         'use strict';

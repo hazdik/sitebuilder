@@ -1,5 +1,6 @@
+/*global SiteBuilder */
 
-angular.module('siteBuilder')
+SiteBuilder.Services
     .factory('vlnPageFactory', ['$http', '$q', function ($http, $q) {
 
         'use strict';

@@ -1,11 +1,11 @@
-/*global angular    */
+/*global SiteBuilder*/
 
 // based on
 // http://blog.parkji.co.uk/2013/08/11/native-drag-and-drop-in-angularjs.html
 // and
 // https://github.com/kevinsproles/kevinsproles.github.io/tree/master/snippets/angular-drag-drop-iframes
 
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('draggable', [
         function ($rootScope, vlnConfig) {
 

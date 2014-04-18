@@ -1,7 +1,6 @@
+/*global SiteBuilder, console*/
 
-/*global angular, console */
-
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('appHeader', ['$rootScope', 'vlnConfig', 'vlnSiteFactory', function ($rootScope, vlnConfig, vlnSiteFactory) {
         'use strict';
 

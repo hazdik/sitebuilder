@@ -1,6 +1,6 @@
-/*global angular*/
+/*global SiteBuilder*/
 
-angular.module('siteBuilder')
+SiteBuilder.Controllers
     .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnFireRef', 'vlnConfig',
         function ($rootScope, $scope, vlnFireRef, vlnConfig) {
             'use strict';

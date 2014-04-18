@@ -1,15 +1,18 @@
-'use strict';
+/*global SiteBuilder*/
 
-angular.module('siteBuilder')
-.controller('vlnAppNavCtrl', ['$rootScope', '$scope', 'vlnConfig',
-    function ($rootScope, $scope, vlnConfig) {
-    $scope.awesomeThings = [
-        'HTML5 Boilerplate',
-        'AngularJS',
-        'Karma'
-    ];  // TODO: Realize testing and remove this.
+SiteBuilder.Controllers
+    .controller('vlnAppNavCtrl', ['$rootScope', '$scope', 'vlnConfig',
+        function ($rootScope, $scope, vlnConfig) {
+            'use strict';
 
-    $rootScope.isVisible = vlnConfig.getGlobalNavState();
-    // $rootScope.isVisible = false;
+            $scope.awesomeThings = [
+                'HTML5 Boilerplate',
+                'AngularJS',
+                'Karma'
+            ];  // TODO: Realize testing and remove this.
 
-}]);
+            $rootScope.isVisible = vlnConfig.getGlobalNavState();
+            // $rootScope.isVisible = false;
+
+        }
+    ]);

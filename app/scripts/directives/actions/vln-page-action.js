@@ -1,6 +1,6 @@
-/*global angular*/
+/*global SiteBuilder*/
 
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('vlnPageAction', ['$rootScope', 'vlnPageFactory', 'vlnConfig',
         function ($rootScope, vlnPageFactory, vlnConfig) {
 

@@ -1,10 +1,6 @@
-/**
- * Created by tsanko_tsolov on 3/27/14.
- */
+/*global SiteBuilder*/
 
-/*global angular, console */
-
-angular.module('siteBuilder')
+SiteBuilder.Directives
     .directive('vlnCompSwitch', function () {
 
         'use strict';
@@ -27,7 +23,7 @@ angular.module('siteBuilder')
                     return (scope.$$phase || scope.$root.$$phase) ? fn() : scope.$apply(fn);
                 }
 
-                scope.$watchCollection('[switchState, switchStyle]', function(value) {
+                scope.$watchCollection('[switchState, switchStyle]', function (value) {
                     // console.log('collection=', value);
 
                     scope.elementStyle = scope.switchStyle;

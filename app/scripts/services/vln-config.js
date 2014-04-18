@@ -1,6 +1,6 @@
-/*global angular */
+/*global SiteBuilder */
 
-angular.module('siteBuilder')
+SiteBuilder.Services
     .factory('vlnConfig', ['$rootScope', '$http', function ($rootScope, $http) {
 
         /**

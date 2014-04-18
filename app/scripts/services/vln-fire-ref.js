@@ -1,6 +1,6 @@
-/*global angular,Firebase*/
+/*global SiteBuilder, Firebase */
 
-angular.module('siteBuilder')
+SiteBuilder.Services
     .factory('vlnFireRef', ['$firebase', 'vlnConfig',
         function ($firebase, vlnConfig) {
             'use strict';
