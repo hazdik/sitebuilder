@@ -66,8 +66,9 @@
 
     <div class="row-fluid description">
         <p>Description:</p>
-        <input value="{{ currentProduct.description }}"
-               ng-model="currentProduct.description"></input>
+        <textarea ng-model="currentProduct.description">
+            currentProduct.description
+        </textarea>
     </div>
 
     <div class="row-fluid">

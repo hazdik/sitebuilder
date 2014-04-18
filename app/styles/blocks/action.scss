@@ -268,10 +268,12 @@
                     }
 
                     .description {
-
-                        input {
-                            @include formInput();
-                        }
+//                        .editor {
+                            textarea {
+                                @include formInput();
+                                height: 225px;
+                            }
+//                        }
                     }
 
                     &.fade-in {
