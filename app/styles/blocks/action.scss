@@ -218,7 +218,7 @@
                         }
                     }
 
-                    .product-name {
+                    .name {
                         color : $cg6;
 
                         input {
@@ -226,7 +226,15 @@
                         }
                     }
 
-                    .product-images {
+                    .images {
+                        .-carousel {
+                            ul {
+                                list-style-type: none;
+                                padding: 0;
+                                margin: 0;
+                                display: inline-block;
+                            }
+                        }
 
                     }
 
