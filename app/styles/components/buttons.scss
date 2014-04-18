@@ -34,6 +34,10 @@
                     content : url("/images/ico-add-more.svg");
                     margin  : 0 5px 0 3px;
                 }
+
+                &:hover {
+                    color: $cg8;
+                }
             }
         }
     }
