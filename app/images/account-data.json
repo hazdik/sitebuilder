@@ -54,9 +54,9 @@
             "name": "Shiney Red Sparkles",
             "path": "/product",
             "images": [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price": "129.99",
             "currency": "dollar",
@@ -67,9 +67,9 @@
             "name": "Summer Dress",
             "path": "/product",
             "images": [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price": "129.99",
             "currency": "dollar",
@@ -80,9 +80,9 @@
             "name": "Summer Shoes",
             "path": "/product",
             "images": [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price": "129.99",
             "currency": "dollar",
@@ -93,9 +93,9 @@
             "name": "Summer Hat",
             "path": "/product",
             "images": [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price": "129.99",
             "currency": "dollar",
@@ -106,9 +106,9 @@
             "name": "Summer Shirts",
             "path": "/product",
             "images": [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price": "129.99",
             "currency": "dollar",

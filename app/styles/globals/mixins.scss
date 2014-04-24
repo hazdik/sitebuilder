@@ -168,11 +168,11 @@
 
     // Redeclare so transitions work
     &:hover {
-        @include box-shadow(lighten($borderColor, 30%) 0 0 1px 1px);
+        @include box-shadow(lighten($borderColor, 30%) 0 0 1px 1px inset);
     }
 
     &:focus {
-        @include box-shadow(lighten($borderColor, 45%) 0 0 1px 1px);
+        @include box-shadow(lighten($borderColor, 45%) 0 0 1px 1px inset);
     }
 }
 
