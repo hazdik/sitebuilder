@@ -1,6 +1,6 @@
 {
-  "name": "pieology",
-  "version": "0.1.0",
+  "name": "SiteBuilder",
+  "version": "0.2.0",
   "dependencies": {},
   "devDependencies": {
     "cache": "^1.1.2",

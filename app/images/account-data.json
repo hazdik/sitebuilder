@@ -1,118 +1,96 @@
 {
-    "siteName": "RunwayClothing.com",
-    "siteUrl": "http://localhost:8080/",
-    "siteTheme": {
-        "id"         : "1",
-        "name"       : "default",
-        "thumbnail"  : "http://localhost:8090/default.png",
-        "cssRef": "http://localhost:8090/default.css"
+    "siteName"  : "RunwayClothing.com",
+    "siteUrl"   : "http://localhost:8080/",
+    "siteTheme" : {
+        "id"       : "1",
+        "name"     : "default",
+        "thumbnail": "http://localhost:8090/default.png",
+        "cssRef"   : "http://localhost:8090/default.css"
     },
-    "themes": [
+    "themes"    : [
         {
-            "id": "1",
-            "name": "default",
+            "id"       : "1",
+            "name"     : "default",
             "thumbnail": "http://localhost:8090/default.png",
-            "cssRef": "http://localhost:8090/default.css"
+            "cssRef"   : "http://localhost:8090/default.css"
         },
         {
-            "id": "1234",
-            "name": "tt-simple",
+            "id"       : "1234",
+            "name"     : "tt-simple",
             "thumbnail": "http://localhost:8090/tt_sample.png",
-            "cssRef": "http://localhost:8090/tt_sample.css"
+            "cssRef"   : "http://localhost:8090/tt_sample.css"
         },
         {
-            "id": "5678",
-            "name": "tt-brave",
+            "id"       : "5678",
+            "name"     : "tt-brave",
             "thumbnail": "http://localhost:8090/tt_brave.png",
-            "cssRef": "http://localhost:8090/tt_brave.css"
+            "cssRef"   : "http://localhost:8090/tt_brave.css"
         }
     ],
-    "pages": [
+    "products"  : [
         {
-            "title": "Home",
-            "path": "/",
-            "name": "home"
-        },
-        {
-            "title": "About",
-            "path": "/about",
-            "name": "about"
-        },
-        {
-            "title": "Shiney Red Sparkles",
-            "path": "/product",
-            "name": "shiney-red-sparkles"
-        },
-        {
-            "title": "Categorys",
-            "path": "/category",
-            "name": "category"
-        }
-    ],
-    "products": [
-        {
-            "name": "Shiney Red Sparkles",
-            "path": "/product",
-            "images": [
+            "name"       : "Shiney Red Sparkles",
+            "path"       : "/product",
+            "images"     : [
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/"
             ],
-            "price": "129.99",
-            "currency": "dollar",
-            "options": [],
+            "price"      : "129.99",
+            "currency"   : "dollar",
+            "options"    : [],
             "description": "These things are shiney. And red!"
         },
         {
-            "name": "Summer Dress",
-            "path": "/product",
-            "images": [
+            "name"       : "Summer Dress",
+            "path"       : "/product",
+            "images"     : [
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/"
             ],
-            "price": "129.99",
-            "currency": "dollar",
-            "options": [],
+            "price"      : "129.99",
+            "currency"   : "dollar",
+            "options"    : [],
             "description": "Summer dresses are nice on hot days"
         },
         {
-            "name": "Summer Shoes",
-            "path": "/product",
-            "images": [
+            "name"       : "Summer Shoes",
+            "path"       : "/product",
+            "images"     : [
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/"
             ],
-            "price": "129.99",
-            "currency": "dollar",
-            "options": [],
+            "price"      : "129.99",
+            "currency"   : "dollar",
+            "options"    : [],
             "description": "Summer shoes are comfortable at the beach"
         },
         {
-            "name": "Summer Hat",
-            "path": "/product",
-            "images": [
+            "name"       : "Summer Hat",
+            "path"       : "/product",
+            "images"     : [
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/"
             ],
-            "price": "129.99",
-            "currency": "dollar",
-            "options": [],
+            "price"      : "129.99",
+            "currency"   : "dollar",
+            "options"    : [],
             "description": "Summer hats keep you eyes cool"
         },
         {
-            "name": "Summer Shirts",
-            "path": "/product",
-            "images": [
+            "name"       : "Summer Shirts",
+            "path"       : "/product",
+            "images"     : [
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/",
                 "http://lorempixel.com/100/100/"
             ],
-            "price": "129.99",
-            "currency": "dollar",
-            "options": [],
+            "price"      : "129.99",
+            "currency"   : "dollar",
+            "options"    : [],
             "description": "Summer shirts are comforatble in the sun"
         }
     ],
@@ -144,16 +122,150 @@
     ],
     "components": [
         {
-            "name": "Comments",
+            "name"  : "Comments",
             "active": true
         },
         {
-            "name": "Slider",
+            "name"  : "Slider",
             "active": true
         },
         {
-            "name": "Component 3",
+            "name"  : "Component 3",
             "active": false
+        }
+    ],
+    "nav"       : {
+        "navmenu1": [
+            {
+                "name"  : "Apparel",
+                "link"  : "/SearchResults.asp?Cat=1814",
+                "title" : null,
+                "active": "",
+                "subnav": [
+                    {
+                        "name"  : "Women",
+                        "link"  : "/SearchResults.asp?Cat=1815",
+                        "title" : null,
+                        "active": ""
+                    },
+                    {
+                        "name"  : "Men",
+                        "link"  : "/SearchResults.asp?Cat=1816",
+                        "title" : null,
+                        "active": ""
+                    }
+                ]
+            },
+            {
+                "name"  : "Home Decor",
+                "link"  : "/SearchResults.asp?Cat=1477",
+                "title" : null,
+                "active": "",
+                "subnav": [
+                    {
+                        "name"  : "Furniture",
+                        "link"  : "/SearchResults.asp?Cat=1516",
+                        "title" : null,
+                        "active": ""
+                    },
+                    {
+                        "name"  : "Home Accessories",
+                        "link"  : "/SearchResults.asp?Cat=1517",
+                        "title" : null,
+                        "active": ""
+                    }
+                ]
+            },
+            {
+                "name"  : "Beauty",
+                "link"  : "/SearchResults.asp?Cat=1513",
+                "title" : null,
+                "active": "",
+                "subnav": [
+                    {
+                        "name"  : "Bath and Body",
+                        "link"  : "/SearchResults.asp?Cat=1553",
+                        "title" : null,
+                        "active": ""
+                    },
+                    {
+                        "name"  : "Hair Care",
+                        "link"  : "/SearchResults.asp?Cat=1554",
+                        "title" : "Hair Care",
+                        "active": ""
+                    }
+                ]
+            },
+            {
+                "name"  : "Gourmet Food",
+                "link"  : "/SearchResults.asp?Cat=1514",
+                "title" : null,
+                "active": "",
+                "subnav": [
+                    {
+                        "name"  : "Specialty Items",
+                        "link"  : "/SearchResults.asp?Cat=1632",
+                        "title" : null,
+                        "active": ""
+                    },
+                    {
+                        "name"  : "Sweets",
+                        "link"  : "/SearchResults.asp?Cat=1673",
+                        "title" : null,
+                        "active": ""
+                    }
+                ]
+            }
+        ],
+        "navmenu2": [
+            {
+                "name"  : "About Us",
+                "link"  : "aboutus.asp",
+                "title" : null,
+                "active": ""
+            },
+            {
+                "name"  : "Returns",
+                "link"  : "/returns.asp",
+                "title" : null,
+                "active": ""
+            },
+            {
+                "name"  : "Shipping",
+                "link"  : "/articles.asp?ID=57",
+                "title" : null,
+                "active": ""
+            },
+            {
+                "name"  : "Site Help / FAQ",
+                "link"  : "/help.asp",
+                "title" : null,
+                "active": ""
+            }
+        ]
+    },
+    "articles": [
+        {
+            "id": 1,
+            "title": "Page three",
+            "body": "<b>Home Page</b><br /><i>Front page</i><br /><br />History of company, mission statement, etc.",
+            "seo": {
+                "metaTagTitle": null,
+                "metaTagKeywords": null,
+                "metaTagDescription": null,
+                "metaTagsOverride": null
+            }
+        },
+        {
+            "id": 2,
+            "title": "Page two",
+            "body": "<b>Page Two</b><br /><i>Not as good as page one</i><br /><br />History of company, mission statement, etc.",
+            "seo": {
+                "metaTagTitle": null,
+                "metaTagKeywords": null,
+                "metaTagDescription": null,
+                "metaTagsOverride": null
+            }
         }
     ]
 }
