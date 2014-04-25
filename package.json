@@ -1,13 +1,18 @@
 {
   "name": "SiteBuilder",
   "version": "0.2.0",
+<<<<<<< HEAD
   "dependencies": {},
+=======
+  "dependencies": {
+  },
+>>>>>>> f5888df2acd8ec0b729619f648224de787c92cae
   "devDependencies": {
     "cache": "^1.1.2",
     "cache-file": "^0.1.7",
     "grunt": "~0.4.4",
     "grunt-autoprefixer": "~0.7.2",
-    "grunt-bower-install": "~1.3.0",
+    "grunt-bower-install": "~1.4.0",
     "grunt-concurrent": "~0.5.0",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-coffee": "~0.10.1",

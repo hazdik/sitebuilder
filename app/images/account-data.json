@@ -27,14 +27,14 @@
             "cssRef"   : "http://localhost:8090/tt_brave.css"
         }
     ],
-    "products"  : [
+    "products": [
         {
-            "name"       : "Shiney Red Sparkles",
-            "path"       : "/product",
-            "images"     : [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+            "name": "Shiney Red Sparkles",
+            "path": "/product",
+            "images": [
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price"      : "129.99",
             "currency"   : "dollar",
@@ -42,12 +42,12 @@
             "description": "These things are shiney. And red!"
         },
         {
-            "name"       : "Summer Dress",
-            "path"       : "/product",
-            "images"     : [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+            "name": "Summer Dress",
+            "path": "/product",
+            "images": [
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price"      : "129.99",
             "currency"   : "dollar",
@@ -55,12 +55,12 @@
             "description": "Summer dresses are nice on hot days"
         },
         {
-            "name"       : "Summer Shoes",
-            "path"       : "/product",
-            "images"     : [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+            "name": "Summer Shoes",
+            "path": "/product",
+            "images": [
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price"      : "129.99",
             "currency"   : "dollar",
@@ -68,12 +68,12 @@
             "description": "Summer shoes are comfortable at the beach"
         },
         {
-            "name"       : "Summer Hat",
-            "path"       : "/product",
-            "images"     : [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+            "name": "Summer Hat",
+            "path": "/product",
+            "images": [
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price"      : "129.99",
             "currency"   : "dollar",
@@ -81,12 +81,12 @@
             "description": "Summer hats keep you eyes cool"
         },
         {
-            "name"       : "Summer Shirts",
-            "path"       : "/product",
-            "images"     : [
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/",
-                "http://lorempixel.com/100/100/"
+            "name": "Summer Shirts",
+            "path": "/product",
+            "images": [
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"},
+                {"src": "http://lorempixel.com/100/100/"}
             ],
             "price"      : "129.99",
             "currency"   : "dollar",

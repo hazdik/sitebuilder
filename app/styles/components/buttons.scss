@@ -1,7 +1,7 @@
 @import "globals/variables", "globals/mixins", "globals/animations";
 
 .btn {
-    padding: 4px 27px 4px 26px;
+    padding: 4px 12px;
     @include transition-to(all, 0.3s);
     background-color: $cg10;
 

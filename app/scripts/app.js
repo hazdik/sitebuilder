@@ -20,6 +20,7 @@ angular.module('siteBuilder', [
     'ui.bootstrap',
     'angular-carousel',
     'firebase',
+    'textAngular',
 
     // SiteBuilder Modules
     'siteBuilder.constants',
