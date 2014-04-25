@@ -1,4 +1,4 @@
-/*global SiteBuilder, Firebase */
+/*global SiteBuilder, Firebase, SiteDNA */
 
 SiteBuilder.Services
     .factory('vlnFireRef', ['$firebase', 'vlnConfig',
@@ -12,23 +12,24 @@ SiteBuilder.Services
                 /**
                  @function
                  @name productsFn
-                 @description return a firebase object initilaized with a list of products resource
+                 @description return a firebase object initilaized with a list of products resource using the SIteDNA object
                  @param non
                  @return Firebase reference object
                  */
-                return $firebase(new Firebase(fbUrl + '/products'));
+//                return $firebase(new Firebase(fbUrl + '/products'));
+                 return $firebase( SiteDNA.getProducts() );
             }
 
-            function productFn(id) {
-                /**
-                 @function
-                 @name productFn
-                 @description given a product id return a firebase reference to the data for that product
-                 @param {String} id
-                 @return Firebase reference object
-                 */
-                return $firebase(new Firebase(fbUrl + '/products/' + id));
-            }
+//            function productFn(id) {
+//                /**
+//                 @function
+//                 @name productFn
+//                 @description given a product id return a firebase reference to the data for that product
+//                 @param {String} id
+//                 @return Firebase reference object
+//                 */
+//                return $firebase(new Firebase(fbUrl + '/products/' + id));
+//            }
 
             function themesFn() {
                 /**
@@ -66,7 +67,7 @@ SiteBuilder.Services
             // Public API here
             return {
                 products    : productsFn,
-                product     : productFn,
+//                product     : productFn,
                 themes      : themesFn,
                 theme       : themeFn,
                 themeCurrent: themeCurrentFn

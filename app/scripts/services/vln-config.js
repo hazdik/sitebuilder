@@ -1,4 +1,4 @@
-/*global SiteBuilder */
+/*global SiteBuilder,SiteDNA*/
 
 SiteBuilder.Services
     .factory('vlnConfig', ['$rootScope', '$http', function ($rootScope, $http) {
@@ -48,6 +48,22 @@ SiteBuilder.Services
                 .then(function (promise) {
                     iFramePathBase = promise.data.siteUrl;
                 });
+
+            // Mocking the post login response
+            var ctx = 'localhost:9000';
+
+//            if ('SiteBuilder' === context) {
+//                ctx = 'localhost:9000';
+//            } else {
+//                ctx = window.location.host;
+//            }
+            var response = {
+                fbRef    : 'https://brilliant-fire-5600.firebaseio.com',
+                host     : ctx,
+                authToken: 'zzxxccvv11223344'
+            };
+
+            SiteDNA.config(response);
         }
 
         function getIframePathBaseFn() {
