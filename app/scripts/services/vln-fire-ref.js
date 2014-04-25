@@ -30,6 +30,17 @@ SiteBuilder.Services
                 return $firebase( SiteDNA.getArticles() );
             }
 
+            function categoriesFn() {
+                /**
+                 @function
+                 @name categoriesFn
+                 @description return SiteDNA data for categories from correct data source
+                 @param {none} none
+                 @return $firebase object
+                 */
+                return $firebase( SiteDNA.getCategories() );
+            }
+
             function themesFn() {
                 /**
                  @function
@@ -66,6 +77,7 @@ SiteBuilder.Services
             // Public API here
             return {
                 articles    : articlesFn,
+                categories  : categoriesFn,
                 products    : productsFn,
                 themes      : themesFn,
                 theme       : themeFn,

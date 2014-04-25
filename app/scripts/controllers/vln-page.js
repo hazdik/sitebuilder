@@ -8,6 +8,7 @@ SiteBuilder.Controllers
             /* Bind to Firebase.io */
             vlnFireRef.products().$bind($scope, 'products');
             vlnFireRef.articles().$bind($scope, 'articles');
+            vlnFireRef.categories().$bind($scope, 'categories');
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {
@@ -45,7 +46,7 @@ SiteBuilder.Controllers
                  @param {Object,String} product,index
                  @return nothing is returned from this
                  */
-                    // $scope.currentProductIndex = index;
+
                 $scope.currentProduct = product;
                 toggleAssetList();
                 toggleProductForm();

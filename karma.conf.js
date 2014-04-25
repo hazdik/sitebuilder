@@ -61,7 +61,6 @@ module.exports = function (config) {
 
 //                <!--services-->
             'app/scripts/services/vln-config.js',
-            'app/scripts/services/vln-page-factory.js',
             'app/scripts/services/vln-site-factory.js',
             'app/scripts/services/vln-theme-factory.js',
             'app/scripts/services/vln-update-manager.js',

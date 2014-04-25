@@ -209,7 +209,6 @@ SiteDNA = (function () {
          @param {none} none
          @return Object containing a list of pages for the account
          */
-        console.log('getting articles');
         if (!authStatus) {
             return false;
         }
@@ -249,9 +248,31 @@ SiteDNA = (function () {
                 }
             };
         } else {
-            console.log('returning firebase for: ', firebaseLocation + '/articles');
-            console.log(new Firebase(firebaseLocation + '/articles'));
             return new Firebase(firebaseLocation + '/articles');
+        }
+    }
+
+    function getCategoriesFn() {
+        /**
+         @function
+         @name getCategoriesFn
+         @description decide to use either firebase or volusion api and get the categories data
+         @param {none} none
+         @return Object with categories data
+         */
+        if (!authStatus) {
+            return false;
+        }
+
+        if ('production' === context) {
+            // DEV NOTE: how to handle the actual response
+            // might be something like
+            // $.get('path').then(function(response) {
+            //     return response.data;
+            // });
+            return { };
+        } else {
+            return new Firebase(firebaseLocation + '/categories');
         }
     }
 
@@ -373,8 +394,9 @@ SiteDNA = (function () {
         // Return the public api for this object
         config         : configFn,
         isAuthenticated: isAuthenticatedFn,
-        getFirebaseRef : getFirebaseRefFn,
         getArticles    : getArticlesFn,
+        getCategories  : getCategoriesFn,
+        getFirebaseRef : getFirebaseRefFn,
         getNav         : getNavFn,
         getProducts    : getProductsFn,
         logout         : logoutFn
