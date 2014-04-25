@@ -27,8 +27,8 @@
         <div class="-body" ng-style="{ 'height': elementHeight }">
             <span class="-header">Pages</span>
             <ul>
-                <li ng-repeat="page in pageData.pages">
-                    <a href="#" ng-click="loadFramePage(page)">{{ page.name }}</a>
+                <li ng-repeat="article in articles">
+                    <a href="#" ng-click="loadFramePage(article.id)">title: {{ article.title }}</a>
                 </li>
                 <li ng-repeat-end>
                     <button class="btn -vln-default" ng-click="addPage()" ng-disabled="isReadonly">

@@ -1,23 +1,22 @@
-/*global SiteBuilder */
+/*global SiteBuilder,SiteDNA */
 
 SiteBuilder.Services
-    .factory('vlnPageFactory', ['$http', '$q', function ($http, $q) {
+    .factory('vlnPageFactory', ['$firebase', '$http', '$q', function ($firebase, $http, $q) {
 
         'use strict';
 
-        function getPagesFn() {
-            var deferred = $q.defer();
-
-            $http.get('images/account-data.json')
-            .then(function(promise) {
-                deferred.resolve(promise.data);
-            });
-
-            return deferred.promise;
+        function getArticlesFn() {
+            /**
+             @function
+             @name getArticlesFn
+             @description uses the configured information and gets all article data either from Firebase or from Volusion API
+             @param {none} none
+             @return Either dataset from API or Firebase object.
+             */
+            return $firebase(SiteDNA.getArticles());
         }
-
         // Public API here
         return {
-            getPages: getPagesFn
+            getArticles: getArticlesFn
         };
     }]);

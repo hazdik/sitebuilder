@@ -7,6 +7,7 @@ SiteBuilder.Controllers
 
             /* Bind to Firebase.io */
             vlnFireRef.products().$bind($scope, 'products');
+            vlnFireRef.articles().$bind($scope, 'articles');
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {
@@ -77,8 +78,7 @@ SiteBuilder.Controllers
                  @return nothing is returned from this
                  */
 
-                var srcPath = vlnConfig.getIframePathBase() + item.path;
-
+                var srcPath = vlnConfig.getIframePathBase() + item;
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });

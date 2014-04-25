@@ -14,14 +14,6 @@ SiteBuilder.Directives
                 },
                 link       : function postLink(scope) {
 
-                    // Fetch available themes
-                    vlnPageFactory.getPages()
-                        .then(function (promise) {
-                            scope.pageData = promise;
-                        })
-                        .catch(function (error) {
-                        throw new Error('Error fetching page data: ', error);
-                    });
                 }
             };
         }]);

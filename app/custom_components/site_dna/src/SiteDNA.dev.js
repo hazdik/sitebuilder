@@ -209,6 +209,7 @@ SiteDNA = (function () {
          @param {none} none
          @return Object containing a list of pages for the account
          */
+        console.log('getting articles');
         if (!authStatus) {
             return false;
         }
@@ -248,6 +249,8 @@ SiteDNA = (function () {
                 }
             };
         } else {
+            console.log('returning firebase for: ', firebaseLocation + '/articles');
+            console.log(new Firebase(firebaseLocation + '/articles'));
             return new Firebase(firebaseLocation + '/articles');
         }
     }
