@@ -6,9 +6,9 @@ SiteBuilder.Controllers
             'use strict';
 
             /* Bind to Firebase.io */
-            vlnFireRef.products().$bind($scope, 'products');
             vlnFireRef.articles().$bind($scope, 'articles');
             vlnFireRef.categories().$bind($scope, 'categories');
+            vlnFireRef.products().$bind($scope, 'products');
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {

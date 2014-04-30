@@ -40,7 +40,7 @@
                     <a href="#" class="-node">Categories</a>
                     <ul class="subgroup">
                         <li ng-repeat="category in categories">
-                            <a href="#" ng-click="loadFramePage({{ category.path }})">{{ category.name }}</a>
+                            <a href="#" ng-click="loadFramePage( category.path )">{{ category.name }}</a>
                         </li>
                         <li ng-repeat-end>
                             <button class="btn -vln-default" ng-click="addCategory()" ng-disabled="isReadonly">
