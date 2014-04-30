@@ -7,6 +7,10 @@
         "thumbnail": "http://localhost:8090/default.png",
         "cssRef"   : "http://localhost:8090/default.css"
     },
+    "currentComponent" : {
+        "id"       : "9999",
+        "name"     : "product.price"
+    },
     "themes"    : [
         {
             "id"       : "1",
