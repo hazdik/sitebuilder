@@ -86,15 +86,26 @@ SiteBuilder.Services
                 return $firebase(new Firebase(fbUrl + '/themes/' + id));
             }
 
+            function modeCurrentFn() {
+                /**
+                 @function
+                 @name modeCurrentFn
+                 @description \return a firebase reference to the current mode (EDIT / PREVIEW)
+                 @param {none} none
+                 @return Firebase reference object
+                 */
+                return $firebase(new Firebase(fbUrl + '/currentMode'));
+            }
+
             // Public API here
             return {
-                articles        : articlesFn,
-                categories      : categoriesFn,
-                currentComponent: currentComponentFn,
-                products        : productsFn,
-                themes          : themesFn,
-                theme           : themeFn,
-                themeCurrent    : themeCurrentFn
+                articles    : articlesFn,
+                categories  : categoriesFn,
+                products    : productsFn,
+                themes      : themesFn,
+                theme       : themeFn,
+                themeCurrent: themeCurrentFn,
+                modeCurrent : modeCurrentFn
             };
         }
     ]);
