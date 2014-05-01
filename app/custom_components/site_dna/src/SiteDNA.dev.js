@@ -8,6 +8,7 @@ SiteDNA = (function () {
     var authStatus = false,
         authToken,
         context,
+        defaults,
         firebaseLocation,
         hostLocation,
         instance;
@@ -26,6 +27,9 @@ SiteDNA = (function () {
             setAuthStatus(response.authToken);
             setLocation(response.host);
             setFirebaseLocation(response.fbRef);
+
+            // if SiteDNA is used in edit mode we need to set up some defaults when init()
+            setDefaultsFn();
             // if localhost:9000 SiteBuilder context
             // if localhost:8080 Workspace context
             // else production context
@@ -38,7 +42,6 @@ SiteDNA = (function () {
             logoutFn(response);
         }
 
-        // reset SiteDNA to default state
 
 
         return instance;
@@ -49,6 +52,14 @@ SiteDNA = (function () {
          1) In sitebuilder it will need to talk to volusion api and Firebase
          2) In workspace app it will only need to talk to Firebase
          3) In production it will only need to talk to Volusion API
+         4) In SiteBuilder it will only need to talk to Firebase
+         ------------------------------------------------------------------
+         Design considerations:
+         - This feels like an adapter problem
+         - in one direction data needs to transform so it can be stored in Firebase
+         - In the other direction the data needs to flow back in through the Volusion API
+         - It also needs to expose a public api that hides the differences between api
+         - objects and Firebase objects.
          **/
 
     }
@@ -276,6 +287,10 @@ SiteDNA = (function () {
         }
     }
 
+    function getDefaultsFn() {
+        return defaults;
+    }
+
     function getProductsFn() {
         /**
          @function
@@ -376,6 +391,21 @@ SiteDNA = (function () {
         }
     }
 
+    function setDefaultsFn() {
+        /**
+         @function
+         @name setDefaultsFn
+         @description reset the default currentAppState object attributes with starting values in an object
+         @param { none } none
+         @return no return
+         */
+        defaults = {
+            'typeDescription': 'design',
+            'typeId'         : '0000',
+            'id'             : '0'
+        };
+    }
+
     function setLocation(loc) {
         /**
          @function
@@ -396,10 +426,12 @@ SiteDNA = (function () {
         isAuthenticated: isAuthenticatedFn,
         getArticles    : getArticlesFn,
         getCategories  : getCategoriesFn,
+        getDefaults    : getDefaultsFn,
         getFirebaseRef : getFirebaseRefFn,
         getNav         : getNavFn,
         getProducts    : getProductsFn,
-        logout         : logoutFn
+        logout         : logoutFn,
+        setDefaults    : setDefaultsFn
     };
 
 })();
