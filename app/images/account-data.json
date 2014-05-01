@@ -8,8 +8,9 @@
         "cssRef"   : "http://localhost:8090/default.css"
     },
     "currentComponent" : {
-        "id"       : "9999",
-        "name"     : "product.price"
+        "typeDescription": "design",
+        "typeId": "0000",
+        "id": "0"
     },
     "themes"    : [
         {

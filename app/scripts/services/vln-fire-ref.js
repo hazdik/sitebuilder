@@ -1,8 +1,8 @@
 /*global SiteBuilder, Firebase, SiteDNA */
 
 SiteBuilder.Services
-    .factory('vlnFireRef', ['$firebase', 'vlnConfig',
-        function ($firebase, vlnConfig) {
+    .factory('vlnFireRef', ['$rootScope', '$firebase', 'vlnConfig',
+        function ($rootScope, $firebase, vlnConfig) {
             'use strict';
 
             var fbUrl = vlnConfig.getFirebaseUrl();
@@ -27,7 +27,7 @@ SiteBuilder.Services
                  @param {none} none
                  @return $firebase object (willl need to modify for api data)
                  */
-                return $firebase( SiteDNA.getArticles() );
+                return $firebase(SiteDNA.getArticles());
             }
 
             function categoriesFn() {
@@ -38,7 +38,19 @@ SiteBuilder.Services
                  @param {none} none
                  @return $firebase object
                  */
-                return $firebase( SiteDNA.getCategories() );
+                return $firebase(SiteDNA.getCategories());
+            }
+
+            function currentComponentFn() {
+                /**
+                 @function
+                 @name currentComponentFn
+                 @description private function to setup rootScope with a reference to the currentComponent object in Firebase
+                 @param { none } none
+                 @return $firebase reference object
+                 */
+                return $firebase(new Firebase(fbUrl + '/currentComponent'));
+
             }
 
             function themesFn() {
@@ -76,12 +88,13 @@ SiteBuilder.Services
 
             // Public API here
             return {
-                articles    : articlesFn,
-                categories  : categoriesFn,
-                products    : productsFn,
-                themes      : themesFn,
-                theme       : themeFn,
-                themeCurrent: themeCurrentFn
+                articles        : articlesFn,
+                categories      : categoriesFn,
+                currentComponent: currentComponentFn,
+                products        : productsFn,
+                themes          : themesFn,
+                theme           : themeFn,
+                themeCurrent    : themeCurrentFn
             };
         }
     ]);

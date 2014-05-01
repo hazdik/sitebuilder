@@ -1,11 +1,10 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('MainCtrl', ['$scope',  'vlnConfig', function ($scope, vlnConfig) {
+    .controller('MainCtrl', ['$rootScope', '$scope',  'vlnConfig', function ($rootScope, $scope, vlnConfig) {
 
         'use strict';
         vlnConfig.initConfig();
-
 
         $scope.awesomeThings = [
             'HTML5 Boilerplate',

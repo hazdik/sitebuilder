@@ -12,6 +12,7 @@ SiteBuilder.Services
 
 
         'use strict';
+
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
