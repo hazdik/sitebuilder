@@ -10,6 +10,9 @@ SiteBuilder.Controllers
             vlnFireRef.categories().$bind($scope, 'categories');
             vlnFireRef.products().$bind($scope, 'products');
 
+            $scope.articles = vlnFireRef.articles().$bind($scope, 'articles');
+            console.log($scope.articles);
+
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {
                     $scope.visibleAssetList = false;

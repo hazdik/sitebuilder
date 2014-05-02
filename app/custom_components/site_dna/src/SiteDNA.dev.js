@@ -1,4 +1,5 @@
 /* global Firebase*/
+//Test
 var SiteDNA = SiteDNA || {};
 
 SiteDNA = (function () {
@@ -23,6 +24,16 @@ SiteDNA = (function () {
          */
 
         if (!instance && response.authToken) {
+            /**
+             * Do init tasks here
+             * use authThoken to set up Firebase stuff
+             * set up locations and urls if needed
+             *
+             * Do any thing context specific
+             * SiteBuilder: ???
+             * Staging: ???
+             * Production: ???
+             */
             // Hardcodeing for development, needs to come form our servers
             setAuthStatus(response.authToken);
             setLocation(response.host);
@@ -287,6 +298,14 @@ SiteDNA = (function () {
         }
     }
 
+    function getCurrentAppStateFn() {
+        if( 'production' === context ) {
+            return new Error('Production cannot use currentAppState');
+        } else {
+            return new Firebase(firebaseLocation + '/currentAppState');
+        }
+    }
+
     function getDefaultsFn() {
         return defaults;
     }
@@ -391,13 +410,13 @@ SiteDNA = (function () {
         }
     }
 
-    function setDefaultsFn() {
+    function setDefaultsFn () {
         /**
          @function
          @name setDefaultsFn
          @description reset the default currentAppState object attributes with starting values in an object
          @param { none } none
-         @return no return
+         @return nothing returned
          */
         defaults = {
             'typeDescription': 'design',
@@ -422,16 +441,17 @@ SiteDNA = (function () {
 
     return {
         // Return the public api for this object
-        config         : configFn,
-        isAuthenticated: isAuthenticatedFn,
-        getArticles    : getArticlesFn,
-        getCategories  : getCategoriesFn,
-        getDefaults    : getDefaultsFn,
-        getFirebaseRef : getFirebaseRefFn,
-        getNav         : getNavFn,
-        getProducts    : getProductsFn,
-        logout         : logoutFn,
-        setDefaults    : setDefaultsFn
+        config            : configFn,
+        isAuthenticated   : isAuthenticatedFn,
+        getArticles       : getArticlesFn,
+        getCategories     : getCategoriesFn,
+        getCurrentAppState: getCurrentAppStateFn,
+        getDefaults       : getDefaultsFn,
+        getFirebaseRef    : getFirebaseRefFn,
+        getNav            : getNavFn,
+        getProducts       : getProductsFn,
+        logout            : logoutFn,
+        setDefaults       : setDefaultsFn
     };
 
 })();

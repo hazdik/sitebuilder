@@ -99,13 +99,14 @@ SiteBuilder.Services
 
             // Public API here
             return {
-                articles    : articlesFn,
-                categories  : categoriesFn,
-                products    : productsFn,
-                themes      : themesFn,
-                theme       : themeFn,
-                themeCurrent: themeCurrentFn,
-                modeCurrent : modeCurrentFn
+                articles        : articlesFn,
+                categories      : categoriesFn,
+                currentComponent: currentComponentFn,
+                products        : productsFn,
+                themes          : themesFn,
+                theme           : themeFn,
+                themeCurrent    : themeCurrentFn,
+                modeCurrent     : modeCurrentFn
             };
         }
     ]);

@@ -14,7 +14,8 @@ SiteBuilder.Controllers
             $rootScope.isVisible = vlnConfig.getGlobalNavState();
 
             $scope.currentComponent = vlnFireRef.currentComponent();
-            $scope.currentComponent.$on('change', function( obj ) {
+            console.log($scope.currentComponent);
+            $scope.currentComponent.$on('change', function() {
                 if ('0000' === $scope.currentComponent.typeId) {
                     console.log('root case: here go to the design action: ', $scope.currentComponent);
 //                    autoNavigateToProduct();
