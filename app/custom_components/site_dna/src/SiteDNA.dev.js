@@ -310,6 +310,33 @@ SiteDNA = (function () {
         return defaults;
     }
 
+    function getProductFn( product ) {
+        /**
+         @function
+         @name getProductFn
+         @description Given a product object with product data retrieve the product from an appropriate endpoint. Note when data model settles down this may be refactored into code or id or ??
+         @param { Product } product
+         @return Either the response.data object from api endpoint or a Firebase reference to the object
+         */
+        if( !authStatus ) {
+            return false;
+        }
+
+        if ( 'production' === context ) {
+            // DEV NOTE: how to handle the actual response
+            // might be something like
+            // $.get('path').then(function(response) {
+            //     return response.data;
+            // });
+            return {
+                'data': {}
+            };
+        } else {
+            console.log( 'SiteDNA LOG - getProductFn always returns same product!!!: ', product);
+            return new Firebase( firebaseLocation + '/products/0'); // hard-coded for dev purposes.
+        }
+    }
+
     function getProductsFn() {
         /**
          @function
@@ -449,6 +476,7 @@ SiteDNA = (function () {
         getDefaults       : getDefaultsFn,
         getFirebaseRef    : getFirebaseRefFn,
         getNav            : getNavFn,
+        getProduct        : getProductFn,
         getProducts       : getProductsFn,
         logout            : logoutFn,
         setDefaults       : setDefaultsFn
