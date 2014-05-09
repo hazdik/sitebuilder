@@ -1,6 +1,8 @@
 /*global SiteBuilder */
 
-SiteBuilder.Services
+//SiteBuilder.Services
+angular.module('myApp.directives', []).
+
     .factory('vlnThemeFactory', ['$http', '$q',
         function($http, $q) {
 
