@@ -1,4 +1,4 @@
-pieology
+Site Builder
 ========
 
-just playing around
+An AngularJS based site builder
