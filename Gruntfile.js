@@ -32,7 +32,7 @@ module.exports = function (grunt) {
             js: {
                 // files: ['<%= yeoman.app %>/scripts/{,*/}*.js'], // This was not picking up the directives in the action folder. Weird.
                 files: ['<%= yeoman.app %>/scripts/**/*.js'],
-                tasks: ['newer:jshint:all'],
+                tasks: ['newer:jshint:all', 'test'],
                 options: {
                     livereload: true
                 }

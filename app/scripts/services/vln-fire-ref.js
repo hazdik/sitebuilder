@@ -1,11 +1,10 @@
-/*global SiteBuilder, Firebase, SiteDNA */
+/*global SiteBuilder */
 
 SiteBuilder.Services
-    .factory('vlnFireRef', ['$rootScope', '$firebase', 'vlnConfig',
-        function ($rootScope, $firebase, vlnConfig) {
+    .factory('vlnFireRef', function () {
             'use strict';
 
-            var fbUrl = vlnConfig.getFirebaseUrl();
+//            var fbUrl = vlnConfig.getFirebaseUrl();
             // var _products = {} || products // dont re init
 
             function productsFn() {
@@ -16,7 +15,8 @@ SiteBuilder.Services
                  @param non
                  @return Firebase reference object
                  */
-                return $firebase(SiteDNA.getProducts());
+                console.log('SiteDNA removed');
+//                return $firebase(SiteDNA.getProducts());
             }
 
             function articlesFn() {
@@ -27,7 +27,8 @@ SiteBuilder.Services
                  @param {none} none
                  @return $firebase object (willl need to modify for api data)
                  */
-                return $firebase(SiteDNA.getArticles());
+//                return $firebase(SiteDNA.getArticles());
+                console.log('SiteDNA removed');
             }
 
             function categoriesFn() {
@@ -38,7 +39,8 @@ SiteBuilder.Services
                  @param {none} none
                  @return $firebase object
                  */
-                return $firebase(SiteDNA.getCategories());
+                console.log('SiteDNA removed');
+//                return $firebase(SiteDNA.getCategories());
             }
 
             function currentComponentFn() {
@@ -49,7 +51,8 @@ SiteBuilder.Services
                  @param { none } none
                  @return $firebase reference object
                  */
-                return $firebase(new Firebase(fbUrl + '/currentComponent'));
+                console.log('SiteDNA removed');
+//                return $firebase(new Firebase(fbUrl + '/currentComponent'));
 
             }
 
@@ -61,7 +64,8 @@ SiteBuilder.Services
                  @param non
                  @return Firebase reference object
                  */
-                return $firebase(new Firebase(fbUrl + '/themes'));
+                console.log('SiteDNA removed');
+//                return $firebase(new Firebase(fbUrl + '/themes'));
             }
 
             function themeCurrentFn() {
@@ -72,7 +76,8 @@ SiteBuilder.Services
                  @param {String} id
                  @return Firebase reference object
                  */
-                return $firebase(new Firebase(fbUrl + '/siteTheme'));
+                console.log('SiteDNA removed');
+//                return $firebase(new Firebase(fbUrl + '/siteTheme'));
             }
 
             function themeFn(id) {
@@ -83,7 +88,8 @@ SiteBuilder.Services
                  @param {String} id
                  @return Firebase reference object
                  */
-                return $firebase(new Firebase(fbUrl + '/themes/' + id));
+                console.log('SiteDNA removed for themeFn, ', id);
+//                return $firebase(new Firebase(fbUrl + '/themes/' + id));
             }
 
             function modeCurrentFn() {
@@ -94,7 +100,8 @@ SiteBuilder.Services
                  @param {none} none
                  @return Firebase reference object
                  */
-                return $firebase(new Firebase(fbUrl + '/currentMode'));
+                console.log('SiteDNA removed');
+//                return $firebase(new Firebase(fbUrl + '/currentMode'));
             }
 
             // Public API here
@@ -109,4 +116,4 @@ SiteBuilder.Services
                 modeCurrent     : modeCurrentFn
             };
         }
-    ]);
+    );

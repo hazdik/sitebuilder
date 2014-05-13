@@ -9,8 +9,9 @@ SiteBuilder.Directives
             scope      : {},
             link       : function postLink(scope) {
                 // Fetch available themes
-                vlnFireRef.themeCurrent().$bind(scope, 'themeCurrent');
-                vlnFireRef.themes().$bind(scope, 'themes');
+//                vlnFireRef.themeCurrent().$bind(scope, 'themeCurrent');
+//                vlnFireRef.themes().$bind(scope, 'themes');
+                console.log('SiteDNA removed');
 
                 scope.$on('vlnWorkspace.resize', function () {
                     scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 90;

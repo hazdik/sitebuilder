@@ -1,7 +1,7 @@
-/*global SiteBuilder,SiteDNA*/
+/*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vlnConfig', ['$rootScope', '$http', function ($rootScope, $http) {
+    .factory('vlnConfig', ['$rootScope', function ($rootScope) {
 
         /**
          * @function
@@ -44,27 +44,18 @@ SiteBuilder.Services
              @description - sets up the dynamic configuarion attributes for the app (iframe url base, firebase url, etc)
              */
 
-            /* This is the setter for the iFrameBasePath */
-            $http.get('images/account-data.json')
-                .then(function (promise) {
-                    iFramePathBase = promise.data.siteUrl;
-                });
-
-            // Mocking the post login response
-            var ctx = 'localhost:9000';
-
-//            if ('SiteBuilder' === context) {
-//                ctx = 'localhost:9000';
-//            } else {
-//                ctx = window.location.host;
-//            }
-            var response = {
-                fbRef    : 'https://brilliant-fire-5600.firebaseio.com',
-                host     : ctx,
-                authToken: 'zzxxccvv11223344'
+            var mockResponse = {
+                api     : 'http://www.samplestore.io/api/v1',
+                account : 'asdf123',
+                context : 'SiteBuilder',
+                firebase: 'https://brilliant-fire-5600.firebaseio.com/accounts',
+                fbToken : ']idk - this comes from node server[',
+                apiToken: ']idk - how do I know if I am logging into edit[',
+                sandbox : 'http://localhost:8080'
             };
 
-            SiteDNA.config(response);
+            //Simulate a admin login response
+            return mockResponse;
         }
 
         function getIframePathBaseFn() {

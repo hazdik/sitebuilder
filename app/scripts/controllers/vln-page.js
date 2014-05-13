@@ -6,12 +6,14 @@ SiteBuilder.Controllers
             'use strict';
 
             /* Bind to Firebase.io */
-            vlnFireRef.articles().$bind($scope, 'articles');
-            vlnFireRef.categories().$bind($scope, 'categories');
-            vlnFireRef.products().$bind($scope, 'products');
+//            vlnFireRef.articles().$bind($scope, 'articles');
+//            vlnFireRef.categories().$bind($scope, 'categories');
+//            vlnFireRef.products().$bind($scope, 'products');
+            console.log('SiteDNA removed');
 
-            $scope.articles = vlnFireRef.articles().$bind($scope, 'articles');
-            console.log($scope.articles);
+//            $scope.articles = vlnFireRef.articles().$bind($scope, 'articles');
+            console.log('SiteDNA removed');
+//            console.log($scope.articles);
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {

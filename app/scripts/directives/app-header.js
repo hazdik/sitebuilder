@@ -3,7 +3,7 @@
 SiteBuilder.Directives
     .directive('appHeader',
     ['$rootScope', 'vlnConfig', 'vlnSiteFactory', 'vlnFireRef',
-        function ($rootScope, vlnConfig, vlnSiteFactory, vlnFireRef) {
+        function ($rootScope, vlnConfig, vlnSiteFactory) {
 
             'use strict';
 
@@ -16,7 +16,8 @@ SiteBuilder.Directives
                     scope.screenMode = vlnConfig.getScreenMode();
 
                     scope.previewMode = vlnConfig.getPreviewMode();
-                    vlnFireRef.modeCurrent().$bind(scope, 'previewMode');
+//                    vlnFireRef.modeCurrent().$bind(scope, 'previewMode');
+                    console.log('SiteDNA removed current mode is not bound');
 
                     scope.switchStyle = 'vln-slider';
 
