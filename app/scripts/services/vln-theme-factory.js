@@ -1,10 +1,8 @@
 /*global SiteBuilder */
 
-//SiteBuilder.Services
-angular.module('myApp.directives', []).
-
+SiteBuilder.Services
     .factory('vlnThemeFactory', ['$http', '$q',
-        function($http, $q) {
+        function ($http, $q) {
 
             'use strict';
 
@@ -12,9 +10,9 @@ angular.module('myApp.directives', []).
                 var deferred = $q.defer();
 
                 $http.get('images/themes.json')
-                .then(function (themes) {
-                    deferred.resolve(themes);
-                });
+                    .then(function (themes) {
+                        deferred.resolve(themes);
+                    });
 
                 return deferred.promise;
             }
