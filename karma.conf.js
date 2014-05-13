@@ -67,6 +67,7 @@ module.exports = function (config) {
             'app/scripts/services/vln-theme-factory.js',
             'app/scripts/services/vln-update-manager.js',
             'app/scripts/services/vln-fire-ref.js',
+            'app/scripts/services/vn-product-list.js',
 
 //            'app/scripts/*.js',
 //            'app/scripts/**/*.js',
