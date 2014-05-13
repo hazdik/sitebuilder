@@ -36,7 +36,9 @@ module.exports = function (config) {
             'app/bower_components/angular-carousel/dist/angular-carousel.js',
             'app/bower_components/firebase/firebase.js',
             'app/bower_components/angularfire/angularfire.js',
+            'app/bower_components/tiny-edit//dist/tiny-edit.min.js',
 
+            'app/custom_components/site_dna/src/SiteDNA.dev.js',
 
             'app/scripts/app.js',
 

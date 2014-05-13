@@ -3,24 +3,24 @@
 describe('Directive: appAction', function () {
 
     // load the directive's module
-    beforeEach(module('siteBuilder'));
-
-    var element,
-        scope;
-
-    beforeEach(inject(function ($rootScope) {
-        scope = $rootScope.$new();
-    }));
-
-    it('should show the correct action directive ', inject(function ($compile, $rootScope) {
-        scope.currentAction = 'design-action';
-//        element = angular.element('<div app-action></div>');
-//        element = $compile(element)(scope);
-//        $rootScope.$apply();
-//        expect(element).not.toBe(null);
+//    beforeEach(module('siteBuilder'));
 //
-        console.log(scope);
-    }));
+//    var element,
+//        scope;
+//
+//    beforeEach(inject(function ($rootScope) {
+//        scope = $rootScope.$new();
+//    }));
+//
+//    it('should show the correct action directive ', inject(function ($compile, $rootScope) {
+//        scope.currentAction = 'design-action';
+////        element = angular.element('<div app-action></div>');
+////        element = $compile(element)(scope);
+////        $rootScope.$apply();
+////        expect(element).not.toBe(null);
+////
+//        console.log(scope);
+//    }));
 });
 
 //describe('Directive: appAction', function () {
