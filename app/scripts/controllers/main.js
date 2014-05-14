@@ -6,11 +6,11 @@ SiteBuilder.Controllers
         'use strict';
         vlnConfig.initConfig();
 
-        $scope.awesomeThings = [
-            'HTML5 Boilerplate',
-            'AngularJS',
-            'Karma'
-        ];
+//        $scope.awesomeThings = [
+//            'HTML5 Boilerplate',
+//            'AngularJS',
+//            'Karma'
+//        ];
 
         /* TODO: grab this from vlnConfig (if this is even the right place to keep it) */
         $scope.company = {

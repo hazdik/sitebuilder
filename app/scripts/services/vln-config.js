@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vlnConfig', ['$rootScope', function ($rootScope) {
+    .factory('vlnConfig', ['$q', '$rootScope', 'vnApi', function ($q, $rootScope, vnApi) {
 
         /**
          * @function
@@ -16,9 +16,8 @@ SiteBuilder.Services
         var globalNavState = true,          // Show the app navigation by default.
             currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
             globalAttrBucketState = true, // Show the app attributes by default.
-            iFramePathBase = 'http://localhost:8080',
-           firebaseUrl = 'https://brilliant-fire-5600.firebaseio.com/', // Matt
-//            firebaseUrl = 'https://burning-fire-1964.firebaseio.com/', // Tsanko
+            iFramePathBase = '',
+            firebaseUrl = '', // Matt
             screenMode = 'desktop',         // Initial screen mode.
             previewMode = false,            // Initial edit/preview mode
             workspaceDimensions = {
@@ -55,16 +54,43 @@ SiteBuilder.Services
             };
 
             //Simulate a admin login response
-            return mockResponse;
+            iFramePathBase = mockResponse.sandbox;
+            firebaseUrl = mockResponse.firebase;
+
+            // Kick of the data retrieval from api
+            getNewSessionData();
+        }
+
+        function getNewSessionData() {
+            /**
+             @function
+             @name setupSessionData
+             @description get api data merge it into a firebase object and update firebase
+             @param {}
+             @return Boolean
+             */
+            console.log('setupSession data called');
+
+            var apiResources = [vnApi.Articles.get().$promise,
+                                vnApi.Products.get().$promise,
+                                vnApi.Categories.get().$promise],
+                returnData = [];
+
+            $q.all(apiResources)
+                .then(function(response) {
+                    angular.forEach(response, function(result) {
+                        returnData.push(result.data);
+                    });
+
+                    // Merge it all together
+
+                    // Push it up to firebase
+                }, function(failure) {
+                    console.log(new Error('api requests failed: ', failure));
+                });
         }
 
         function getIframePathBaseFn() {
-            /*
-             @Input - none
-             @Output - iFramePathBase
-             @Description - return the current value of iFrameBasePath
-             */
-
             if ('' === iFramePathBase) {
                 initConfigFn();
             }
