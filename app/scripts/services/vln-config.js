@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vlnConfig', ['$q', '$rootScope', function ($q, $rootScope) {
+    .factory('vlnConfig', ['$q', '$rootScope', 'vnSession', function ($q, $rootScope, vnSession) {
 
         /**
          * @function
@@ -56,6 +56,9 @@ SiteBuilder.Services
             //Simulate a admin login response
             iFramePathBase = mockResponse.sandbox;
             firebaseUrl = mockResponse.firebase;
+            console.log('vnSession injection', vnSession.someMethod());
+
+//            console.log(vnSession.someMethod());
 
             // Kick of the data retrieval from api
 //            getNewSessionData();
