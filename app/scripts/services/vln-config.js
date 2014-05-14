@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vlnConfig', ['$q', '$rootScope', 'vnApi', function ($q, $rootScope, vnApi) {
+    .factory('vlnConfig', ['$q', '$rootScope', function ($q, $rootScope) {
 
         /**
          * @function
@@ -58,37 +58,37 @@ SiteBuilder.Services
             firebaseUrl = mockResponse.firebase;
 
             // Kick of the data retrieval from api
-            getNewSessionData();
+//            getNewSessionData();
         }
 
-        function getNewSessionData() {
-            /**
-             @function
-             @name setupSessionData
-             @description get api data merge it into a firebase object and update firebase
-             @param {}
-             @return Boolean
-             */
-            console.log('setupSession data called');
-
-            var apiResources = [vnApi.Articles.get().$promise,
-                                vnApi.Products.get().$promise,
-                                vnApi.Categories.get().$promise],
-                returnData = [];
-
-            $q.all(apiResources)
-                .then(function(response) {
-                    angular.forEach(response, function(result) {
-                        returnData.push(result.data);
-                    });
-
-                    // Merge it all together
-
-                    // Push it up to firebase
-                }, function(failure) {
-                    console.log(new Error('api requests failed: ', failure));
-                });
-        }
+//        function getNewSessionData() {
+//            /**
+//             @function
+//             @name setupSessionData
+//             @description get api data merge it into a firebase object and update firebase
+//             @param {}
+//             @return Boolean
+//             */
+//            console.log('setupSession data called');
+//
+//            var apiResources = [vnApi.Articles.get().$promise,
+//                                vnApi.Products.get().$promise,
+//                                vnApi.Categories.get().$promise],
+//                returnData = [];
+//
+//            $q.all(apiResources)
+//                .then(function(response) {
+//                    angular.forEach(response, function(result) {
+//                        returnData.push(result.data);
+//                    });
+//
+//                    // Merge it all together
+//
+//                    // Push it up to firebase
+//                }, function(failure) {
+//                    console.log(new Error('api requests failed: ', failure));
+//                });
+//        }
 
         function getIframePathBaseFn() {
             if ('' === iFramePathBase) {

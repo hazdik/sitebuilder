@@ -68,6 +68,7 @@ module.exports = function (config) {
             'app/scripts/services/vln-update-manager.js',
             'app/scripts/services/vln-fire-ref.js',
             'app/scripts/services/vn-api.js',
+            'app/scripts/services/vn-session.js',
 
 //            'app/scripts/*.js',
 //            'app/scripts/**/*.js',
