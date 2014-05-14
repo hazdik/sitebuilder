@@ -1,7 +1,7 @@
 /*globals SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vnSession', ['vnApi',  function (vnApi) {
+    .factory('vnSession', ['$q', 'vnApi',  function ($q, vnApi) {
         'use strict';
         // Service logic
         // ...
