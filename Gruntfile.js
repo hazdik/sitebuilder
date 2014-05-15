@@ -31,7 +31,7 @@ module.exports = function (grunt) {
         watch: {
             js: {
                 // files: ['<%= yeoman.app %>/scripts/{,*/}*.js'], // This was not picking up the directives in the action folder. Weird.
-                files: ['<%= yeoman.app %>/scripts/**/*.js'],
+                files: ['<%= yeoman.app %>/scripts/**/*.js', 'test/spec/**/*.js'],
                 tasks: ['newer:jshint:all', 'test'],
                 options: {
                     livereload: true

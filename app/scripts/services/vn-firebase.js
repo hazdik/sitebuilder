@@ -76,7 +76,7 @@ SiteBuilder.Services
 
             // Remember: /account_{path}/<accountIdenity>/{path} is the pattern
 
-            console.log('path: ', path);
+            console.log('path: ', path, data);
             if ( path && path === typeof String() ){
                 console.log('the path', path);
             }
