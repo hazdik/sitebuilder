@@ -1,14 +1,14 @@
-/*global SiteBuilder */
+/*global SiteBuilder*/
 
 SiteBuilder.Services
     .factory('vnFirebase', function () {
         'use strict';
-        // Service logic
+        // service logic
         // ...
 
-        function fbObjectFn() {
+        function fbObjectfn() {
             return {
-                accountData: {},
+                accountdata: {},
                 articles: {},
                 categories: {},
                 carts: {},
@@ -20,8 +20,8 @@ SiteBuilder.Services
             };
         }
 
-        // Public API here
+        // public api here
         return {
-            fbObject: fbObjectFn
+            fbObject: fbObjectfn
         };
     });

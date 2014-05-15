@@ -13,17 +13,22 @@ SiteBuilder.Services
 
         'use strict';
 
-        var globalNavState = true,          // Show the app navigation by default.
-            currentAction = 'designAction', // Start them here but if conf is persisted turn this into a function.
-            globalAttrBucketState = true, // Show the app attributes by default.
-            iFramePathBase = '',
-            firebaseUrl = '', // Matt
-            screenMode = 'desktop',         // Initial screen mode.
-            previewMode = false,            // Initial edit/preview mode
-            workspaceDimensions = {
+        var account,
+            apiToken,
+            apiUrl,
+            context,
+            currentAction = 'designAction',  // Start them here but if conf is persisted turn this into a function.
+            firebaseToken,
+            firebaseUrl,
+            globalAttrBucketState = true,    // Show the app attributes by default.
+            globalNavState = true,           // Show the app navigation by default.
+            iFramePathBase,
+            previewMode = false,             // Initial edit/preview mode
+            screenMode = 'desktop',          // Initial screen mode.
+            workspaceDimensions = {          // Initial height (use in Action section ... etc.)
                 width : 0,
                 height: 0
-            };               // Initial height (use in Action section ... etc.)
+            };
 
         function getFirebaseUrlFn() {
 
@@ -47,17 +52,24 @@ SiteBuilder.Services
                 api     : 'http://www.samplestore.io/api/v1',
                 account : 'asdf123',
                 context : 'SiteBuilder',
-                firebase: 'https://brilliant-fire-5600.firebaseio.com/accounts',
+                firebase: 'https://brilliant-fire-5600.firebaseio.com',
                 fbToken : ']idk - this comes from node server[',
                 apiToken: ']idk - how do I know if I am logging into edit[',
                 sandbox : 'http://localhost:8080'
             };
 
             //Simulate a admin login response
+            account = mockResponse.account;
+            apiToken = mockResponse.apiToken;
+            apiUrl = mockResponse.api;
+            context = mockResponse.context;
             iFramePathBase = mockResponse.sandbox;
+            firebaseToken = mockResponse.fbToken;
             firebaseUrl = mockResponse.firebase;
-            // Assume the response is good and tell the app its ok to get start a session
-            $rootScope.$broadcast('vnSession.init', mockResponse);
+
+            if( mockResponse && mockResponse.apiToken) {
+                $rootScope.$broadcast('vnSession.init', mockResponse);
+            }
         }
 
         function getIframePathBaseFn() {
