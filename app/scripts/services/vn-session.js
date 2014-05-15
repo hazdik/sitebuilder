@@ -5,14 +5,17 @@ SiteBuilder.Services
         function ($rootScope, $q, vnApi) {
             'use strict';
 
-            console.log('testing1111', {});
-
             var accountData = {};
 
             $rootScope.$on('vnSession.init', function (event, args) {
                 console.log('testing', {});
                 initSessionFn(args);
             });
+
+            function initFn() {
+                // Pre authentication set up stuff goes here.
+                return true;
+            }
 
             function initSessionFn(response) {
                 /**
@@ -38,13 +41,13 @@ SiteBuilder.Services
                  */
 
                 var apiEndpoints = {
-                    article  : vnApi.Article.get().$promise,
-                    categoriy: vnApi.Category.get().$promise,
-                    cart     : vnApi.Cart.get().$promise,
-                    config   : vnApi.Config.get().$promise,
-                    country  : vnApi.Country.get().$promise,
-                    nav      : vnApi.Nav.get().$promise,
-                    product  : vnApi.Product.get().$promise
+                    article : vnApi.Article.get().$promise,
+                    category: vnApi.Category.get().$promise,
+                    cart    : vnApi.Cart.get().$promise,
+                    config  : vnApi.Configuration.get().$promise,
+                    country : vnApi.Country.get().$promise,
+                    nav     : vnApi.Nav.get().$promise,
+                    product : vnApi.Product.get().$promise
 
                 },
                 keys = Object.keys(apiEndpoints);
@@ -90,7 +93,8 @@ SiteBuilder.Services
             }
 
             return {
+                init       : initFn,
                 initSession: initSessionFn,
-                syncItem   : syncItemFn
+                syncItem   : syncItemFn,
             };
         }]);

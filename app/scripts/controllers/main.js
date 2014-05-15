@@ -1,26 +1,22 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('MainCtrl', ['$rootScope', '$scope',  'vlnConfig', function ($rootScope, $scope, vlnConfig) {
+    .controller('MainCtrl', ['$rootScope', '$scope', 'vlnConfig', 'vnSession',
+        function ($rootScope, $scope, vlnConfig, vnSession) {
 
-        'use strict';
-        vlnConfig.initConfig();
+            'use strict';
+            vlnConfig.initConfig();
+            vnSession.init();
 
-//        $scope.awesomeThings = [
-//            'HTML5 Boilerplate',
-//            'AngularJS',
-//            'Karma'
-//        ];
+            /* TODO: grab this from vlnConfig (if this is even the right place to keep it) */
+            $scope.company = {
+                name: 'Runaway Clothing',
+                url : 'RunawayClothing.com'
+            };
 
-        /* TODO: grab this from vlnConfig (if this is even the right place to keep it) */
-        $scope.company = {
-            name : 'Runaway Clothing',
-            url  : 'RunawayClothing.com'
-        };
+            $scope.state = {
+                switchState: 'off',
+                switchStyle: 'vln-tiny-slider'
+            };
 
-        $scope.state = {
-            switchState : 'off',
-            switchStyle : 'vln-tiny-slider'
-        };
-
-    }]);
+        }]);
