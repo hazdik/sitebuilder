@@ -4,9 +4,6 @@ SiteBuilder.Services
     .factory('vlnFireRef', function () {
             'use strict';
 
-//            var fbUrl = vlnConfig.getFirebaseUrl();
-            // var _products = {} || products // dont re init
-
             function productsFn() {
                 /**
                  @function

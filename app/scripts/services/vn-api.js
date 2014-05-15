@@ -11,11 +11,13 @@ SiteBuilder.Services
          @return $resource
          */
 
-        //$resource('/user/:userId', {userId:'@id'});
-
         return {
-            Articles: $resource('http://www.samplestore.io/api/v1/articles'),
-            Categories: $resource('http://www.samplestore.io/api/v1/categories'),
-            Products: $resource('http://www.samplestore.io/api/v1/products/', {productCode: '@productCode'})
+            Article : $resource('http://www.samplestore.io/api/v1/articles'),
+            Category: $resource('http://www.samplestore.io/api/v1/categories'),
+            Cart    : $resource('http://www.samplestore.io/api/v1/carts'),
+            Config  : $resource('http://www.samplestore.io/api/v1/config'),
+            Country : $resource('http://www.samplestore.io/api/v1/countries'),
+            Nav     : $resource('http://www.samplestore.io/api/v1/navs'),
+            Product : $resource('http://www.samplestore.io/api/v1/products/')
         };
     }]);
