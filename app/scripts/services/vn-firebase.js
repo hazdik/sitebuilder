@@ -6,12 +6,22 @@ SiteBuilder.Services
         // Service logic
         // ...
 
-        var meaningOfLife = 42;
+        function fbObjectFn() {
+            return {
+                accountData: {},
+                articles: {},
+                categories: {},
+                carts: {},
+                components: {},
+                config: {},
+                countries: {},
+                nav: {},
+                products: {}
+            };
+        }
 
         // Public API here
         return {
-            someMethod: function () {
-                return meaningOfLife;
-            }
+            fbObject: fbObjectFn
         };
     });

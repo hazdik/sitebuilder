@@ -1,14 +1,14 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vnSession', ['$rootScope', '$q', 'vnApi',
-        function ($rootScope, $q, vnApi) {
+    .factory('vnSession', ['$rootScope', '$q', 'vnApi', 'vnFirebase',
+        function ($rootScope, $q, vnApi, vnFirebase) {
             'use strict';
 
-            var accountData = {};
+            var accountData = {},
+                fbReset = vnFirebase.fbObject();
 
             $rootScope.$on('vnSession.init', function (event, args) {
-                console.log('testing', {});
                 initSessionFn(args);
             });
 
@@ -54,8 +54,7 @@ SiteBuilder.Services
 
                 // Reset Firebase top levels for the endpoints
 
-
-                // Grab the keys for api endpoints so we know what goes where in firebase¡
+                // Grab the keys for api endpoints so we know what goes where in firebase
                 angular.forEach(keys, function (k) {
                     setFirebaseData(k, apiEndpoints[k]);
                 });
@@ -69,10 +68,13 @@ SiteBuilder.Services
                  @param {String, $promise} path, promise
                  @return
                  */
-
                 promise.then(function(result) {
                     console.log('api results for ',path, result.data);
+                    console.log('api results forfbReset path ', fbReset.path);
                 })
+                    .then(function() {
+                        console.log('reset obj', fbReset);
+                    });
 
                 //                // Grab all of the data from the api at once
 //                angular.forEach(keys, function (k) {
