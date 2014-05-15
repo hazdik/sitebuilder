@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('appAttribute', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
+    .directive('appAttribute', ['$rootScope', 'vnConfig', function ($rootScope, vnConfig) {
         'use strict';
 
         return {
@@ -12,7 +12,7 @@ SiteBuilder.Directives
             scope      : {},
             link       : function postLink(scope) {
 
-                scope.isVisible = vlnConfig.getGlobalAttrBucketState();
+                scope.isVisible = vnConfig.getGlobalAttrBucketState();
 
                 $rootScope.$on('vlnGlobalAttrBucketState.change', function (evt, params) {
                     scope.isVisible = params.state; // Relates to the global app nav menu state.

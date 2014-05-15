@@ -1,8 +1,8 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('vlnPageAction', ['$rootScope', 'vlnConfig',
-        function ($rootScope, vlnConfig) {
+    .directive('vlnPageAction', ['$rootScope', 'vnConfig',
+        function ($rootScope, vnConfig) {
 
             'use strict';
 

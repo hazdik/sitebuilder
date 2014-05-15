@@ -1,12 +1,12 @@
 /*global SiteBuilder, Firebase */
 
 SiteBuilder.Services
-    .factory('vlnUpdateManager', ['$firebase', 'vlnConfig',
-        function ($firebase, vlnConfig) {
+    .factory('vlnUpdateManager', ['$firebase', 'vnConfig',
+        function ($firebase, vnConfig) {
             'use strict';
 
             // var fbObj = new Firebase('https://brilliant-fire-5600.firebaseio.com/');
-            var fbUrl = vlnConfig.getFirebaseUrl();
+            var fbUrl = vnConfig.getFirebaseUrl();
 
             function getFBReferenceFn(endpoint) {
                 /**

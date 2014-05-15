@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('vlnDesignAction', ['vlnConfig', 'vlnFireRef', function (vlnConfig, vlnFireRef) {
+    .directive('vlnDesignAction', ['vnConfig', 'vlnFireRef', function (vnConfig, vlnFireRef) {
         'use strict';
         return {
             templateUrl: 'views/actions/design-action.html',
@@ -14,7 +14,7 @@ SiteBuilder.Directives
                 console.log('SiteDNA removed');
 
                 scope.$on('vlnWorkspace.resize', function () {
-                    scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 90;
+                    scope.elementHeight = vnConfig.getWorkspaceDimensions().height - 90;
                 });
 
                 scope.loadTheme = function (theme) {

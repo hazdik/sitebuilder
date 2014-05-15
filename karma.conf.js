@@ -62,12 +62,13 @@ module.exports = function (config) {
             'app/scripts/directives/components/switch.js',
 
 //                <!--services-->
-            'app/scripts/services/vln-config.js',
+            'app/scripts/services/vn-config.js',
             'app/scripts/services/vln-site-factory.js',
             'app/scripts/services/vln-theme-factory.js',
             'app/scripts/services/vln-update-manager.js',
             'app/scripts/services/vln-fire-ref.js',
             'app/scripts/services/vn-api.js',
+            'app/scripts/services/vn-firebase.js',
             'app/scripts/services/vn-session.js',
 //            'app/scripts/*.js',
 //            'app/scripts/**/*.js',

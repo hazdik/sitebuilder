@@ -1,9 +1,9 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('vlnAppNavCtrl', ['$rootScope', '$scope', 'vlnConfig',
-        function ($rootScope, $scope, vlnConfig) {
+    .controller('vlnAppNavCtrl', ['$rootScope', '$scope', 'vnConfig',
+        function ($rootScope, $scope, vnConfig) {
             'use strict';
-            $rootScope.isVisible = vlnConfig.getGlobalNavState();
+            $rootScope.isVisible = vnConfig.getGlobalNavState();
         }
     ]);

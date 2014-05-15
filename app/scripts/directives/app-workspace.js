@@ -1,8 +1,8 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$timeout', '$sce', 'vlnConfig',
-        function ($rootScope, $window, $filter, $timeout, $sce, vlnConfig) {
+    .directive('appWorkspace', ['$rootScope', '$window', '$filter', '$timeout', '$sce', 'vnConfig',
+        function ($rootScope, $window, $filter, $timeout, $sce, vnConfig) {
 
         'use strict';
 
@@ -54,7 +54,7 @@ SiteBuilder.Directives
                 */
 //              TODO:  D'n'D tests
                 scope.iFrameSrc = 'http://localhost:8080'; // This is a hard coded defualt, look at the vlnWorkspaceUrl.change event listener
-                scope.isFullSize = !vlnConfig.getGlobalAttrBucketState();
+                scope.isFullSize = !vnConfig.getGlobalAttrBucketState();
                 scope.isStateAdd = scope.isFullSize;
                 scope.displayClass = '-' + displayScreen;
                 scope.scaledOffsetLeft = 0;
@@ -68,7 +68,7 @@ SiteBuilder.Directives
                     @Purpose - toggle attribute bucket state
 
                     */
-                    vlnConfig.setGlobalAttrBucketState(!vlnConfig.getGlobalAttrBucketState());
+                    vnConfig.setGlobalAttrBucketState(!vnConfig.getGlobalAttrBucketState());
                 };
 
                 function startContainerWatch (compX, compY) {
@@ -87,7 +87,7 @@ SiteBuilder.Directives
 
                             var el = frame.closest('section.-site')[0];
 
-                            vlnConfig.setWorkspaceDimensions(el.clientWidth, el.clientHeight);
+                            vnConfig.setWorkspaceDimensions(el.clientWidth, el.clientHeight);
                             $rootScope.$broadcast('vlnWorkspace.resize');
 
                             calcFrame();

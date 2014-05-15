@@ -7,7 +7,7 @@
 
 SiteBuilder.Directives
     .directive('draggable', [
-        function ($rootScope, vlnConfig) {
+        function ($rootScope, vnConfig) {
 
             'use strict';
 

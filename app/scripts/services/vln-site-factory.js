@@ -1,7 +1,7 @@
 /*global SiteBuilder */
 
 SiteBuilder.Services
-    .factory('vlnSiteFactory', ['$http', '$q', 'vlnConfig', function vlnSiteFactory($http, $q) {
+    .factory('vlnSiteFactory', ['$http', '$q', 'vnConfig', function vlnSiteFactory($http, $q) {
 
         'use strict';
 
@@ -10,7 +10,7 @@ SiteBuilder.Services
             //     config = {};
             var deferred = $q.defer();
 
-//            $http.post(vlnConfig.get(''), params, config)
+//            $http.post(vnConfig.get(''), params, config)
 //                .success(function (response, status, headers, config) {
 //                    if ('true' === response.success) {
 //                        deferred.resolve(response);

@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('appNavigation', ['$rootScope', 'vlnConfig', function ($rootScope, vlnConfig) {
+    .directive('appNavigation', ['$rootScope', 'vnConfig', function ($rootScope, vnConfig) {
 
         'use strict';
 
@@ -28,7 +28,7 @@ SiteBuilder.Directives
                         @Output - none
                         @Purpose - update the config attribute currentAction for design
                     */
-                    vlnConfig.setCurrentAction('designAction');
+                    vnConfig.setCurrentAction('designAction');
                 };
 
                 scope.loadPageTools = function() {
@@ -37,7 +37,7 @@ SiteBuilder.Directives
                         @Output - none
                         @Purpose - update the config attribute currentAction for page
                     */
-                    vlnConfig.setCurrentAction('pageAction');
+                    vnConfig.setCurrentAction('pageAction');
                 };
 
                 scope.loadStatTools = function() {
@@ -46,7 +46,7 @@ SiteBuilder.Directives
                      @Output - none
                      @Purpose - update the config attribute currentAction for page
                      */
-                    vlnConfig.setCurrentAction('pageStats');
+                    vnConfig.setCurrentAction('pageStats');
                 };
             }
         };

@@ -1,8 +1,8 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('vlnPageStats', ['vlnConfig',
-        function (vlnConfig) {
+    .directive('vlnPageStats', ['vnConfig',
+        function (vnConfig) {
 
             'use strict';
 
@@ -13,10 +13,10 @@ SiteBuilder.Directives
                 },
                 link       : function postLink(scope) {
 
-                    scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
+                    scope.elementHeight = vnConfig.getWorkspaceDimensions().height - 55;
 
                     scope.$on('vlnWorkspace.resize', function () {
-                        scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
+                        scope.elementHeight = vnConfig.getWorkspaceDimensions().height - 55;
                     });
                 }
             };

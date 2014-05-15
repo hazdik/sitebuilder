@@ -5,8 +5,7 @@ SiteBuilder.Services
         function ($rootScope, $q, vnApi, vnFirebase) {
             'use strict';
 
-            var accountData = {},
-                fbReset = vnFirebase.fbObject();
+            var accountData = {};
 
             $rootScope.$on('vnSession.init', function (event, args) {
                 initSessionFn(args);
@@ -41,19 +40,19 @@ SiteBuilder.Services
                  */
 
                 var apiEndpoints = {
-                    article : vnApi.Article.get().$promise,
-                    category: vnApi.Category.get().$promise,
-                    cart    : vnApi.Cart.get().$promise,
-                    config  : vnApi.Configuration.get().$promise,
-                    country : vnApi.Country.get().$promise,
-                    nav     : vnApi.Nav.get().$promise,
-                    product : vnApi.Product.get().$promise
+                    articles  : vnApi.Article.get().$promise,
+                    categories: vnApi.Category.get().$promise,
+                    carts     : vnApi.Cart.get().$promise,
+                    config    : vnApi.Configuration.get().$promise,
+                    countries : vnApi.Country.get().$promise,
+                    navs      : vnApi.Nav.get().$promise,
+                    products  : vnApi.Product.get().$promise
 
                 },
                 keys = Object.keys(apiEndpoints);
 
-                // Reset Firebase top levels for the endpoints
-
+                // Set up Firebase with fresh data for this session.
+                vnFirebase.resetSiteBuilder();
                 // Grab the keys for api endpoints so we know what goes where in firebase
                 angular.forEach(keys, function (k) {
                     setFirebaseData(k, apiEndpoints[k]);
@@ -68,22 +67,10 @@ SiteBuilder.Services
                  @param {String, $promise} path, promise
                  @return
                  */
-                promise.then(function(result) {
-                    console.log('api results for ',path, result.data);
-                    console.log('api results forfbReset path ', fbReset.path);
-                })
-                    .then(function() {
-                        console.log('reset obj', fbReset);
-                    });
-
-                //                // Grab all of the data from the api at once
-//                angular.forEach(keys, function (k) {
-//                    var promise = apiEndpoints[k];
-//
-//                    promise.then(function (result) {
-//                        apiData[k] = result;
-//                    });
-//                });
+                promise.then(function (result) {
+//                    console.log('results data', result.data);
+                    vnFirebase.resetDataForPath(path, result.data);
+                });
             }
 
             function syncItemFn(item) {
@@ -100,6 +87,6 @@ SiteBuilder.Services
             return {
                 init       : initFn,
                 initSession: initSessionFn,
-                syncItem   : syncItemFn,
+                syncItem   : syncItemFn
             };
         }]);

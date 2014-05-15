@@ -1,18 +1,18 @@
 'use strict';
 
-describe('Service: vlnConfig', function () {
+describe('Service: vnConfig', function () {
 
     // load the service's module
     beforeEach(module('siteBuilder'));
 
     // instantiate service
-    var vlnConfig;
-    beforeEach(inject(function (_vlnConfig_) {
-        vlnConfig = _vlnConfig_;
+    var vnConfig;
+    beforeEach(inject(function (_vnConfig_) {
+        vnConfig = _vnConfig_;
     }));
 
     it('should do something', function () {
-        expect(!!vlnConfig).toBe(true);
+        expect(!!vnConfig).toBe(true);
     });
 
 });

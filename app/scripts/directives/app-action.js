@@ -1,8 +1,8 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('appAction', ['$rootScope', 'vlnConfig',
-        function ($rootScope, vlnConfig) {
+    .directive('appAction', ['$rootScope', 'vnConfig',
+        function ($rootScope, vnConfig) {
 
             'use strict';
 
@@ -14,12 +14,12 @@ SiteBuilder.Directives
                 link       : function postLink(scope) {
                     // element.text('this is the appActionContainer directive');
 
-                    scope.isVisible = vlnConfig.getGlobalNavState();
+                    scope.isVisible = vnConfig.getGlobalNavState();
                     $rootScope.$on('vlnGlobalNavState.change', function (evt, params) {
                         scope.isVisible = params.state; // Relates to the global app nav menu state.
                     });
 
-                    scope.currentAction = vlnConfig.getCurrentAction();
+                    scope.currentAction = vnConfig.getCurrentAction();
                     $rootScope.$on('vlnCurrentAction.change', function (evt, params) {
                         scope.currentAction = params.action;
                     });

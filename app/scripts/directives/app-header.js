@@ -2,8 +2,8 @@
 
 SiteBuilder.Directives
     .directive('appHeader',
-    ['$rootScope', 'vlnConfig', 'vlnSiteFactory', 'vlnFireRef',
-        function ($rootScope, vlnConfig, vlnSiteFactory) {
+    ['$rootScope', 'vnConfig', 'vlnSiteFactory', 'vlnFireRef',
+        function ($rootScope, vnConfig, vlnSiteFactory) {
 
             'use strict';
 
@@ -13,19 +13,19 @@ SiteBuilder.Directives
                 replace    : true,
                 link       : function postLink(scope) {
 
-                    scope.screenMode = vlnConfig.getScreenMode();
+                    scope.screenMode = vnConfig.getScreenMode();
 
-                    scope.previewMode = vlnConfig.getPreviewMode();
+                    scope.previewMode = vnConfig.getPreviewMode();
 //                    vlnFireRef.modeCurrent().$bind(scope, 'previewMode');
                     console.log('SiteDNA removed current mode is not bound');
 
                     scope.switchStyle = 'vln-slider';
 
                     scope.toggleAppNavigation = function () {
-                        if (vlnConfig.getGlobalNavState()) {
-                            return vlnConfig.setGlobalNavState(false);
+                        if (vnConfig.getGlobalNavState()) {
+                            return vnConfig.setGlobalNavState(false);
                         }
-                        return vlnConfig.setGlobalNavState(true);
+                        return vnConfig.setGlobalNavState(true);
                     };
 
                     scope.setDisplayTo = function (display) {

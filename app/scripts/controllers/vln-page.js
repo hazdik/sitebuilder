@@ -1,8 +1,8 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnFireRef', 'vlnConfig',
-        function ($rootScope, $scope, vlnFireRef, vlnConfig) {
+    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnFireRef', 'vnConfig',
+        function ($rootScope, $scope, vlnFireRef, vnConfig) {
             'use strict';
 
             /* Bind to Firebase.io */
@@ -40,7 +40,7 @@ SiteBuilder.Controllers
             $scope.currentCategory = null;
             $scope.currentPage = null;
 
-            $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
+            $scope.elementHeight = vnConfig.getWorkspaceDimensions().height - 55;
 
 
             $scope.editProduct = function (product, index) {
@@ -67,7 +67,7 @@ SiteBuilder.Controllers
                  @return nothing is returned from this
                  */
 
-                var srcPath = vlnConfig.getIframePathBase() + '/product/' + index;
+                var srcPath = vnConfig.getIframePathBase() + '/product/' + index;
 
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
@@ -84,7 +84,7 @@ SiteBuilder.Controllers
                  @return nothing is returned from this
                  */
 
-                var srcPath = vlnConfig.getIframePathBase() + item;
+                var srcPath = vnConfig.getIframePathBase() + item;
                 $rootScope.$broadcast('vlnWorkspaceUrl.change', {
                     url: srcPath
                 });
@@ -96,7 +96,7 @@ SiteBuilder.Controllers
             });
 
             $scope.$on('vlnWorkspace.resize', function () {
-                $scope.elementHeight = vlnConfig.getWorkspaceDimensions().height - 55;
+                $scope.elementHeight = vnConfig.getWorkspaceDimensions().height - 55;
             });
         }
     ]);

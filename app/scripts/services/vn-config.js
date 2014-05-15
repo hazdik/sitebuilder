@@ -1,11 +1,11 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vlnConfig', ['$q', '$rootScope', function ($q, $rootScope) {
+    .factory('vnConfig', ['$q', '$rootScope', function ($q, $rootScope) {
 
         /**
          * @function
-         * @name vlnConfig
+         * @name vnConfig
          * @param $rootScope, $http
          * @return an object with public api contract to get/set dynamic app configuation states.
          */

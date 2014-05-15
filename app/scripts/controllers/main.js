@@ -1,14 +1,14 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('MainCtrl', ['$rootScope', '$scope', 'vlnConfig', 'vnSession',
-        function ($rootScope, $scope, vlnConfig, vnSession) {
+    .controller('MainCtrl', ['$rootScope', '$scope', 'vnConfig', 'vnSession',
+        function ($rootScope, $scope, vnConfig, vnSession) {
 
             'use strict';
-            vlnConfig.initConfig();
+            vnConfig.initConfig();
             vnSession.init();
 
-            /* TODO: grab this from vlnConfig (if this is even the right place to keep it) */
+            /* TODO: grab this from vnConfig (if this is even the right place to keep it) */
             $scope.company = {
                 name: 'Runaway Clothing',
                 url : 'RunawayClothing.com'
