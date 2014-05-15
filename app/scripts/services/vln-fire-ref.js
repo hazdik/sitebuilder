@@ -4,6 +4,11 @@ SiteBuilder.Services
     .factory('vlnFireRef', function () {
             'use strict';
 
+        /**
+         * Depricated and will be removed soon.
+         * Use the vnFirebase factory
+         */
+
             function productsFn() {
                 /**
                  @function

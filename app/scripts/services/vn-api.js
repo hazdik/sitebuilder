@@ -12,12 +12,12 @@ SiteBuilder.Services
          */
 
         return {
-            Article      : $resource('http://www.samplestore.io/api/v1/articles'),
-            Category     : $resource('http://www.samplestore.io/api/v1/categories'),
-            Cart         : $resource('http://www.samplestore.io/api/v1/carts'),
-            Configuration: $resource('http://www.samplestore.io/api/v1/config'),
-            Country      : $resource('http://www.samplestore.io/api/v1/countries'),
-            Nav          : $resource('http://www.samplestore.io/api/v1/navs'),
-            Product      : $resource('http://www.samplestore.io/api/v1/products/')
+            Article        : $resource('http://www.samplestore.io/api/v1/articles'),
+            Category       : $resource('http://www.samplestore.io/api/v1/categories'),
+            Cart           : $resource('http://www.samplestore.io/api/v1/carts'),
+            Configuration  : $resource('http://www.samplestore.io/api/v1/config'),
+            Country        : $resource('http://www.samplestore.io/api/v1/countries'),
+            Nav            : $resource('http://www.samplestore.io/api/v1/navs'),
+            Product        : $resource('http://www.samplestore.io/api/v1/products/')
         };
     }]);

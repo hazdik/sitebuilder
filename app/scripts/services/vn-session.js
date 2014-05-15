@@ -55,7 +55,7 @@ SiteBuilder.Services
                 // Reset Firebase top levels for the endpoints
 
 
-                // Grab the keys for api endpoints so we know what goes where in firebase
+                // Grab the keys for api endpoints so we know what goes where in firebase¡
                 angular.forEach(keys, function (k) {
                     setFirebaseData(k, apiEndpoints[k]);
                 });
@@ -69,7 +69,10 @@ SiteBuilder.Services
                  @param {String, $promise} path, promise
                  @return
                  */
-                console.log('updating Firebase for this resource: ', path, promise);
+
+                promise.then(function(result) {
+                    console.log('api results for ',path, result.data);
+                })
 
                 //                // Grab all of the data from the api at once
 //                angular.forEach(keys, function (k) {
