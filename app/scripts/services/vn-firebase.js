@@ -1,7 +1,7 @@
 /*global Firebase, SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vnFirebase', ['vnConfig', '$firebase', function ($firebase) {
+    .factory('vnFirebase', ['vnDataEndpoint', '$firebase', function (vnDataEndpoint, $firebase) {
         'use strict';
 
         /**
@@ -41,7 +41,7 @@ SiteBuilder.Services
             // Remember: /account_{path}/<accountIdenity>/{path} is the pattern
             // Also may need to iterate through only children that are desireable to update.
 
-            var sbRef = $firebase( new Firebase('https://brilliant-fire-5600.firebaseio.com/account_sitebuilder/asdf123') );
+            var sbRef = $firebase( new Firebase(vnDataEndpoint.fbUrl + '/account_sitebuilder/asdf123') );
             var sbd = new SiteBuilderDefaults();
             sbRef.$set( sbd );
 

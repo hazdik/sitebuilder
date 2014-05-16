@@ -1,7 +1,7 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vnApi', ['$resource', function ($resource) {
+    .factory('vnApi', ['$resource', 'vnDataEndpoint', function ($resource, vnDataEndpoint) {
         'use strict';
         /**
          @function
@@ -12,12 +12,12 @@ SiteBuilder.Services
          */
 
         return {
-            Article        : $resource('http://www.samplestore.io/api/v1/articles'),
-            Category       : $resource('http://www.samplestore.io/api/v1/categories'),
-            Cart           : $resource('http://www.samplestore.io/api/v1/carts'),
-            Configuration  : $resource('http://www.samplestore.io/api/v1/config'),
-            Country        : $resource('http://www.samplestore.io/api/v1/countries'),
-            Nav            : $resource('http://www.samplestore.io/api/v1/navs'),
-            Product        : $resource('http://www.samplestore.io/api/v1/products/')
+            Article        : $resource(vnDataEndpoint.apiUrl + '/articles'),
+            Category       : $resource(vnDataEndpoint.apiUrl + '/categories'),
+            Cart           : $resource(vnDataEndpoint.apiUrl + '/carts'),
+            Configuration  : $resource(vnDataEndpoint.apiUrl + '/config'),
+            Country        : $resource(vnDataEndpoint.apiUrl + 'countries'),
+            Nav            : $resource(vnDataEndpoint.apiUrl + '/navs'),
+            Product        : $resource(vnDataEndpoint.apiUrl + '/v1/products/')
         };
     }]);
