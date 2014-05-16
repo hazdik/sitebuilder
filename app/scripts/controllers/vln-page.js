@@ -1,19 +1,9 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vlnFireRef', 'vnConfig',
-        function ($rootScope, $scope, vlnFireRef, vnConfig) {
+    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vnConfig',
+        function ($rootScope, $scope, vnConfig) {
             'use strict';
-
-            /* Bind to Firebase.io */
-//            vlnFireRef.articles().$bind($scope, 'articles');
-//            vlnFireRef.categories().$bind($scope, 'categories');
-//            vlnFireRef.products().$bind($scope, 'products');
-            console.log('SiteDNA removed');
-
-//            $scope.articles = vlnFireRef.articles().$bind($scope, 'articles');
-            console.log('SiteDNA removed');
-//            console.log($scope.articles);
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {

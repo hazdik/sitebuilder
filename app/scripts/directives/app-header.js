@@ -2,7 +2,7 @@
 
 SiteBuilder.Directives
     .directive('appHeader',
-    ['$rootScope', 'vnConfig', 'vlnSiteFactory', 'vlnFireRef',
+    ['$rootScope', 'vnConfig', 'vlnSiteFactory',
         function ($rootScope, vnConfig, vlnSiteFactory) {
 
             'use strict';

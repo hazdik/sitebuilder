@@ -22,9 +22,12 @@ SiteBuilder.Services
                  @name getFirebaseData
                  @description Return $angularfire resource for given path
                  @param {String} path
-                 @return ?????? Hmmm idk right now
+                 @return $firebase Object
                  */
-                return $firebase( new Firebase(vnDataEndpoint.fbUrl + fbItems[path] + '/' + vnConfig.getAccount() + '/') );
+                if (path && 'string' === typeof path) {
+                    return $firebase(new Firebase(vnDataEndpoint.fbUrl + fbItems[path] + '/' + vnConfig.getAccount() + '/'));
+                }
+                return false;
             }
 
             function generatePathFn(path) {
@@ -35,7 +38,11 @@ SiteBuilder.Services
                  @param {String} path
                  @return String
                  */
-                return vnDataEndpoint.fbUrl + fbItems[path] + '/' + vnConfig.getAccount() + '/';
+
+                if (path && 'string' === typeof path) {
+                    return vnDataEndpoint.fbUrl + fbItems[path] + '/' + vnConfig.getAccount() + '/';
+                }
+                return false;
             }
 
             function resetSiteBuilderFn() {
@@ -64,11 +71,13 @@ SiteBuilder.Services
                  */
 
                 var fullPath;
-                if ( path && data && 'string' === typeof path ) {
+                if (path && data && 'string' === typeof path) {
                     fullPath = generatePathFn(path);
                     var pathRef = $firebase(new Firebase(fullPath));
                     pathRef.$set(data);
+                    return true;
                 }
+                return false;
             }
 
             /**

@@ -3,11 +3,12 @@
 var SiteBuilder = SiteBuilder || {};
 
 SiteBuilder.Constants = angular.module('siteBuilder.constants', []);
-SiteBuilder.Services = angular.module('siteBuilder.services', []);
 SiteBuilder.Controllers = angular.module('siteBuilder.controllers', []);
-SiteBuilder.Filters = angular.module('siteBuilder.filters', []);
-SiteBuilder.Directives = angular.module('siteBuilder.directives', []);
 SiteBuilder.Decorators = angular.module('siteBuilder.decorators', []);
+SiteBuilder.Directives = angular.module('siteBuilder.directives', []);
+SiteBuilder.Filters = angular.module('siteBuilder.filters', []);
+SiteBuilder.Services = angular.module('siteBuilder.services', []);
+SiteBuilder.Values = angular.module('siteBuilder.values', []);
 
 angular.module('siteBuilder', [
     // Angular Modules
@@ -24,11 +25,12 @@ angular.module('siteBuilder', [
 
     // SiteBuilder Modules
     'siteBuilder.constants',
-    'siteBuilder.services',
     'siteBuilder.controllers',
-    'siteBuilder.filters',
+    'siteBuilder.decorators',
     'siteBuilder.directives',
-    'siteBuilder.decorators'
+    'siteBuilder.filters',
+    'siteBuilder.services',
+    'siteBuilder.values'
 ])
     .config(['$locationProvider', '$routeProvider', '$sceDelegateProvider',
         function ($locationProvider, $routeProvider, $sceDelegateProvider) {
