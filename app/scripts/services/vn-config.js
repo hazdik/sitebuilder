@@ -67,9 +67,20 @@ SiteBuilder.Services
             firebaseToken = mockResponse.fbToken;
             firebaseUrl = mockResponse.firebase;
 
-            if( mockResponse && mockResponse.apiToken) {
+            if (mockResponse && mockResponse.apiToken) {
                 $rootScope.$broadcast('vnSession.init', mockResponse);
             }
+        }
+
+        function getAccountFn() {
+            /**
+             @function
+             @name getAccount
+             @description Return the account string for this account name
+             @param {}
+             @return String
+             */
+            return account;
         }
 
         function getIframePathBaseFn() {
@@ -144,6 +155,7 @@ SiteBuilder.Services
 
         // Public API here
         return {
+            getAccount              : getAccountFn,
             getGlobalNavState       : getGlobalNavStateFn,
             setGlobalNavState       : setGlobalNavStateFn,
             getCurrentAction        : getCurrentActionFn,

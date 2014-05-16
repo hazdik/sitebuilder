@@ -51,8 +51,9 @@ SiteBuilder.Services
                 },
                 keys = Object.keys(apiEndpoints);
 
-                // Set up Firebase with fresh data for this session.
-                vnFirebase.resetSiteBuilder();
+                // proof-of-concept.
+                vnFirebase.resetSiteBuilder(); // i.e. called with no session state persistence considered.
+
                 // Grab the keys for api endpoints so we know what goes where in firebase
                 angular.forEach(keys, function (k) {
                     setFirebaseData(k, apiEndpoints[k]);
