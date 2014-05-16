@@ -16,8 +16,8 @@ SiteBuilder.Services
             Category       : $resource(vnDataEndpoint.apiUrl + '/categories'),
             Cart           : $resource(vnDataEndpoint.apiUrl + '/carts'),
             Configuration  : $resource(vnDataEndpoint.apiUrl + '/config'),
-            Country        : $resource(vnDataEndpoint.apiUrl + 'countries'),
+            Country        : $resource(vnDataEndpoint.apiUrl + '/countries'),
             Nav            : $resource(vnDataEndpoint.apiUrl + '/navs'),
-            Product        : $resource(vnDataEndpoint.apiUrl + '/v1/products/')
+            Product        : $resource(vnDataEndpoint.apiUrl + '/products/')
         };
     }]);
