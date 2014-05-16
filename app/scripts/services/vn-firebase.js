@@ -1,7 +1,7 @@
 /*global Firebase, SiteBuilder*/
 
 SiteBuilder.Services
-    .factory('vnFirebase', ['$firebase', function ($firebase) {
+    .factory('vnFirebase', ['vnConfig', '$firebase', function ($firebase) {
         'use strict';
 
         /**
@@ -16,36 +16,19 @@ SiteBuilder.Services
          * /account_products/<ACCOUNT_IDENTITY>/{ data }
          * /account_sitebuilder/<ACCOUNT_IDENTITY>/{ data }
          */
-        function SiteBuilderDefaults() {
-            /**
-             @function
-             @name SiteBuilderDefaults
-             @description Return an object with the SiteBuilder Default settings for Firebase
-             @param {}
-             @return Object
-             */
-
-            // Note this will get more complicated when we want to start remembering things
-            // like current theme, state etc ...
-            return {
-                component: {
-                    id: 'uniq id/code for the item',
-                    typeDesc: 'thing.attribute',
-                    typeId: '9999 - each component/widget has a type to id it, thereby enabling bideirectional communication between sitebuilder and workspace '
-                },
-                product: '',
-                category: '',
-                page: '',
-                theme: {
-                    id: '1',
-                    name: 'default',
-                    thumbnail: 'http://localhost:8090/default.png',
-                    cssRef: 'http://localhost:8090/default.css'
-                },
-                previewMode: 'on',
-                preferredLanguge: 'en-us'
-            };
-        }
+//
+//        function generatePathFn(path) {
+//            /**
+//             @function
+//             @name generateFBPathFn
+//             @description Given a partial path as a string use vnConfig info to construct a path to FB resources
+//             @param {String} path
+//             @return String
+//             */
+//            var returnPath;
+//            // fbUrl + account_item + account
+//
+//        }
 
         function resetSiteBuilderFn() {
             /**
@@ -81,6 +64,42 @@ SiteBuilder.Services
             if ( path && 'string' === typeof path ){
                 console.log('the path', path);
             }
+        }
+
+        /**
+         *
+         * @returns {{component: {id: string, typeDesc: string, typeId: string}, product: string, category: string, page: string, theme: {id: string, name: string, thumbnail: string, cssRef: string}, previewMode: string, preferredLanguge: string}}
+         * @constructor SiteBuilder
+         */
+        function SiteBuilderDefaults() {
+            /**
+             @function
+             @name SiteBuilderDefaults
+             @description Return an object with the SiteBuilder Default settings for Firebase
+             @param {}
+             @return Object
+             */
+
+            // Note this will get more complicated when we want to start remembering things
+            // like current theme, state etc ...
+            return {
+                component: {
+                    id: 'uniq id/code for the item',
+                    typeDesc: 'thing.attribute',
+                    typeId: '9999 - each component/widget has a type to id it, thereby enabling bideirectional communication between sitebuilder and workspace '
+                },
+                product: 'bucket for when a product is selected',
+                category: 'bucket for when a category is selected',
+                page: 'bucket for when a page is selected',
+                theme: {
+                    id: '1',
+                    name: 'default',
+                    thumbnail: 'http://localhost:8090/default.png',
+                    cssRef: 'http://localhost:8090/default.css'
+                },
+                previewMode: 'on',
+                preferredLanguge: 'en-us'
+            };
         }
 
         // public api here
