@@ -28,7 +28,8 @@
             <span class="-header">Pages</span>
             <ul>
                 <li ng-repeat="article in articles">
-                    <a href="#" ng-click="loadFramePage(article.id)">title: {{ article.title }}</a>
+                    <!--<a href="#" ng-click="loadFramePage(article.id)">title: {{ article.title }}</a>-->
+                    {{ article.title }}
                 </li>
                 <li ng-repeat-end>
                     <button class="btn -vln-default" ng-click="addPage()" ng-disabled="isReadonly">
@@ -40,7 +41,7 @@
                     <a href="#" class="-node">Categories</a>
                     <ul class="subgroup">
                         <li ng-repeat="category in categories">
-                            <a href="#" ng-click="loadFramePage( category.path )">{{ category.name }}</a>
+                            <a href="#" ng-click="loadFramePage( category.id )">{{ category.title }}</a>
                         </li>
                         <li ng-repeat-end>
                             <button class="btn -vln-default" ng-click="addCategory()" ng-disabled="isReadonly">
@@ -53,7 +54,7 @@
                     <a href="#" class="-node">Products</a>
                     <ul class="subgroup">
                         <li ng-repeat="product in products">
-                            <a href="#" ng-click="editProduct( product, $index )">{{ product.name }}</a>
+                            <a href="#" ng-click="editProduct( product, $index )">{{ product.title }}</a>
                         </li>
                         <li ng-repeat-end>
                             <button class="btn -vln-default" ng-click="addProduct()" ng-disabled="isReadonly">

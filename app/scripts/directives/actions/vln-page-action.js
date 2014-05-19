@@ -1,8 +1,8 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Directives
-    .directive('vlnPageAction', ['$rootScope', 'vnConfig',
-        function ($rootScope, vnConfig) {
+    .directive('vlnPageAction', [
+        function () {
 
             'use strict';
 
@@ -12,7 +12,7 @@ SiteBuilder.Directives
                 scope      : {
                     products: '='
                 },
-                link       : function postLink(scope) {
+                link       : function postLink() {
 
                 }
             };

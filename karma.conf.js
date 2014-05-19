@@ -37,9 +37,6 @@ module.exports = function (config) {
             'app/bower_components/firebase/firebase.js',
             'app/bower_components/angularfire/angularfire.js',
             'app/bower_components/tiny-edit//dist/tiny-edit.min.js',
-
-            'app/custom_components/site_dna/src/SiteDNA.dev.js',
-
             'app/scripts/app.js',
 
 //                <!--controllers-->
@@ -67,7 +64,9 @@ module.exports = function (config) {
             'app/scripts/services/vln-theme-factory.js',
             'app/scripts/services/vln-update-manager.js',
             'app/scripts/services/vn-api.js',
+            'app/scripts/services/vn-environment-context.js',
             'app/scripts/services/vn-data-endpoint.js',
+            'app/scripts/services/vn-data-src.js',
             'app/scripts/services/vn-firebase.js',
             'app/scripts/services/vn-session.js',
 //            'app/scripts/*.js',

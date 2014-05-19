@@ -1,9 +1,26 @@
 /*global SiteBuilder*/
 
 SiteBuilder.Controllers
-    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vnConfig',
-        function ($rootScope, $scope, vnConfig) {
+    .controller('vlnPageCtrl', ['$rootScope', '$scope', 'vnConfig', 'vnDataSrc',
+        function ($rootScope, $scope, vnConfig, vnDataSrc) {
             'use strict';
+
+            $scope.articles = vnDataSrc.getArticles();
+
+            /**
+             * exploreation to try and unify a firebase object and the results of a a $resource call
+             */
+            console.log('articles', vnDataSrc.getArticles());
+            $scope.articles = vnDataSrc.getArticles();
+//                .then(function (res) {
+//                    $scope.articles = res.data;
+//                    console.log('lookalike arts: ', $scope.articles);
+//                });
+////            $scope.articles = vnDataSrc.getArticles()
+////                .then('yoyoyo');
+////            console.log('logging arts from vlnPageCtrl: ', $scope.articles);
+////            $scope.products = vnDataSrc.getProducts();
+////            $scope.categories = vnDataSrc.getCategories();
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {
