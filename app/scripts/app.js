@@ -42,7 +42,7 @@ angular.module('siteBuilder', [
             $routeProvider
                 .when('/', {
                     templateUrl: 'views/app-container.html',
-                    controller: 'MainCtrl'
+                    controller : 'MainCtrl'
                 })
                 .otherwise({
                     redirectTo: '/'

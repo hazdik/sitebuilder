@@ -6,21 +6,9 @@ SiteBuilder.Controllers
             'use strict';
 
             $scope.articles = vnDataSrc.getArticles();
-
-            /**
-             * exploreation to try and unify a firebase object and the results of a a $resource call
-             */
-            console.log('articles', vnDataSrc.getArticles());
-            $scope.articles = vnDataSrc.getArticles();
-//                .then(function (res) {
-//                    $scope.articles = res.data;
-//                    console.log('lookalike arts: ', $scope.articles);
-//                });
-////            $scope.articles = vnDataSrc.getArticles()
-////                .then('yoyoyo');
-////            console.log('logging arts from vlnPageCtrl: ', $scope.articles);
-////            $scope.products = vnDataSrc.getProducts();
-////            $scope.categories = vnDataSrc.getCategories();
+            $scope.categories = vnDataSrc.getCategories();
+            $scope.products = vnDataSrc.getProducts();
+            console.log('cats', $scope.categories);
 
             function toggleAssetList() {
                 if ($scope.visibleAssetList) {

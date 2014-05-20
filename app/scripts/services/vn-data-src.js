@@ -1,67 +1,76 @@
 /*globals SiteBuilder*/
 
+// API ENDPOINTS FOR GETTING DATA
+//        return {
+//            Article        : $resource(vnDataEndpoint.apiUrl + '/articles'),
+//            Category       : $resource(vnDataEndpoint.apiUrl + '/categories'),
+//            Cart           : $resource(vnDataEndpoint.apiUrl + '/carts'),
+//            Configuration  : $resource(vnDataEndpoint.apiUrl + '/config'),
+//            Country        : $resource(vnDataEndpoint.apiUrl + '/countries'),
+//            Nav            : $resource(vnDataEndpoint.apiUrl + '/navs'),
+//            Product        : $resource(vnDataEndpoint.apiUrl + '/products/')
+//        };
+
 SiteBuilder.Services
-    .service('vnDataSrc', ['$q', 'vnEnvironmentContext', 'vnApi', 'vnFirebase',
-        function vnDataSrc($q, vnEnvironmentContext, vnApi, vnFirebase) {
+    .factory('vnDataSrc', ['$q', 'vnEnvironmentContext', 'vnApi', 'vnFirebase', 'vnApiArticleData', 'vnApiCategoryData', 'vnApiProductData',
+        function ($q, vnEnvironmentContext, vnApi, vnFirebase, vnApiArticleData, vnApiCategoryData, vnApiProductData) {
             'use strict';
 
-            this.context = vnEnvironmentContext;
+            var environmentContext = vnEnvironmentContext;
 
-            this.getContext = function () {
-                return this.context;
-            };
+            function getContextFn() {
+                return environmentContext;
+            }
 
-            this.getArticles = function () {
-                if ('Production' !== this.context) {
-                    /**
-                     * From trying to unify the firebase object and the $resoutce promise results
-                     */
-//                    var returnFire = vnFirebase.getFirebaseData('articles');
-//                    var deferred =  $q.defer();
-//                    return angular.extend(returnFire, deferred.promise);
-////                    console.log('returnFire', returnFire);
-////                    return angular.extend(returnFire, {then: function(test) {console.log('extend fn call to: ', test);}});
-////                    console.log('returnFire', returnFire);
+            function getArticlesFn() {
+                if ('Production' !== environmentContext) {
                     return vnFirebase.getFirebaseData('articles');  // is an object
                 } else {
-                    var deferred = $q.defer()
-
                     vnApi.Article.get()
-                        .$promise.then(function (res) {
-                            console.log('datasrc: ', res);
-                            return res;
+                        .$promise.then(function (results) {
+                            angular.forEach(results.data, function (r) {
+                                var aid = r.id;
+                                vnApiArticleData[aid] = r;
+                            });
                         });
-
-//                    return deferred.promise;
+                    return vnApiArticleData;
                 }
+            }
+
+            function getCategoriesFn() {
+                if ('Production' !== environmentContext) {
+                    return vnFirebase.getFirebaseData('categories');
+                } else {
+                    vnApi.Category.get()
+                        .$promise.then(function (results) {
+                            angular.forEach(results.data, function (r) {
+                                var cid = r.id;
+                                vnApiCategoryData[cid] = r;
+                            });
+                        });
+                    return vnApiCategoryData;
+                }
+            }
+
+            function getProductsFn() {
+                if ('Production' !== environmentContext) {
+                    return vnFirebase.getFirebaseData('products');
+                } else {
+                    vnApi.Product.get()
+                        .$promise.then(function (results) {
+                            angular.forEach(results.data, function (r) {
+                                var pid = r.id;
+                                vnApiProductData[pid] = r;
+                            });
+                        });
+                    return vnApiProductData;
+                }
+            }
+
+            return {
+                getArticles  : getArticlesFn,
+                getCategories: getCategoriesFn,
+                getContext   : getContextFn,
+                getProducts  : getProductsFn
             };
-
-            this.getCategories = function () {
-                return [
-                    {id: 1, title: 'first category'},
-                    {id: 2, title: '2nd category'},
-                    {id: 3, title: '3rd category'}
-                ];
-            };
-
-            this.getProducts = function () {
-                return [
-                    {id: 1, title: 'first product'},
-                    {id: 2, title: '2nd product'},
-                    {id: 3, title: '3rd product'}
-                ];
-            };
-
-//        this.showData = function() {
-//            if(this.context !== 'Production') {
-//                console.log(vnEnvironmentContext, 'from vnDataSrc');
-//                console.log(vnFirebase, 'from Flexton vnDataSrc');
-//            } else {
-//                console.log(vnEnvironmentContext, 'from vnDataSrc');
-//                console.log(vnApi, 'from vnDataSrc');
-//            }
-//            console.log('and ctx was ... ', this.context);
-//        }
-
-            // AngularJS will instantiate a singleton by calling "new" on this function
         }]);
