@@ -39,6 +39,7 @@ SiteBuilder.Services
                  @return Boolean
                  */
 
+                // The places interesting data sets live ...
                 var apiEndpoints = {
                     articles  : vnApi.Article.get().$promise,
                     categories: vnApi.Category.get().$promise,
@@ -55,6 +56,8 @@ SiteBuilder.Services
                 vnFirebase.resetSiteBuilder(); // i.e. called with no session state persistence considered.
 
                 // Grab the keys for api endpoints so we know what goes where in firebase
+                // NOTE: The key depends on accuracy of the firebase schema as it is used as a string elsewhere
+                //       for firebase url generation.
                 angular.forEach(keys, function (k) {
                     setFirebaseData(k, apiEndpoints[k]);
                 });
