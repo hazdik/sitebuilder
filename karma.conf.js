@@ -65,6 +65,8 @@ module.exports = function (config) {
             'app/scripts/services/vln-update-manager.js',
             'app/scripts/services/vn-api.js',
             'app/scripts/services/vn-api-article-data.js',
+            'app/scripts/services/vn-api-category-data.js',
+            'app/scripts/services/vn-api-product-data.js',
             'app/scripts/services/vn-environment-context.js',
             'app/scripts/services/vn-data-endpoint.js',
             'app/scripts/services/vn-data-src.js',
